@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Topics on FHXISDOG</title>
-    <link>https://www.example.com/topics/</link>
+    <link>https://fhxisdog.github.io/topics/</link>
     <description>Recent content in Topics on FHXISDOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
     <lastBuildDate>Sun, 21 Apr 2019 18:23:51 +0800</lastBuildDate>
     
-	<atom:link href="https://www.example.com/topics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fhxisdog.github.io/topics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello</title>
-      <link>https://www.example.com/topics/hello/</link>
+      <link>https://fhxisdog.github.io/topics/hello/</link>
       <pubDate>Sun, 21 Apr 2019 18:23:51 +0800</pubDate>
       
-      <guid>https://www.example.com/topics/hello/</guid>
+      <guid>https://fhxisdog.github.io/topics/hello/</guid>
       <description></description>
     </item>
     
