@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on FHXISDOG</title>
-    <link>https://fhxisdog.github.io/posts/</link>
-    <description>Recent content in Posts on FHXISDOG</description>
+    <title>Jvm on FHXISDOG</title>
+    <link>https://fhxisdog.github.io/tags/jvm/</link>
+    <description>Recent content in Jvm on FHXISDOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
     <lastBuildDate>Sun, 21 Apr 2019 18:23:51 +0800</lastBuildDate>
     
-	<atom:link href="https://fhxisdog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fhxisdog.github.io/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>My First Post</title>
-      <link>https://fhxisdog.github.io/posts/my-first-post/</link>
-      <pubDate>Sun, 21 Apr 2019 18:23:51 +0800</pubDate>
-      
-      <guid>https://fhxisdog.github.io/posts/my-first-post/</guid>
-      <description> hello </description>
-    </item>
     
     <item>
       <title>My First Post</title>
