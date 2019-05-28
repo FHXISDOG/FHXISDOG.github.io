@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.55.6" />
 
-  <title>FHXISDOG</title>
+  <title>smb &middot; FHXISDOG</title>
 
   
   
@@ -40,7 +40,7 @@
 
  
   
-  <link rel="alternate" type="application/rss+xml" title="FHXISDOG" href="https://fhxisdog.github.io/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="FHXISDOG" href="https://fhxisdog.github.io/tags/smb/index.xml" />
   
 
   
@@ -121,7 +121,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://fhxisdog.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="https://fhxisdog.github.io/tags/smb/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -222,8 +222,7 @@
 
 
 <div class="header">
-  <h1>FHXISDOG</h1>
-  <h2>just for fun</h2>
+  <h1>smb</h1>
 </div>
 
 <div class="content">
@@ -286,134 +285,6 @@ min protocOl = SMB2 max protocol = SMB2 client min protocol = SMB2 client max pr
 </article>
 
   
-    <article>
-  <header>
-    <h2><a href="https://fhxisdog.github.io/posts/shadowsocks-libev&#43;privoxy/">Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>28 May 2019, 12:01</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/linux">linux</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/shadowsocks">shadowsocks</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/vpn">vpn</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  本文所用到的工具  shadowsocks-libev privoxy gfwlist2privoxy  shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev
-配置:
- 在/etc/shadowsocks/下新建config.json文件 编辑config.json：  { &quot;server&quot;:&quot;xxxxxx&quot;, #服务器IP &quot;server_port&quot;:xxx, #服务器端口 &quot;local_address&quot;:&quot;127.0.0.1&quot;, #本地监听IP &quot;local_port&quot;:1080, #本地监听端口 &quot;password&quot;:&quot;xxx&quot;, #密码 &quot;method&quot;:&quot;xxx&quot;, #加密方式 &quot;fast_open&quot;:false, # tcp_fastopen &quot;timeout&quot;:1000, #超时时间 &quot;workers&quot;:1 #workder进程数 }   启动ss-local: ss-local -c /etc/shadowsocks/config.json 测试:curl -x socks5://127.0.0.1:1080 http://www.google.com 设置守护进程启动:systemctl start shadowsocks-libev@config ** 注意：这里@config是指 /etc/shadowsocks/下面的配置文件 ** 设置开机自启动: systemctl enable shadows-libev@config
-privoxy+gfwlist2privoxy安装配置 下载privoxy：sudo pacman -S privoxy
-  获取 gfwlist2privoxy 脚本:curl -skL https://raw.
-  </p>
-
-  
-  <footer>
-    <a href="https://fhxisdog.github.io/posts/shadowsocks-libev&#43;privoxy/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://fhxisdog.github.io/posts/jvm/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/">深入浅出 JIT 编译器</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>21 Apr 2019, 18:23</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/jvm">jvm</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/jvm">jvm</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/java">java</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  转自:https://www.ibm.com/developerworks/cn/java/j-lo-just-in-time/
-JIT 简介 JIT 是 just in time 的缩写, 也就是即时编译编译器。使用即时编译器技术，能够加速 Java 程序的执行速度。下面，就对该编译器技术做个简单的讲解。
-首先，我们大家都知道，通常通过 javac 将程序源代码编译，转换成 java 字节码，JVM 通过解释字节码将其翻译成对应的机器指令，逐条读入，逐条解释翻译。很显然，经过解释执行，其执行速度必然会比可执行的二进制字节码程序慢很多。为了提高执行速度，引入了 JIT 技术。
-在运行时 JIT 会把翻译过的机器码保存起来，以备下次使用，因此从理论上来说，采用该 JIT 技术可以接近以前纯编译技术。下面我们看看，JIT 的工作过程。
-JIT 编译过程 当 JIT 编译启用时（默认是启用的），JVM 读入.class 文件解释后，将其发给 JIT 编译器。JIT 编译器将字节码编译成本机机器代码，下图展示了该过程。
-图 1. JIT 工作原理图
-Hot Spot 编译 当 JVM 执行代码时，它并不立即开始编译代码。这主要有两个原因：
-首先，如果这段代码本身在将来只会被执行一次，那么从本质上看，编译就是在浪费精力。因为将代码翻译成 java 字节码相对于编译这段代码并执行代码来说，要快很多。
-当然，如果一段代码频繁的调用方法，或是一个循环，也就是这段代码被多次执行，那么编译就非常值得了。因此，编译器具有的这种权衡能力会首先执行解释后的代码，然后再去分辨哪些方法会被频繁调用来保证其本身的编译。其实说简单点，就是 JIT 在起作用，我们知道，对于 Java 代码，刚开始都是被编译器编译成字节码文件，然后字节码文件会被交由 JVM 解释执行，所以可以说 Java 本身是一种半编译半解释执行的语言。Hot Spot VM 采用了 JIT compile 技术，将运行频率很高的字节码直接编译为机器指令执行以提高性能，所以当字节码被 JIT 编译为机器码的时候，要说它是编译执行的也可以。也就是说，运行时，部分代码可能由 JIT 翻译为目标机器指令（以 method 为翻译单位，还会保存起来，第二次执行就不用翻译了）直接执行。
-  </p>
-
-  
-  <footer>
-    <a href="https://fhxisdog.github.io/posts/jvm/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-
-  
-
-
 </div>
 
 </div>
@@ -428,4 +299,3 @@ Hot Spot 编译 当 JVM 执行代码时，它并不立即开始编译代码。�
 
 </body>
 </html>
-

@@ -6,10 +6,39 @@
     <description>Recent content in Posts on FHXISDOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 21 Apr 2019 18:23:51 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 28 May 2019 13:05:29 +0800</lastBuildDate>
     
 	<atom:link href="https://fhxisdog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Smb无法连接windows共享文件夹</title>
+      <link>https://fhxisdog.github.io/posts/smb%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5windows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Tue, 28 May 2019 13:05:29 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/posts/smb%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5windows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>问题描述 使用pacmanfm在地址栏输入:smb://fhxisdog-win/temp访问windows共享文件夹，提示NO FILE OR DIRECTIONARY
+在命令行使用命令:smbclient -L fhxisdog-win -U% 提示:NT_STATUS_ACCESS_DENIED
+使用:smbclient -L fhxisdog-win -m SMB2可以访问
+解决方法 编辑 /etc/samba/smb.conf:在[gloabl]下加入:
+min protocOl = SMB2 max protocol = SMB2 client min protocol = SMB2 client max protocol = SMB2  smb简介  服务器消息块（Server Message Block，缩写为SMB），又称网络文件共享系统（Common Internet File System，缩写为CIFS, /ˈsɪfs/），一种应用层网络传输协议，由微软开发，主要功能是使网络上的机器能够共享计算机文件、打印机、串行端口和通讯等资源。它也提供经认证的行程间通信机能。它主要用在装有Microsoft Windows的机器上，在这样的机器上被称为Microsoft Windows Network。
+经过Unix服务器厂商重新开发后，它可以用于连接Unix服务器和Windows客户机，执行打印和文件共享等任务。
+与功能类似的网络文件系统（NFS）相比，NFS的消息格式是固定长度，而CIFS的消息格式大多数是可变长度，这增加了协议的复杂性。CIFS消息一般使用NetBIOS或TCP协议发送，分别使用不同的端口139或445，当前倾向于使用445端口。CIFS的消息包括一个信头（32字节）和消息体（1个或多个，可变长）。
+ 参考连接:wiki</description>
+    </item>
+    
+    <item>
+      <title>Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy</title>
+      <link>https://fhxisdog.github.io/posts/shadowsocks-libev&#43;privoxy/</link>
+      <pubDate>Tue, 28 May 2019 12:01:14 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/posts/shadowsocks-libev&#43;privoxy/</guid>
+      <description>本文所用到的工具  shadowsocks-libev privoxy gfwlist2privoxy  shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev
+配置:
+ 在/etc/shadowsocks/下新建config.json文件 编辑config.json：  { &amp;quot;server&amp;quot;:&amp;quot;xxxxxx&amp;quot;, #服务器IP &amp;quot;server_port&amp;quot;:xxx, #服务器端口 &amp;quot;local_address&amp;quot;:&amp;quot;127.0.0.1&amp;quot;, #本地监听IP &amp;quot;local_port&amp;quot;:1080, #本地监听端口 &amp;quot;password&amp;quot;:&amp;quot;xxx&amp;quot;, #密码 &amp;quot;method&amp;quot;:&amp;quot;xxx&amp;quot;, #加密方式 &amp;quot;fast_open&amp;quot;:false, # tcp_fastopen &amp;quot;timeout&amp;quot;:1000, #超时时间 &amp;quot;workers&amp;quot;:1 #workder进程数 }   启动ss-local: ss-local -c /etc/shadowsocks/config.json 测试:curl -x socks5://127.0.0.1:1080 http://www.google.com 设置守护进程启动:systemctl start shadowsocks-libev@config ** 注意：这里@config是指 /etc/shadowsocks/下面的配置文件 ** 设置开机自启动: systemctl enable shadows-libev@config
+privoxy+gfwlist2privoxy安装配置 下载privoxy：sudo pacman -S privoxy
+  获取 gfwlist2privoxy 脚本:curl -skL https://raw.</description>
+    </item>
     
     <item>
       <title>深入浅出 JIT 编译器</title>
