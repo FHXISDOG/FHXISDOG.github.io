@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.55.6" />
 
-  <title>Tags &middot; FHXISDOG</title>
+  <title>Linux使用modmap替换super和CapsLock位置 &middot; FHXISDOG</title>
 
   
   
@@ -39,8 +39,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="FHXISDOG" href="https://fhxisdog.github.io/tags/index.xml" />
   
 
   
@@ -119,10 +117,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://fhxisdog.github.io/tags/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -222,58 +216,124 @@
 
 
 <div class="header">
-  <h1>Tags</h1>
+  <h1>Linux使用modmap替换super和CapsLock位置</h1>
+  <h2></h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>28 May 2019, 15:50</time>
+  </div>
+
+  
+
   
   
-    <li>
-      <a href="linux">linux</a>
-      <span>&#40;4&#41;</span>
-    </li>
   
-    <li>
-      <a href="i3wm">i3wm</a>
-      <span>&#40;2&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/linux">linux</a>
+    
+  </div>
   
-    <li>
-      <a href="java">java</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="jvm">jvm</a>
-      <span>&#40;1&#41;</span>
-    </li>
+
   
-    <li>
-      <a href="manjaro">manjaro</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="modmap">modmap</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="shadowsocks">shadowsocks</a>
-      <span>&#40;1&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/modmap">modmap</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/i3wm">i3wm</a>
+    
+  </div>
   
-    <li>
-      <a href="smb">smb</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="vpn">vpn</a>
-      <span>&#40;1&#41;</span>
-    </li>
+
+</div>
+
   
-  </ul>
+
+<p>manjaro的i3wm版本默认的mod键是super(就是windows键)，为了拯救我的小拇指，所以使用xmodmap将<code>super</code>键和<code>CapsLock</code>互换位置。</p>
+
+<hr />
+
+<h3 id="创建自己的映射表">创建自己的映射表</h3>
+
+<pre><code>xmodmap -pke &gt; ~/.Xmodmap
+</code></pre>
+
+<h3 id="创建映射">创建映射</h3>
+
+<p>编辑<code>～/.Xmodmap</code>,在底部加入:</p>
+
+<pre><code>remove Lock = Caps_Lock
+remove Mod4 = Super_L
+keysym Super_L = Caps_Lock
+keysym Caps_Lock = Super_L
+add Lock = Caps_Lock
+add Mod4 = Super_L
+</code></pre>
+
+<h3 id="测试">测试:</h3>
+
+<pre><code>xmodmap ~/.Xmodmap
+</code></pre>
+
+<h3 id="设置开机启动">设置开机启动:</h3>
+
+<p>默认系统读取的就是$HOME/.Xmodmap</p>
+
+<h3 id="参考连接">参考连接</h3>
+
+<p><a href="https://wiki.archlinux.org/index.php/Xmodmap_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29">arch-wiki</a></p>
+
+<p><a href="https://www.linuxidc.com/Linux/2013-05/84542.htm">https://www.linuxidc.com/Linux/2013-05/84542.htm</a></p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://fhxisdog.github.io/posts/smb%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5windows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://fhxisdog.github.io/posts/smb%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5windows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">Smb无法连接windows共享文件夹</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://fhxisdog.github.io/posts/manjaro-i3wm%E6%8E%A5%E5%85%A5%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/">Manjaro I3wm接入外接显示器不显示</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://fhxisdog.github.io/posts/manjaro-i3wm%E6%8E%A5%E5%85%A5%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
 </div>
 
 </div>
@@ -288,3 +348,4 @@
 
 </body>
 </html>
+

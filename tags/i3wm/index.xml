@@ -23,5 +23,18 @@ xrandr  可以看到结果如下，其中 eDP1是我笔记本自带的屏幕，H
 Screen 0: minimum 8 x 8, current 1920 x 1080, maximum 32767 x 32767 eDP1 connected primary 1920x1080+0+0 (normal left inverted right x axis y axis) 310mm x 170mm 1920x1080 60.05*+ 59.93 1680x1050 59.88 1400x1050 59.98 1600x900 60.00 59.95 59.82 1280x1024 60.02 1400x900 59.96 59.88 1280x960 60.00 1368x768 60.00 59.88 59.85 1280x800 59.81 59.91 1280x720 59.86 60.00 59.74 1024x768 60.00 1024x576 60.00 59.</description>
     </item>
     
+    <item>
+      <title>Linux使用modmap替换super和CapsLock位置</title>
+      <link>https://fhxisdog.github.io/posts/linux%E4%BD%BF%E7%94%A8modmap%E6%9B%BF%E6%8D%A2super%E5%92%8Ccapslock%E4%BD%8D%E7%BD%AE/</link>
+      <pubDate>Tue, 28 May 2019 15:50:39 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/posts/linux%E4%BD%BF%E7%94%A8modmap%E6%9B%BF%E6%8D%A2super%E5%92%8Ccapslock%E4%BD%8D%E7%BD%AE/</guid>
+      <description>manjaro的i3wm版本默认的mod键是super(就是windows键)，为了拯救我的小拇指，所以使用xmodmap将super键和CapsLock互换位置。
+创建自己的映射表 xmodmap -pke &amp;gt; ~/.Xmodmap  创建映射 编辑～/.Xmodmap,在底部加入:
+remove Lock = Caps_Lock remove Mod4 = Super_L keysym Super_L = Caps_Lock keysym Caps_Lock = Super_L add Lock = Caps_Lock add Mod4 = Super_L  测试: xmodmap ~/.Xmodmap  设置开机启动: 默认系统读取的就是$HOME/.Xmodmap
+参考连接 arch-wiki
+https://www.linuxidc.com/Linux/2013-05/84542.htm</description>
+    </item>
+    
   </channel>
 </rss>

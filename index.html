@@ -290,6 +290,63 @@ Screen 0: minimum 8 x 8, current 1920 x 1080, maximum 32767 x 32767 eDP1 connect
   
     <article>
   <header>
+    <h2><a href="https://fhxisdog.github.io/posts/linux%E4%BD%BF%E7%94%A8modmap%E6%9B%BF%E6%8D%A2super%E5%92%8Ccapslock%E4%BD%8D%E7%BD%AE/">Linux使用modmap替换super和CapsLock位置</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>28 May 2019, 15:50</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/linux">linux</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/modmap">modmap</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/i3wm">i3wm</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  manjaro的i3wm版本默认的mod键是super(就是windows键)，为了拯救我的小拇指，所以使用xmodmap将super键和CapsLock互换位置。
+创建自己的映射表 xmodmap -pke &gt; ~/.Xmodmap  创建映射 编辑～/.Xmodmap,在底部加入:
+remove Lock = Caps_Lock remove Mod4 = Super_L keysym Super_L = Caps_Lock keysym Caps_Lock = Super_L add Lock = Caps_Lock add Mod4 = Super_L  测试: xmodmap ~/.Xmodmap  设置开机启动: 默认系统读取的就是$HOME/.Xmodmap
+参考连接 arch-wiki
+https://www.linuxidc.com/Linux/2013-05/84542.htm
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://fhxisdog.github.io/posts/smb%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5windows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">Smb无法连接windows共享文件夹</a></h2>
 
     <div class="post-meta">
