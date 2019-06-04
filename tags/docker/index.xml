@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on FHXISDOG</title>
+    <link>https://fhxisdog.github.io/tags/docker/</link>
+    <description>Recent content in docker on FHXISDOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 04 Jun 2019 15:01:04 +0800</lastBuildDate>
+    
+	<atom:link href="https://fhxisdog.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker Compose：链接外部容器的几种方式</title>
+      <link>https://fhxisdog.github.io/posts/docker-compose%E9%93%BE%E6%8E%A5%E5%A4%96%E9%83%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Tue, 04 Jun 2019 15:01:04 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/posts/docker-compose%E9%93%BE%E6%8E%A5%E5%A4%96%E9%83%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid>
+      <description>在Docker中，容器之间的链接是一种很常见的操作：它提供了访问其中的某个容器的网络服务而不需要将所需的端口暴露给Docker Host主机的功能。Docker Compose中对该特性的支持同样是很方便的。然而，如果需要链接的容器没有定义在同一个docker-compose.yml中的时候，这个时候就稍微麻烦复杂了点。
+ 在不使用Docker Compose的时候，将两个容器链接起来使用—link参数，相对来说比较简单，以nginx镜像为例子：
+docker run --rm --name test1 -d nginx #开启一个实例test1 docker run --rm --name test2 --link test1 -d nginx #开启一个实例test2并与test1建立链接  这样，test2与test1便建立了链接，就可以在test2中使用访问test1中的服务了。
+如果使用Docker Compose，那么这个事情就更简单了，还是以上面的nginx镜像为例子，编辑docker-compose.yml文件为：
+version: &amp;quot;3&amp;quot; services: test2: image: nginx depends_on: - test1 links: - test1 test1: image: nginx  最终效果与使用普通的Docker命令docker run xxxx建立的链接并无区别。这只是一种最为理想的情况。
+ 如果容器没有定义在同一个docker-compose.yml文件中，应该如何链接它们呢？ 又如果定义在docker-compose.yml文件中的容器需要与docker run xxx启动的容器链接，需要如何处理？ 针对这两种典型的情况，下面给出我个人测试可行的办法：  方式一：让需要链接的容器同属一个外部网络 我们还是使用nginx镜像来模拟这样的一个情景：假设我们需要将两个使用Docker Compose管理的nignx容器（test1和test2）链接起来，使得test2能够访问test1中提供的服务，这里我们以能ping通为准。
+首先，我们定义容器test1的docker-compose.yml文件内容为：
+version: &amp;quot;3&amp;quot; services: test2: image: nginx container_name: test1 networks: - default - app_net networks: app_net: external: true  容器test2内容与test1基本一样，只是多了一个external_links,需要特别说明的是：最近发布的Docker版本已经不需要使用external_links来链接容器，容器的DNS服务可以正确的作出判断，因此如果你你需要兼容较老版本的Docker的话，那么容器test2的docker-compose.</description>
+    </item>
+    
+  </channel>
+</rss>

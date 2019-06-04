@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.55.6" />
 
-  <title>Posts &middot; FHXISDOG</title>
+  <title>docker &middot; FHXISDOG</title>
 
   
   
@@ -40,7 +40,7 @@
 
  
   
-  <link rel="alternate" type="application/rss+xml" title="FHXISDOG" href="https://fhxisdog.github.io/posts/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="FHXISDOG" href="https://fhxisdog.github.io/topics/docker/index.xml" />
   
 
   
@@ -121,7 +121,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://fhxisdog.github.io/posts/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="https://fhxisdog.github.io/topics/docker/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -222,38 +222,70 @@
 
 
 <div class="header">
-  <h1>Posts</h1>
+  <h1>docker</h1>
 </div>
+
 <div class="content">
   
-  <h2>2019</h2>
-  <ul>
-  
-    <li><time>04 Jun 2019, 15:01</time> - <a href="https://fhxisdog.github.io/posts/docker-compose%E9%93%BE%E6%8E%A5%E5%A4%96%E9%83%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">Docker Compose：链接外部容器的几种方式</a></li>
+    <article>
+  <header>
+    <h2><a href="https://fhxisdog.github.io/posts/docker-compose%E9%93%BE%E6%8E%A5%E5%A4%96%E9%83%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">Docker Compose：链接外部容器的几种方式</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>04 Jun 2019, 15:01</time>
+  </div>
 
   
-    <li><time>04 Jun 2019, 14:17</time> - <a href="https://fhxisdog.github.io/posts/alphabetarcga%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/">Alpha、Beta、RC、GA版本的区别</a></li>
 
   
-    <li><time>29 May 2019, 15:33</time> - <a href="https://fhxisdog.github.io/posts/nacos%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">nacos使用指南</a></li>
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/docker">docker</a>
+    
+  </div>
+  
+  
 
   
-    <li><time>29 May 2019, 11:59</time> - <a href="https://fhxisdog.github.io/posts/manjaro-i3wm%E6%8E%A5%E5%85%A5%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/">Manjaro I3wm接入外接显示器不显示</a></li>
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/docker">docker</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  在Docker中，容器之间的链接是一种很常见的操作：它提供了访问其中的某个容器的网络服务而不需要将所需的端口暴露给Docker Host主机的功能。Docker Compose中对该特性的支持同样是很方便的。然而，如果需要链接的容器没有定义在同一个docker-compose.yml中的时候，这个时候就稍微麻烦复杂了点。
+ 在不使用Docker Compose的时候，将两个容器链接起来使用—link参数，相对来说比较简单，以nginx镜像为例子：
+docker run --rm --name test1 -d nginx #开启一个实例test1 docker run --rm --name test2 --link test1 -d nginx #开启一个实例test2并与test1建立链接  这样，test2与test1便建立了链接，就可以在test2中使用访问test1中的服务了。
+如果使用Docker Compose，那么这个事情就更简单了，还是以上面的nginx镜像为例子，编辑docker-compose.yml文件为：
+version: &quot;3&quot; services: test2: image: nginx depends_on: - test1 links: - test1 test1: image: nginx  最终效果与使用普通的Docker命令docker run xxxx建立的链接并无区别。这只是一种最为理想的情况。
+ 如果容器没有定义在同一个docker-compose.yml文件中，应该如何链接它们呢？ 又如果定义在docker-compose.yml文件中的容器需要与docker run xxx启动的容器链接，需要如何处理？ 针对这两种典型的情况，下面给出我个人测试可行的办法：  方式一：让需要链接的容器同属一个外部网络 我们还是使用nginx镜像来模拟这样的一个情景：假设我们需要将两个使用Docker Compose管理的nignx容器（test1和test2）链接起来，使得test2能够访问test1中提供的服务，这里我们以能ping通为准。
+首先，我们定义容器test1的docker-compose.yml文件内容为：
+version: &quot;3&quot; services: test2: image: nginx container_name: test1 networks: - default - app_net networks: app_net: external: true  容器test2内容与test1基本一样，只是多了一个external_links,需要特别说明的是：最近发布的Docker版本已经不需要使用external_links来链接容器，容器的DNS服务可以正确的作出判断，因此如果你你需要兼容较老版本的Docker的话，那么容器test2的docker-compose.
+  </p>
 
   
-    <li><time>28 May 2019, 15:50</time> - <a href="https://fhxisdog.github.io/posts/linux%E4%BD%BF%E7%94%A8modmap%E6%9B%BF%E6%8D%A2super%E5%92%8Ccapslock%E4%BD%8D%E7%BD%AE/">Linux使用modmap替换super和CapsLock位置</a></li>
-
+  <footer>
+    <a href="https://fhxisdog.github.io/posts/docker-compose%E9%93%BE%E6%8E%A5%E5%A4%96%E9%83%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
   
-    <li><time>28 May 2019, 13:05</time> - <a href="https://fhxisdog.github.io/posts/smb%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5windows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">Smb无法连接windows共享文件夹</a></li>
+</article>
 
-  
-    <li><time>28 May 2019, 12:01</time> - <a href="https://fhxisdog.github.io/posts/shadowsocks-libev&#43;privoxy/">Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy</a></li>
-
-  
-    <li><time>21 Apr 2019, 18:23</time> - <a href="https://fhxisdog.github.io/posts/jvm/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/">深入浅出 JIT 编译器</a></li>
-
-  
-  </ul>
   
 </div>
 
@@ -269,4 +301,3 @@
 
 </body>
 </html>
-
