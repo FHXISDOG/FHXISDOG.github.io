@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.56.3" />
 
   <title>FHXISDOG</title>
 
@@ -230,6 +230,220 @@
   
     <article>
   <header>
+    <h2><a href="https://fhxisdog.github.io/posts/%E5%B0%86vue%E6%89%93%E5%8C%85%E5%88%B0springboot%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E4%B8%AD/">将vue打包到springboot静态资源中</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>04 Sep 2019, 16:48</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/spring-boot">spring boot</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/vue">vue</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/java">java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/spring-boot">spring boot</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+   项目中遇到需要将vue打包到spring boot 中的static中，直接访问，不需要使用Nginx来访问nginx.具体做法如下:
+将vue工程放到spring boot工程最外层 修改pom文件  &lt;plugin&gt; &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt; &lt;artifactId&gt;exec-maven-plugin&lt;/artifactId&gt; &lt;executions&gt; &lt;!--程序打包的时候，利用本地已安装的node环境，同时编译管理后台前端的工程文件--&gt; &lt;execution&gt; &lt;id&gt;npm-build-background&lt;/id&gt; &lt;phase&gt;verify&lt;/phase&gt; &lt;goals&gt; &lt;goal&gt;exec&lt;/goal&gt; &lt;/goals&gt; &lt;configuration&gt; &lt;executable&gt;${npm.command}&lt;/executable&gt; &lt;arguments&gt; &lt;argument&gt;run&lt;/argument&gt; &lt;argument&gt;prod-package&lt;/argument&gt; &lt;/arguments&gt; &lt;workingDirectory&gt;${basedir}/consumable-background&lt;/workingDirectory&gt; &lt;/configuration&gt; &lt;/execution&gt; &lt;/executions&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt; &lt;version&gt;3.1.0&lt;/version&gt; &lt;executions&gt; &lt;!--添加管理后台前端工程的静态文件到jar包中--&gt; &lt;execution&gt; &lt;id&gt;copy-consumable-background&lt;/id&gt; &lt;phase&gt;prepare-package&lt;/phase&gt; &lt;goals&gt; &lt;goal&gt;copy-resources&lt;/goal&gt; &lt;/goals&gt; &lt;configuration&gt; &lt;outputDirectory&gt;${basedir}/target/classes/static/background&lt;/outputDirectory&gt; &lt;resources&gt; &lt;resource&gt; &lt;directory&gt;${basedir}/consumable-background/dist&lt;/directory&gt; &lt;/resource&gt; &lt;/resources&gt; &lt;/configuration&gt; &lt;/execution&gt; &lt;/executions&gt; &lt;/plugin&gt; &lt;/plugins&gt;  配置拦截器(此步可以省略,应为springboot static 路径是默认放开的)  @Override public void addResourceHandlers(org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry registry) { registry.addResourceHandler(&quot;/static/**&quot;) .addResourceLocations(&quot;classpath:/static/&quot;); }  
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://fhxisdog.github.io/posts/spring-boot-%E5%88%86%E7%8E%AF%E5%A2%83%E6%89%93%E5%8C%85/">Spring Boot 分环境打包</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>04 Sep 2019, 16:33</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/spring-boot">spring boot</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/java">java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/spring-boot">spring boot</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  使用spring boot工程时，虽然官方提供了application.profiles.active参数去激活不同环境，但是如果打包时忘了修改还是比较麻烦的时。可以使用maven插件，自动的更新不同环境的 的配置文件。
+配置方法如下:
+这里列举三个环境:dev,test,prod
+resource目录结构如下(custom-config.properties为自定义的配置文件,区分不同环境也是以dev,test,prod结尾,如:custom-config-dev.properties):
+--- resource --- application.yml --- application-dev.yml --- application-test.yml --- application-prod.yml --- custom-config.properties --- custom-config-dev.properties --- custom-config-test.properties --- custom-config-prod.properties --- application-common.yml  修改pom文件:  &lt;profiles&gt; &lt;profile&gt; &lt;id&gt;dev&lt;/id&gt; &lt;activation&gt; &lt;activeByDefault&gt;true&lt;/activeByDefault&gt; &lt;/activation&gt; &lt;properties&gt; &lt;profile.active&gt;dev&lt;/profile.active&gt; &lt;/properties&gt; &lt;/profile&gt; &lt;profile&gt; &lt;id&gt;test&lt;/id&gt; &lt;properties&gt; &lt;profile.active&gt;test&lt;/profile.active&gt; &lt;/properties&gt; &lt;/profile&gt; &lt;profile&gt; &lt;id&gt;prod&lt;/id&gt; &lt;properties&gt; &lt;profile.active&gt;prod&lt;/profile.active&gt; &lt;/properties&gt; &lt;/profile&gt; &lt;/profiles&gt; &lt;build&gt; &lt;finalName&gt;app&lt;/finalName&gt; &lt;plugins&gt; &lt;/plugins&gt; &lt;resources&gt; &lt;resource&gt; &lt;directory&gt;src/main/resources&lt;/directory&gt; &lt;excludes&gt; &lt;exclude&gt;application-*.yml&lt;/exclude&gt; &lt;exclude&gt;custom-config.properties&lt;/exclude&gt; &lt;/excludes&gt; &lt;/resource&gt; &lt;resource&gt; &lt;directory&gt;src/main/resources&lt;/directory&gt; &lt;!-- 是否替换@xx@表示的maven properties属性值 --&gt; &lt;filtering&gt;true&lt;/filtering&gt; &lt;includes&gt; &lt;include&gt;application.
+  </p>
+
+  
+  <footer>
+    <a href="https://fhxisdog.github.io/posts/spring-boot-%E5%88%86%E7%8E%AF%E5%A2%83%E6%89%93%E5%8C%85/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://fhxisdog.github.io/posts/spring-boot-thymeleaf-%E5%BC%95%E7%94%A8contexpath/">Spring Boot Thymeleaf 引用contexpath</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>04 Sep 2019, 16:03</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/spring-boot">spring boot</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/java">java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/spring-boot">spring boot</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  spring boot 设置contextPath后，如果js中的请求路径不设置，会造成404的问题。 设置方法:
+在html页面header中添加配置:
+&lt;meta name=&quot;ctx&quot; th:content=&quot;${#httpServletRequest.getContextPath()}&quot; &gt;  js中引用:
+ var ctx = $(&quot;meta[name='ctx']&quot;).attr(&quot;content&quot;);  变量ctx就是contextPath
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://fhxisdog.github.io/posts/manjaro%E5%AE%89%E8%A3%85displaylink/">Manjar安装displaylink</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>24 Jun 2019, 13:06</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/manjaor">manjaor</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安装方法如下: 准备工作  uname -r查看内核版本,输出:4.19.23-1-MANJARO,说明我的内核版本是419,执行pacman -Ss linux-headers查看库中的依赖，执行sudo pacman -S core/liux419-headers安装头文件 安装evdi:yay -S evdi-git 3 安装displaylink yay -S displaylink  开始配置  装载evdi: sudo modprobe evdi 装载udl: sudo modprobe udl 启用displaylink.sevice: systemctl enable display link 开启displaylink.service:systemctl start displaylink 新增配置文件
+/usr/share/X11/xorg.conf.d/20-evdidevice.conf --- Section &quot;OutputClass&quot; Identifier &quot;DisplayLink&quot; MatchDriver &quot;evdi&quot; Driver &quot;modesetting&quot; Option &quot;AccelMethod&quot; &quot;none&quot; EndSection  执行xandr --listproviders,可以看到输出:
+Providers: number : 2 Provider 0: id: 0x45 cap: 0xb, Source Output, Sink Output, Sink Offload crtcs: 4 outputs: 2 associated providers: 1 name:Intel Provider 1: id: 0x14d cap: 0x2, Sink Output crtcs: 1 outputs: 1 associated providers: 1 name:modesetting  lxrandr开启屏幕
+  </p>
+
+  
+  <footer>
+    <a href="https://fhxisdog.github.io/posts/manjaro%E5%AE%89%E8%A3%85displaylink/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://fhxisdog.github.io/posts/docker-compose%E9%93%BE%E6%8E%A5%E5%A4%96%E9%83%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">Docker Compose：链接外部容器的几种方式</a></h2>
 
     <div class="post-meta">
@@ -399,6 +613,67 @@ version: &quot;3&quot; services: test2: image: nginx container_name: test1 netwo
   
     <article>
   <header>
+    <h2><a href="https://fhxisdog.github.io/posts/skywalking%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">skywalking使用指南</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>29 May 2019, 15:33</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/skywalking">skywalking</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/java">java</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/skywalking">skywalking</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/spring-cloud">spring cloud</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  运行 单机运行  下载最新release包 解压，sh ${skywalkingpath}/bin/startup.sh 在springboot启动命令前加入启动参数
+-javaagent:${path}/skywalking-agent.jar #path为skywalking解压的agent目录  访问localhost:8080查看结果
+  docker 运行 前置条件 下载 下载最新release包并解压
+构建docker bridge dcoker network create skywalking  使用数据库 ElasticSearch 启动es docker run -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; docker.elastic.co/elasticsearch/elasticsearch:6.4.3 #skywalking目前只支持6.x(6.1.0版本)  初始化数据库 编辑 ${path}/apache-skywalking-bin/config/appliccation.yml
+storage: #elasticsearch: nameSpace: ${SW_NAMESPACE:&quot;&quot;} clusterNodes: ${SW_STORAGE_ES_CLUSTER_NODES:dev.iotechina.com:9201} #user: ${SW_ES_USER:&quot;&quot;} #password: ${SW_ES_PASSWORD:&quot;&quot;} indexShardsNumber: ${SW_STORAGE_ES_INDEX_SHARDS_NUMBER:2} indexReplicasNumber: ${SW_STORAGE_ES_INDEX_REPLICAS_NUMBER:0} #Batch process setting, refer to https://www.elastic.co/guide/en/elasticsearch/client/java-api/5.5/java-docs-bulk-processor.html bulkActions: ${SW_STORAGE_ES_BULK_ACTIONS:2000} # Execute the bulk every 2000 requests bulkSize: ${SW_STORAGE_ES_BULK_SIZE:20} # flush the bulk every 20mb flushInterval: ${SW_STORAGE_ES_FLUSH_INTERVAL:10} # flush the bulk every 10 seconds whatever the number of requests concurrentRequests: ${SW_STORAGE_ES_CONCURRENT_REQUESTS:2} # the number of concurrent requests metadataQueryMaxSize: ${SW_STORAGE_ES_QUERY_MAX_SIZE:5000} segmentQueryMaxSize: ${SW_STORAGE_ES_QUERY_SEGMENT_SIZE:200}  执行
+  </p>
+
+  
+  <footer>
+    <a href="https://fhxisdog.github.io/posts/skywalking%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://fhxisdog.github.io/posts/manjaro-i3wm%E6%8E%A5%E5%85%A5%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/">Manjaro I3wm接入外接显示器不显示</a></h2>
 
     <div class="post-meta">
@@ -514,190 +789,20 @@ https://www.linuxidc.com/Linux/2013-05/84542.htm
 </article>
 
   
-    <article>
-  <header>
-    <h2><a href="https://fhxisdog.github.io/posts/smb%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5windows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">Smb无法连接windows共享文件夹</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>28 May 2019, 13:05</time>
-  </div>
 
   
 
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/linux">linux</a>
-    
-  </div>
-  
-  
 
+<nav class="pagination" role="pagination">
   
+  <i class="fa fa-chevron-left"></i>
   
+  <span>&nbsp;1 / 2&nbsp;</span>
   
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/smb">smb</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>
-    
-  </div>
+  <a href="https://fhxisdog.github.io/page/2/"><i class="fa fa-chevron-right"></i></a>
   
-  
+</nav>
 
-</div>
-
-  </header>
-
-  <p>
-  问题描述 使用pacmanfm在地址栏输入:smb://fhxisdog-win/temp访问windows共享文件夹，提示NO FILE OR DIRECTIONARY
-在命令行使用命令:smbclient -L fhxisdog-win -U% 提示:NT_STATUS_ACCESS_DENIED
-使用:smbclient -L fhxisdog-win -m SMB2可以访问
-解决方法 编辑 /etc/samba/smb.conf:在[gloabl]下加入:
-min protocOl = SMB2 max protocol = SMB2 client min protocol = SMB2 client max protocol = SMB2  smb简介  服务器消息块（Server Message Block，缩写为SMB），又称网络文件共享系统（Common Internet File System，缩写为CIFS, /ˈsɪfs/），一种应用层网络传输协议，由微软开发，主要功能是使网络上的机器能够共享计算机文件、打印机、串行端口和通讯等资源。它也提供经认证的行程间通信机能。它主要用在装有Microsoft Windows的机器上，在这样的机器上被称为Microsoft Windows Network。
-经过Unix服务器厂商重新开发后，它可以用于连接Unix服务器和Windows客户机，执行打印和文件共享等任务。
-与功能类似的网络文件系统（NFS）相比，NFS的消息格式是固定长度，而CIFS的消息格式大多数是可变长度，这增加了协议的复杂性。CIFS消息一般使用NetBIOS或TCP协议发送，分别使用不同的端口139或445，当前倾向于使用445端口。CIFS的消息包括一个信头（32字节）和消息体（1个或多个，可变长）。
- 参考连接:wiki
-  </p>
-
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://fhxisdog.github.io/posts/shadowsocks-libev&#43;privoxy/">Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>28 May 2019, 12:01</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/linux">linux</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/shadowsocks">shadowsocks</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/vpn">vpn</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  本文所用到的工具  shadowsocks-libev privoxy gfwlist2privoxy  shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev
-配置:
- 在/etc/shadowsocks/下新建config.json文件 编辑config.json：  { &quot;server&quot;:&quot;xxxxxx&quot;, #服务器IP &quot;server_port&quot;:xxx, #服务器端口 &quot;local_address&quot;:&quot;127.0.0.1&quot;, #本地监听IP &quot;local_port&quot;:1080, #本地监听端口 &quot;password&quot;:&quot;xxx&quot;, #密码 &quot;method&quot;:&quot;xxx&quot;, #加密方式 &quot;fast_open&quot;:false, # tcp_fastopen &quot;timeout&quot;:1000, #超时时间 &quot;workers&quot;:1 #workder进程数 }   启动ss-local: ss-local -c /etc/shadowsocks/config.json 测试:curl -x socks5://127.0.0.1:1080 http://www.google.com 设置守护进程启动:systemctl start shadowsocks-libev@config ** 注意：这里@config是指 /etc/shadowsocks/下面的配置文件 ** 设置开机自启动: systemctl enable shadows-libev@config
-privoxy+gfwlist2privoxy安装配置 下载privoxy：sudo pacman -S privoxy
-  获取 gfwlist2privoxy 脚本:curl -skL https://raw.
-  </p>
-
-  
-  <footer>
-    <a href="https://fhxisdog.github.io/posts/shadowsocks-libev&#43;privoxy/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://fhxisdog.github.io/posts/jvm/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/">深入浅出 JIT 编译器</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>21 Apr 2019, 18:23</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/jvm">jvm</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/jvm">jvm</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/java">java</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  转自:https://www.ibm.com/developerworks/cn/java/j-lo-just-in-time/
-JIT 简介 JIT 是 just in time 的缩写, 也就是即时编译编译器。使用即时编译器技术，能够加速 Java 程序的执行速度。下面，就对该编译器技术做个简单的讲解。
-首先，我们大家都知道，通常通过 javac 将程序源代码编译，转换成 java 字节码，JVM 通过解释字节码将其翻译成对应的机器指令，逐条读入，逐条解释翻译。很显然，经过解释执行，其执行速度必然会比可执行的二进制字节码程序慢很多。为了提高执行速度，引入了 JIT 技术。
-在运行时 JIT 会把翻译过的机器码保存起来，以备下次使用，因此从理论上来说，采用该 JIT 技术可以接近以前纯编译技术。下面我们看看，JIT 的工作过程。
-JIT 编译过程 当 JIT 编译启用时（默认是启用的），JVM 读入.class 文件解释后，将其发给 JIT 编译器。JIT 编译器将字节码编译成本机机器代码，下图展示了该过程。
-图 1. JIT 工作原理图
-Hot Spot 编译 当 JVM 执行代码时，它并不立即开始编译代码。这主要有两个原因：
-首先，如果这段代码本身在将来只会被执行一次，那么从本质上看，编译就是在浪费精力。因为将代码翻译成 java 字节码相对于编译这段代码并执行代码来说，要快很多。
-当然，如果一段代码频繁的调用方法，或是一个循环，也就是这段代码被多次执行，那么编译就非常值得了。因此，编译器具有的这种权衡能力会首先执行解释后的代码，然后再去分辨哪些方法会被频繁调用来保证其本身的编译。其实说简单点，就是 JIT 在起作用，我们知道，对于 Java 代码，刚开始都是被编译器编译成字节码文件，然后字节码文件会被交由 JVM 解释执行，所以可以说 Java 本身是一种半编译半解释执行的语言。Hot Spot VM 采用了 JIT compile 技术，将运行频率很高的字节码直接编译为机器指令执行以提高性能，所以当字节码被 JIT 编译为机器码的时候，要说它是编译执行的也可以。也就是说，运行时，部分代码可能由 JIT 翻译为目标机器指令（以 method 为翻译单位，还会保存起来，第二次执行就不用翻译了）直接执行。
-  </p>
-
-  
-  <footer>
-    <a href="https://fhxisdog.github.io/posts/jvm/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-
-  
 
 
 </div>

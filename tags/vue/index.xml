@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vue on FHXISDOG</title>
+    <link>https://fhxisdog.github.io/tags/vue/</link>
+    <description>Recent content in vue on FHXISDOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 04 Sep 2019 16:48:24 +0800</lastBuildDate>
+    
+	<atom:link href="https://fhxisdog.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>将vue打包到springboot静态资源中</title>
+      <link>https://fhxisdog.github.io/posts/%E5%B0%86vue%E6%89%93%E5%8C%85%E5%88%B0springboot%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E4%B8%AD/</link>
+      <pubDate>Wed, 04 Sep 2019 16:48:24 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/posts/%E5%B0%86vue%E6%89%93%E5%8C%85%E5%88%B0springboot%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E4%B8%AD/</guid>
+      <description> 项目中遇到需要将vue打包到spring boot 中的static中，直接访问，不需要使用Nginx来访问nginx.具体做法如下:
+将vue工程放到spring boot工程最外层 修改pom文件  &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;exec-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;!--程序打包的时候，利用本地已安装的node环境，同时编译管理后台前端的工程文件--&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;id&amp;gt;npm-build-background&amp;lt;/id&amp;gt; &amp;lt;phase&amp;gt;verify&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;exec&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;executable&amp;gt;${npm.command}&amp;lt;/executable&amp;gt; &amp;lt;arguments&amp;gt; &amp;lt;argument&amp;gt;run&amp;lt;/argument&amp;gt; &amp;lt;argument&amp;gt;prod-package&amp;lt;/argument&amp;gt; &amp;lt;/arguments&amp;gt; &amp;lt;workingDirectory&amp;gt;${basedir}/consumable-background&amp;lt;/workingDirectory&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;artifactId&amp;gt;maven-resources-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;!--添加管理后台前端工程的静态文件到jar包中--&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;id&amp;gt;copy-consumable-background&amp;lt;/id&amp;gt; &amp;lt;phase&amp;gt;prepare-package&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;copy-resources&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;outputDirectory&amp;gt;${basedir}/target/classes/static/background&amp;lt;/outputDirectory&amp;gt; &amp;lt;resources&amp;gt; &amp;lt;resource&amp;gt; &amp;lt;directory&amp;gt;${basedir}/consumable-background/dist&amp;lt;/directory&amp;gt; &amp;lt;/resource&amp;gt; &amp;lt;/resources&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt;  配置拦截器(此步可以省略,应为springboot static 路径是默认放开的)  @Override public void addResourceHandlers(org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry registry) { registry.addResourceHandler(&amp;quot;/static/**&amp;quot;) .addResourceLocations(&amp;quot;classpath:/static/&amp;quot;); }  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>manjaor on FHXISDOG</title>
+    <link>https://fhxisdog.github.io/tags/manjaor/</link>
+    <description>Recent content in manjaor on FHXISDOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 24 Jun 2019 13:06:10 +0800</lastBuildDate>
+    
+	<atom:link href="https://fhxisdog.github.io/tags/manjaor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manjar安装displaylink</title>
+      <link>https://fhxisdog.github.io/posts/manjaro%E5%AE%89%E8%A3%85displaylink/</link>
+      <pubDate>Mon, 24 Jun 2019 13:06:10 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/posts/manjaro%E5%AE%89%E8%A3%85displaylink/</guid>
+      <description>使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安装方法如下: 准备工作  uname -r查看内核版本,输出:4.19.23-1-MANJARO,说明我的内核版本是419,执行pacman -Ss linux-headers查看库中的依赖，执行sudo pacman -S core/liux419-headers安装头文件 安装evdi:yay -S evdi-git 3 安装displaylink yay -S displaylink  开始配置  装载evdi: sudo modprobe evdi 装载udl: sudo modprobe udl 启用displaylink.sevice: systemctl enable display link 开启displaylink.service:systemctl start displaylink 新增配置文件
+/usr/share/X11/xorg.conf.d/20-evdidevice.conf --- Section &amp;quot;OutputClass&amp;quot; Identifier &amp;quot;DisplayLink&amp;quot; MatchDriver &amp;quot;evdi&amp;quot; Driver &amp;quot;modesetting&amp;quot; Option &amp;quot;AccelMethod&amp;quot; &amp;quot;none&amp;quot; EndSection  执行xandr --listproviders,可以看到输出:
+Providers: number : 2 Provider 0: id: 0x45 cap: 0xb, Source Output, Sink Output, Sink Offload crtcs: 4 outputs: 2 associated providers: 1 name:Intel Provider 1: id: 0x14d cap: 0x2, Sink Output crtcs: 1 outputs: 1 associated providers: 1 name:modesetting  lxrandr开启屏幕</description>
+    </item>
+    
+  </channel>
+</rss>

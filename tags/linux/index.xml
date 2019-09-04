@@ -6,10 +6,21 @@
     <description>Recent content in linux on FHXISDOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 29 May 2019 11:59:08 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jun 2019 13:06:10 +0800</lastBuildDate>
     
 	<atom:link href="https://fhxisdog.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Manjar安装displaylink</title>
+      <link>https://fhxisdog.github.io/posts/manjaro%E5%AE%89%E8%A3%85displaylink/</link>
+      <pubDate>Mon, 24 Jun 2019 13:06:10 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/posts/manjaro%E5%AE%89%E8%A3%85displaylink/</guid>
+      <description>使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安装方法如下: 准备工作  uname -r查看内核版本,输出:4.19.23-1-MANJARO,说明我的内核版本是419,执行pacman -Ss linux-headers查看库中的依赖，执行sudo pacman -S core/liux419-headers安装头文件 安装evdi:yay -S evdi-git 3 安装displaylink yay -S displaylink  开始配置  装载evdi: sudo modprobe evdi 装载udl: sudo modprobe udl 启用displaylink.sevice: systemctl enable display link 开启displaylink.service:systemctl start displaylink 新增配置文件
+/usr/share/X11/xorg.conf.d/20-evdidevice.conf --- Section &amp;quot;OutputClass&amp;quot; Identifier &amp;quot;DisplayLink&amp;quot; MatchDriver &amp;quot;evdi&amp;quot; Driver &amp;quot;modesetting&amp;quot; Option &amp;quot;AccelMethod&amp;quot; &amp;quot;none&amp;quot; EndSection  执行xandr --listproviders,可以看到输出:
+Providers: number : 2 Provider 0: id: 0x45 cap: 0xb, Source Output, Sink Output, Sink Offload crtcs: 4 outputs: 2 associated providers: 1 name:Intel Provider 1: id: 0x14d cap: 0x2, Sink Output crtcs: 1 outputs: 1 associated providers: 1 name:modesetting  lxrandr开启屏幕</description>
+    </item>
     
     <item>
       <title>Manjaro I3wm接入外接显示器不显示</title>
@@ -60,7 +71,11 @@ min protocOl = SMB2 max protocol = SMB2 client min protocol = SMB2 client max pr
       <guid>https://fhxisdog.github.io/posts/shadowsocks-libev&#43;privoxy/</guid>
       <description>本文所用到的工具  shadowsocks-libev privoxy gfwlist2privoxy  shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev
 配置:
- 在/etc/shadowsocks/下新建config.json文件 编辑config.json：  { &amp;quot;server&amp;quot;:&amp;quot;xxxxxx&amp;quot;, #服务器IP &amp;quot;server_port&amp;quot;:xxx, #服务器端口 &amp;quot;local_address&amp;quot;:&amp;quot;127.0.0.1&amp;quot;, #本地监听IP &amp;quot;local_port&amp;quot;:1080, #本地监听端口 &amp;quot;password&amp;quot;:&amp;quot;xxx&amp;quot;, #密码 &amp;quot;method&amp;quot;:&amp;quot;xxx&amp;quot;, #加密方式 &amp;quot;fast_open&amp;quot;:false, # tcp_fastopen &amp;quot;timeout&amp;quot;:1000, #超时时间 &amp;quot;workers&amp;quot;:1 #workder进程数 }   启动ss-local: ss-local -c /etc/shadowsocks/config.json 测试:curl -x socks5://127.0.0.1:1080 http://www.google.com 设置守护进程启动:systemctl start shadowsocks-libev@config ** 注意：这里@config是指 /etc/shadowsocks/下面的配置文件 ** 设置开机自启动: systemctl enable shadows-libev@config
+ 在/etc/shadowsocks/下新建config.json文件 编辑config.json：
+{ &amp;quot;server&amp;quot;:&amp;quot;xxxxxx&amp;quot;, #服务器IP &amp;quot;server_port&amp;quot;:xxx, #服务器端口 &amp;quot;local_address&amp;quot;:&amp;quot;127.0.0.1&amp;quot;, #本地监听IP &amp;quot;local_port&amp;quot;:1080, #本地监听端口 &amp;quot;password&amp;quot;:&amp;quot;xxx&amp;quot;, #密码 &amp;quot;method&amp;quot;:&amp;quot;xxx&amp;quot;, #加密方式 &amp;quot;fast_open&amp;quot;:false, # tcp_fastopen &amp;quot;timeout&amp;quot;:1000, #超时时间 &amp;quot;workers&amp;quot;:1 #workder进程数 }  启动ss-local: ss-local -c /etc/shadowsocks/config.json
+ 测试:curl -x socks5://127.0.0.1:1080 http://www.google.com
+ 设置守护进程启动:systemctl start shadowsocks-libev@config ** 注意：这里@config是指 /etc/shadowsocks/下面的配置文件 **
+ 设置开机自启动: systemctl enable shadows-libev@config
 privoxy+gfwlist2privoxy安装配置 下载privoxy：sudo pacman -S privoxy
   获取 gfwlist2privoxy 脚本:curl -skL https://raw.</description>
     </item>

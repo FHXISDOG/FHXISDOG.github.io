@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.56.3" />
 
   <title>shadowsocks &middot; FHXISDOG</title>
 
@@ -275,7 +275,11 @@
   <p>
   本文所用到的工具  shadowsocks-libev privoxy gfwlist2privoxy  shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev
 配置:
- 在/etc/shadowsocks/下新建config.json文件 编辑config.json：  { &quot;server&quot;:&quot;xxxxxx&quot;, #服务器IP &quot;server_port&quot;:xxx, #服务器端口 &quot;local_address&quot;:&quot;127.0.0.1&quot;, #本地监听IP &quot;local_port&quot;:1080, #本地监听端口 &quot;password&quot;:&quot;xxx&quot;, #密码 &quot;method&quot;:&quot;xxx&quot;, #加密方式 &quot;fast_open&quot;:false, # tcp_fastopen &quot;timeout&quot;:1000, #超时时间 &quot;workers&quot;:1 #workder进程数 }   启动ss-local: ss-local -c /etc/shadowsocks/config.json 测试:curl -x socks5://127.0.0.1:1080 http://www.google.com 设置守护进程启动:systemctl start shadowsocks-libev@config ** 注意：这里@config是指 /etc/shadowsocks/下面的配置文件 ** 设置开机自启动: systemctl enable shadows-libev@config
+ 在/etc/shadowsocks/下新建config.json文件 编辑config.json：
+{ &quot;server&quot;:&quot;xxxxxx&quot;, #服务器IP &quot;server_port&quot;:xxx, #服务器端口 &quot;local_address&quot;:&quot;127.0.0.1&quot;, #本地监听IP &quot;local_port&quot;:1080, #本地监听端口 &quot;password&quot;:&quot;xxx&quot;, #密码 &quot;method&quot;:&quot;xxx&quot;, #加密方式 &quot;fast_open&quot;:false, # tcp_fastopen &quot;timeout&quot;:1000, #超时时间 &quot;workers&quot;:1 #workder进程数 }  启动ss-local: ss-local -c /etc/shadowsocks/config.json
+ 测试:curl -x socks5://127.0.0.1:1080 http://www.google.com
+ 设置守护进程启动:systemctl start shadowsocks-libev@config ** 注意：这里@config是指 /etc/shadowsocks/下面的配置文件 **
+ 设置开机自启动: systemctl enable shadows-libev@config
 privoxy+gfwlist2privoxy安装配置 下载privoxy：sudo pacman -S privoxy
   获取 gfwlist2privoxy 脚本:curl -skL https://raw.
   </p>

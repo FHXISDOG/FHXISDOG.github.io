@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.56.3" />
 
   <title>Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy &middot; FHXISDOG</title>
 
@@ -278,8 +278,8 @@
 
 <ul>
 <li>在<code>/etc/shadowsocks/</code>下新建<code>config.json</code>文件</li>
-<li>编辑<code>config.json</code>：</li>
-</ul>
+
+<li><p>编辑<code>config.json</code>：</p>
 
 <pre><code class="language-json">{
 	&quot;server&quot;:&quot;xxxxxx&quot;,  #服务器IP
@@ -292,13 +292,14 @@
 	&quot;timeout&quot;:1000, #超时时间
 	&quot;workers&quot;:1 #workder进程数
 }
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>启动ss-local: <code>ss-local -c /etc/shadowsocks/config.json</code></li>
-<li>测试:<code>curl -x socks5://127.0.0.1:1080 http://www.google.com</code></li>
-<li>设置守护进程启动:<code>systemctl start shadowsocks-libev@config</code>
-** 注意：这里<code>@config</code>是指 <code>/etc/shadowsocks/</code>下面的配置文件 **</li>
+<li><p>启动ss-local: <code>ss-local -c /etc/shadowsocks/config.json</code></p></li>
+
+<li><p>测试:<code>curl -x socks5://127.0.0.1:1080 http://www.google.com</code></p></li>
+
+<li><p>设置守护进程启动:<code>systemctl start shadowsocks-libev@config</code>
+** 注意：这里<code>@config</code>是指 <code>/etc/shadowsocks/</code>下面的配置文件 **</p></li>
 
 <li><p>设置开机自启动: <code>systemctl enable shadows-libev@config</code></p>
 
