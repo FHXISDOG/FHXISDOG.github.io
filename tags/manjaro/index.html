@@ -229,6 +229,53 @@
   
     <article>
   <header>
+    <h2><a href="https://fhxisdog.github.io/posts/manjaro%E5%AE%89%E8%A3%85displaylink/">Manjaro安装displaylink</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>24 Jun 2019, 13:06</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/manjaro">manjaro</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安装方法如下: 准备工作  uname -r查看内核版本,输出:4.19.23-1-MANJARO,说明我的内核版本是419,执行pacman -Ss linux-headers查看库中的依赖，执行sudo pacman -S core/liux419-headers安装头文件 安装evdi:yay -S evdi-git 3 安装displaylink yay -S displaylink  开始配置  装载evdi: sudo modprobe evdi 装载udl: sudo modprobe udl 启用displaylink.sevice: systemctl enable display link 开启displaylink.service:systemctl start displaylink 新增配置文件
+/usr/share/X11/xorg.conf.d/20-evdidevice.conf --- Section &quot;OutputClass&quot; Identifier &quot;DisplayLink&quot; MatchDriver &quot;evdi&quot; Driver &quot;modesetting&quot; Option &quot;AccelMethod&quot; &quot;none&quot; EndSection  执行xandr --listproviders,可以看到输出:
+Providers: number : 2 Provider 0: id: 0x45 cap: 0xb, Source Output, Sink Output, Sink Offload crtcs: 4 outputs: 2 associated providers: 1 name:Intel Provider 1: id: 0x14d cap: 0x2, Sink Output crtcs: 1 outputs: 1 associated providers: 1 name:modesetting  lxrandr开启屏幕
+  </p>
+
+  
+  <footer>
+    <a href="https://fhxisdog.github.io/posts/manjaro%E5%AE%89%E8%A3%85displaylink/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://fhxisdog.github.io/posts/manjaro-i3wm%E6%8E%A5%E5%85%A5%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/">Manjaro I3wm接入外接显示器不显示</a></h2>
 
     <div class="post-meta">
