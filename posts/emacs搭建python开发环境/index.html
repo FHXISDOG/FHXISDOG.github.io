@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.57.2" />
 
-  <title>Topics &middot; FHXISDOG</title>
+  <title>Emacs搭建python开发环境 &middot; FHXISDOG</title>
 
   
   
@@ -39,8 +39,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="FHXISDOG" href="https://fhxisdog.github.io/topics/index.xml" />
   
 
   
@@ -119,10 +117,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://fhxisdog.github.io/topics/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -222,53 +216,186 @@
 
 
 <div class="header">
-  <h1>Topics</h1>
+  <h1>Emacs搭建python开发环境</h1>
+  <h2></h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>15 Sep 2019, 05:05</time>
+  </div>
+
+  
+
   
   
-    <li>
-      <a href="linux">linux</a>
-      <span>&#40;4&#41;</span>
-    </li>
   
-    <li>
-      <a href="spring-boot">spring-boot</a>
-      <span>&#40;3&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/emacs">emacs</a>
+    
+  </div>
   
-    <li>
-      <a href="emacs">emacs</a>
-      <span>&#40;2&#41;</span>
-    </li>
   
-    <li>
-      <a href="docker">docker</a>
-      <span>&#40;1&#41;</span>
-    </li>
+
   
-    <li>
-      <a href="jvm">jvm</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="nacos">nacos</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="orther">orther</a>
-      <span>&#40;1&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/emacs">emacs</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>
+    
+  </div>
   
-    <li>
-      <a href="skywalking">skywalking</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-  </ul>
+
+</div>
+
+  
+
+<h4 id="安装python必须的依赖">安装python必须的依赖</h4>
+
+<p><code>sudo pip install jedi elpy  rope  pylint</code></p>
+
+<h4 id="emacs配置">emacs配置</h4>
+
+<p>在<code>～/.emacs.d/</code>路径新建文件init.el</p>
+
+<p>添加以下配置:</p>
+
+<pre><code>(require 'package)
+
+(package-initialize)
+;;配置包管理列表的源
+ (setq package-archives '((&quot;gnu&quot;   . &quot;http://elpa.emacs-china.org/gnu/&quot;)
+			 (&quot;melpa&quot; . &quot;https://stable.melpa.org/packages/&quot;)))
+
+(require 'cl)
+
+
+(defvar my/packages '(
+		      company
+		      better-deafults
+		      material-theme
+		      elpy
+		      company-jedi
+		      switch-window
+		      projectile
+		      neotree
+		      )
+
+  )
+;;jedi配置
+(setq jedi:setup-keys t)
+(setq jedi:complete-on-dot t)
+(setq elpy-rpc-backend &quot;jedi&quot;)
+(when (fboundp 'jedi:setup) (jedi:setup))
+;; 自动补全
+(global-company-mode t)
+(add-hook 'after-init-hook 'global-company-mode)
+;; 使用material主题
+(load-theme 'material t)
+;; enable python插件
+(elpy-enable)
+;;设置切换窗口为a-z
+(setq switch-window-shortcut-style 'qwerty)
+(global-set-key (kbd &quot;C-x o&quot;) 'switch-window)
+;;projectilep配置
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd &quot;C-c p&quot;) 'projectile-command-map)
+;;neotree配置
+(setq neo-smart-open t)
+(setq projectile-switch-project-action 'neotree-projectile-action)
+  (defun neotree-project-dir ()
+    &quot;Open NeoTree using the git root.&quot;
+    (interactive)
+    (let ((project-dir (projectile-project-root))
+          (file-name (buffer-file-name)))
+      (neotree-toggle)
+      (if project-dir
+          (if (neo-global--window-exists-p)
+              (progn
+                (neotree-dir project-dir)
+                (neotree-find file-name)))
+        (message &quot;Could not find git project root.&quot;))))
+
+
+</code></pre>
+
+<h4 id="emacs配置-1">emacs配置</h4>
+
+<p>进入Emacs,<code>ALT-X</code>输入<code>list-packages</code></p>
+
+<p>安装必须的包:</p>
+
+<pre><code>		      company
+		      better-deafults
+		      material-theme
+		      elpy
+		      company-jedi
+		      switch-window
+		      projectile
+		      neotree
+
+</code></pre>
+
+<p>解释:</p>
+
+<pre><code>		      company   ;;自动补全
+
+		      better-deafults 
+
+		      material-theme    ;;material主题
+
+		      elpy  ;;python开发必须环境
+
+		      company-jedi  ::jedi
+
+		      switch-window ::快速切换窗口
+
+		      projectile    ;;项目管理
+
+		      neotree   ;;树形文件结构
+
+</code></pre>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://fhxisdog.github.io/posts/emacs%E5%BF%AB%E6%8D%B7%E9%94%AE/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://fhxisdog.github.io/posts/emacs%E5%BF%AB%E6%8D%B7%E9%94%AE/">Emacs快捷键</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
 </div>
 
 </div>
@@ -283,3 +410,4 @@
 
 </body>
 </html>
+

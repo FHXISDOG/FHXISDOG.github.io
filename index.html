@@ -230,6 +230,64 @@
   
     <article>
   <header>
+    <h2><a href="https://fhxisdog.github.io/posts/emacs%E6%90%AD%E5%BB%BApython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">Emacs搭建python开发环境</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>15 Sep 2019, 05:05</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/emacs">emacs</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/emacs">emacs</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  安装python必须的依赖 sudo pip install jedi elpy rope pylint
+emacs配置 在～/.emacs.d/路径新建文件init.el
+添加以下配置:
+(require 'package) (package-initialize) ;;配置包管理列表的源 (setq package-archives '((&quot;gnu&quot; . &quot;http://elpa.emacs-china.org/gnu/&quot;) (&quot;melpa&quot; . &quot;https://stable.melpa.org/packages/&quot;))) (require 'cl) (defvar my/packages '( company better-deafults material-theme elpy company-jedi switch-window projectile neotree ) ) ;;jedi配置 (setq jedi:setup-keys t) (setq jedi:complete-on-dot t) (setq elpy-rpc-backend &quot;jedi&quot;) (when (fboundp 'jedi:setup) (jedi:setup)) ;; 自动补全 (global-company-mode t) (add-hook 'after-init-hook 'global-company-mode) ;; 使用material主题 (load-theme 'material t) ;; enable python插件 (elpy-enable) ;;设置切换窗口为a-z (setq switch-window-shortcut-style 'qwerty) (global-set-key (kbd &quot;C-x o&quot;) 'switch-window) ;;projectilep配置 (projectile-mode +1) (define-key projectile-mode-map (kbd &quot;C-c p&quot;) 'projectile-command-map) ;;neotree配置 (setq neo-smart-open t) (setq projectile-switch-project-action 'neotree-projectile-action) (defun neotree-project-dir () &quot;Open NeoTree using the git root.
+  </p>
+
+  
+  <footer>
+    <a href="https://fhxisdog.github.io/posts/emacs%E6%90%AD%E5%BB%BApython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://fhxisdog.github.io/posts/emacs%E5%BF%AB%E6%8D%B7%E9%94%AE/">Emacs快捷键</a></h2>
 
     <div class="post-meta">
@@ -275,7 +333,7 @@
    含义 C -&gt; CTRL
 M -&gt; ALT
 S-&gt;SHIFT
-基本命令  快捷键 含义 快捷键 含义    C-x C-f 打开文件 C-x C-c 关闭emacs   C-x C-s 保存文件 C-x C-w 当前缓冲区另存为   C-g 取消命令 C-x C-b 打开缓冲区列表   C-x b  打开一个缓冲区 C-x k 关闭当前缓冲区   C-x C-v 关闭当前缓冲区并打开新的文件    移动命令  快捷键 含义 快捷键 含义    C-n 向下移动一行 C-p 向上移动一行   C-f 向前移动一个字符 C-b 向后移动一个字符   C-a 移动到行首 C-e 移动到行尾   M-b 向后移动一个单词 M-f 向前移动一个单词   M-v 向上移动半屏 C-v 向下移动半屏   M-&gt; 到文件末尾 M-&lt; 到文件开头   M-g M-g  跳到xx行    窗口命令  快捷键 含义 快捷键 含义    C-x 2 水平分割窗口 C-x 3 垂直分割窗口   C-x 0 关闭当前窗口 C-x 1 关闭其他窗口   C-x 4 f  新tab打开文件 C-x 5 f   新窗口打开文件   C-x o   切换窗口 C-x 5 2  新建窗口   C-M-V 向下滚动其他窗口 C-M-S-V 向上滚动窗口    编辑命令  快捷键 含义 快捷键 含义    C-space 开始设置标记 C-@ 开始设置标记   M-w 复制标记内容 C-w 剪切选中内容   M-d 删除后面一个单词 C-d 删除后面一个字符   C-y 粘贴 C-k 删除一行    替换命令  快捷键 含义 快捷键 含义    C-s 向下搜索 C-r 向上搜索   M-% 替换    
+基本命令  快捷键 含义 快捷键 含义    C-x C-f 打开文件 C-x C-c 关闭emacs   C-x C-s 保存文件 C-x C-w 当前缓冲区另存为   C-g 取消命令 C-x C-b 打开缓冲区列表   C-x b  打开一个缓冲区 C-x k 关闭当前缓冲区   C-x C-v 关闭当前缓冲区并打开新的文件    移动命令  快捷键 含义 快捷键 含义    C-n 向下移动一行 C-p 向上移动一行   C-f 向前移动一个字符 C-b 向后移动一个字符   C-a 移动到行首 C-e 移动到行尾   M-b 向后移动一个单词 M-f 向前移动一个单词   M-v 向上移动半屏 C-v 向下移动半屏   M-&gt; 到文件末尾 M-&lt; 到文件开头   M-g M-g  跳到xx行    窗口命令  快捷键 含义 快捷键 含义    C-x 2 水平分割窗口 C-x 3 垂直分割窗口   C-x 0 关闭当前窗口 C-x 1 关闭其他窗口   C-x 4 f  新tab打开文件 C-x 5 f   新窗口打开文件   C-x o   切换窗口 C-x 5 2  新建窗口   C-M-V 向下滚动其他窗口 C-M-S-V 向上滚动窗口    编辑命令  快捷键 含义 快捷键 含义    C-space 开始设置标记 C-@ 开始设置标记   M-w 复制标记内容 C-w 剪切选中内容   M-d 删除后面一个单词 C-d 删除后面一个字符   C-y 粘贴 C-k 删除一行   M-u 后面一个单词变成大写 M-l 后一个单词变成小写   M-c 后面一个单词首字母大写    替换命令  快捷键 含义 快捷键 含义    C-s 向下搜索 C-r 向上搜索   M-% 替换    文件夹命令  快捷键 含义 快捷键 含义    C-s d 打开文件夹列表 n 向下移动   p 向上移动 v 编辑光标所在文件   d 标记为删除 D 马上删除   x 执行标记 C 拷贝当前文件   R 重命名 &#43; 新建文件夹   z 压缩文件 ！ 对光标所在文件执行shell命令   q 退出    
   </p>
 
   
@@ -721,66 +779,6 @@ storage: #elasticsearch: nameSpace: ${SW_NAMESPACE:&quot;&quot;} clusterNodes: $
   
   <footer>
     <a href="https://fhxisdog.github.io/posts/skywalking%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://fhxisdog.github.io/posts/manjaro-i3wm%E6%8E%A5%E5%85%A5%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/">Manjaro I3wm接入外接显示器不显示</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>29 May 2019, 11:59</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/linux">linux</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/manjaro">manjaro</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/i3wm">i3wm</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  装了manjaro的i3wm桌面环境后，发现外界显示器无法显示。搜索资料后发现解决方法如下。
-查看设备输入 终端输入:
-xrandr  可以看到结果如下，其中 eDP1是我笔记本自带的屏幕，HDMI1就是我外接的显示器。
-Screen 0: minimum 8 x 8, current 1920 x 1080, maximum 32767 x 32767 eDP1 connected primary 1920x1080+0+0 (normal left inverted right x axis y axis) 310mm x 170mm 1920x1080 60.05*+ 59.93 1680x1050 59.88 1400x1050 59.98 1600x900 60.00 59.95 59.82 1280x1024 60.02 1400x900 59.96 59.88 1280x960 60.00 1368x768 60.00 59.88 59.85 1280x800 59.81 59.91 1280x720 59.86 60.00 59.74 1024x768 60.00 1024x576 60.00 59.
-  </p>
-
-  
-  <footer>
-    <a href="https://fhxisdog.github.io/posts/manjaro-i3wm%E6%8E%A5%E5%85%A5%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>
