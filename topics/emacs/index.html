@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.57.2" />
 
-  <title>vpn &middot; FHXISDOG</title>
+  <title>emacs &middot; FHXISDOG</title>
 
   
   
@@ -40,7 +40,7 @@
 
  
   
-  <link rel="alternate" type="application/rss+xml" title="FHXISDOG" href="https://fhxisdog.github.io/tags/vpn/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="FHXISDOG" href="https://fhxisdog.github.io/topics/emacs/index.xml" />
   
 
   
@@ -121,7 +121,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://fhxisdog.github.io/tags/vpn/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="https://fhxisdog.github.io/topics/emacs/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -222,20 +222,20 @@
 
 
 <div class="header">
-  <h1>vpn</h1>
+  <h1>emacs</h1>
 </div>
 
 <div class="content">
   
     <article>
   <header>
-    <h2><a href="https://fhxisdog.github.io/posts/shadowsocks-libev&#43;privoxy/">Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy</a></h2>
+    <h2><a href="https://fhxisdog.github.io/posts/emacs%E5%BF%AB%E6%8D%B7%E9%94%AE/">Emacs快捷键</a></h2>
 
     <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>28 May 2019, 12:01</time>
+    <time>14 Sep 2019, 16:44</time>
   </div>
 
   
@@ -246,7 +246,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/linux">linux</a>
+      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/emacs">emacs</a>
     
   </div>
   
@@ -258,11 +258,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/emacs">emacs</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/shadowsocks">shadowsocks</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/vpn">vpn</a>
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/linux">linux</a>
     
   </div>
   
@@ -273,21 +271,12 @@
   </header>
 
   <p>
-  本文所用到的工具  shadowsocks-libev privoxy gfwlist2privoxy  shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev
-配置:
- 在/etc/shadowsocks/下新建config.json文件 编辑config.json：
-{ &quot;server&quot;:&quot;xxxxxx&quot;, #服务器IP &quot;server_port&quot;:xxx, #服务器端口 &quot;local_address&quot;:&quot;127.0.0.1&quot;, #本地监听IP &quot;local_port&quot;:1080, #本地监听端口 &quot;password&quot;:&quot;xxx&quot;, #密码 &quot;method&quot;:&quot;xxx&quot;, #加密方式 &quot;fast_open&quot;:false, # tcp_fastopen &quot;timeout&quot;:1000, #超时时间 &quot;workers&quot;:1 #workder进程数 }  启动ss-local: ss-local -c /etc/shadowsocks/config.json
- 测试:curl -x socks5://127.0.0.1:1080 http://www.google.com
- 设置守护进程启动:systemctl start shadowsocks-libev@config ** 注意：这里@config是指 /etc/shadowsocks/下面的配置文件 **
- 设置开机自启动: systemctl enable shadows-libev@config
-privoxy+gfwlist2privoxy安装配置 下载privoxy：sudo pacman -S privoxy
-  获取 gfwlist2privoxy 脚本:curl -skL https://raw.
+   含义 C -&gt; CTRL
+M -&gt; ALT
+S-&gt;SHIFT
+基本命令  快捷键 含义 快捷键 含义    C-x C-f 打开文件 C-x C-c 关闭emacs   C-x C-s 保存文件 C-x C-w 当前缓冲区另存为   C-g 取消命令 C-x C-b 打开缓冲区列表   C-x b  打开一个缓冲区 C-x k 关闭当前缓冲区   C-x C-v 关闭当前缓冲区并打开新的文件    移动命令  快捷键 含义 快捷键 含义    C-n 向下移动一行 C-p 向上移动一行   C-f 向前移动一个字符 C-b 向后移动一个字符   C-a 移动到行首 C-e 移动到行尾   M-b 向后移动一个单词 M-f 向前移动一个单词   M-v 向上移动半屏 C-v 向下移动半屏   M-&gt; 到文件末尾 M-&lt; 到文件开头   M-g M-g  跳到xx行    窗口命令  快捷键 含义 快捷键 含义    C-x 2 水平分割窗口 C-x 3 垂直分割窗口   C-x 0 关闭当前窗口 C-x 1 关闭其他窗口   C-x 4 f  新tab打开文件 C-x 5 f   新窗口打开文件   C-x o   切换窗口 C-x 5 2  新建窗口   C-M-V 向下滚动其他窗口 C-M-S-V 向上滚动窗口    编辑命令  快捷键 含义 快捷键 含义    C-space 开始设置标记 C-@ 开始设置标记   M-w 复制标记内容 C-w 剪切选中内容   M-d 删除后面一个单词 C-d 删除后面一个字符   C-y 粘贴 C-k 删除一行    替换命令  快捷键 含义 快捷键 含义    C-s 向下搜索 C-r 向上搜索   M-% 替换    
   </p>
 
-  
-  <footer>
-    <a href="https://fhxisdog.github.io/posts/shadowsocks-libev&#43;privoxy/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
   
 </article>
 
