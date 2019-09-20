@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.57.2" />
 
-  <title>Topics &middot; FHXISDOG</title>
+  <title>Android Platform 28 SDK License Not Accepted &middot; FHXISDOG</title>
 
   
   
@@ -39,8 +39,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="FHXISDOG" href="https://fhxisdog.github.io/topics/index.xml" />
   
 
   
@@ -119,10 +117,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://fhxisdog.github.io/topics/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -222,58 +216,113 @@
 
 
 <div class="header">
-  <h1>Topics</h1>
+  <h1>Android Platform 28 SDK License Not Accepted</h1>
+  <h2></h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>17 Sep 2019, 13:13</time>
+  </div>
+
+  
+
   
   
-    <li>
-      <a href="linux">linux</a>
-      <span>&#40;4&#41;</span>
-    </li>
   
-    <li>
-      <a href="spring-boot">spring-boot</a>
-      <span>&#40;3&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://fhxisdog.github.io/topics/flutter">flutter</a>
+    
+  </div>
   
-    <li>
-      <a href="emacs">emacs</a>
-      <span>&#40;2&#41;</span>
-    </li>
   
-    <li>
-      <a href="flutter">flutter</a>
-      <span>&#40;2&#41;</span>
-    </li>
+
   
-    <li>
-      <a href="docker">docker</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="jvm">jvm</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="nacos">nacos</a>
-      <span>&#40;1&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/flutter">flutter</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://fhxisdog.github.io/tags/android">android</a>
+    
+  </div>
   
-    <li>
-      <a href="orther">orther</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="skywalking">skywalking</a>
-      <span>&#40;1&#41;</span>
-    </li>
+
+</div>
+
+  <pre><code>&gt; Configure project :core
+Checking the license for package Android SDK Platform 28 in /opt/android/sdk/licenses
+Warning: License for package Android SDK Platform 28 not accepted.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring project ':core'.
+&gt; Failed to install the following Android SDK packages as some licences have not been accepted.
+     platforms;android-28 Android SDK Platform 28
+  To build this project, accept the SDK license agreements and install the missing components using the Android Studio SDK Manager.
+  Alternatively, to transfer the license agreements from one workstation to another, see http://d.android.com/r/studio-ui/export-licenses.html
   
-  </ul>
+  Using Android SDK: /opt/android/sdk
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 28s
+Exited with code 1
+
+</code></pre>
+
+<p>解决方法:</p>
+
+<p>进入 <code>$Andorid_HOME/tools/bin</code>,执行<code>yes | ./sdkmanager --licenses</code></p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://fhxisdog.github.io/posts/emacs%E6%90%AD%E5%BB%BApython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://fhxisdog.github.io/posts/emacs%E6%90%AD%E5%BB%BApython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">Emacs搭建python开发环境</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://fhxisdog.github.io/posts/error-insufficient-permissions-for-device%E8%A7%A3%E5%86%B3adb-shell%E9%97%AE%E9%A2%98/">Error: Insufficient Permissions for Device(解决adb Shell问题)</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://fhxisdog.github.io/posts/error-insufficient-permissions-for-device%E8%A7%A3%E5%86%B3adb-shell%E9%97%AE%E9%A2%98/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
 </div>
 
 </div>
@@ -288,3 +337,4 @@
 
 </body>
 </html>
+
