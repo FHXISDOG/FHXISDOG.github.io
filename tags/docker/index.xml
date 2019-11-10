@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on just for fun</title>
+    <link>https://fhxisdog.github.io/tags/docker/</link>
+    <description>Recent content in docker on just for fun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 04 Jun 2019 15:01:04 +0800</lastBuildDate>
+    
+        <atom:link href="https://fhxisdog.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker Compose：链接外部容器的几种方式</title>
+      <link>https://fhxisdog.github.io/2019/06/docker-compose%E9%93%BE%E6%8E%A5%E5%A4%96%E9%83%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Tue, 04 Jun 2019 15:01:04 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/06/docker-compose%E9%93%BE%E6%8E%A5%E5%A4%96%E9%83%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid>
+      <description>在Docker中，容器之间的链接是一种很常见的操作：它提供了访问其中的某个容器的网络服务而不需要将所需的端口暴露给Docker Host主机的</description>
+    </item>
+    
+  </channel>
+</rss>

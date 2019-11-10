@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nacos on just for fun</title>
+    <link>https://fhxisdog.github.io/categories/nacos/</link>
+    <description>Recent content in nacos on just for fun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 29 May 2019 15:33:57 +0800</lastBuildDate>
+    
+        <atom:link href="https://fhxisdog.github.io/categories/nacos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>nacos使用指南</title>
+      <link>https://fhxisdog.github.io/2019/05/nacos%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Wed, 29 May 2019 15:33:57 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/nacos%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>服务启动 本地单机启动 下载源码 从github上下载源码方式: git clone https://github.com/alibaba/nacos.git cd nacos/ mvn -Prelease-nacos clean install -U ls -al distribution/target/ // change the $version to your actual path cd distribution/target/nacos-server-$version/nacos/bin 下载编译后压缩包方式 从 最新稳定版本 下</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>modmap on just for fun</title>
+    <link>https://fhxisdog.github.io/tags/modmap/</link>
+    <description>Recent content in modmap on just for fun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 28 May 2019 15:50:39 +0800</lastBuildDate>
+    
+        <atom:link href="https://fhxisdog.github.io/tags/modmap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux使用modmap替换super和CapsLock位置</title>
+      <link>https://fhxisdog.github.io/2019/05/linux%E4%BD%BF%E7%94%A8modmap%E6%9B%BF%E6%8D%A2super%E5%92%8Ccapslock%E4%BD%8D%E7%BD%AE/</link>
+      <pubDate>Tue, 28 May 2019 15:50:39 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/linux%E4%BD%BF%E7%94%A8modmap%E6%9B%BF%E6%8D%A2super%E5%92%8Ccapslock%E4%BD%8D%E7%BD%AE/</guid>
+      <description>manjaro的i3wm版本默认的mod键是super(就是windows键)，为了拯救我的小拇指，所以使用xmodmap将super键和C</description>
+    </item>
+    
+  </channel>
+</rss>

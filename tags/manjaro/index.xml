@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>manjaro on just for fun</title>
+    <link>https://fhxisdog.github.io/tags/manjaro/</link>
+    <description>Recent content in manjaro on just for fun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 24 Jun 2019 13:06:10 +0800</lastBuildDate>
+    
+        <atom:link href="https://fhxisdog.github.io/tags/manjaro/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manjaro安装displaylink</title>
+      <link>https://fhxisdog.github.io/2019/06/manjaro%E5%AE%89%E8%A3%85displaylink/</link>
+      <pubDate>Mon, 24 Jun 2019 13:06:10 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/06/manjaro%E5%AE%89%E8%A3%85displaylink/</guid>
+      <description>使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安</description>
+    </item>
+    
+    <item>
+      <title>Manjaro I3wm接入外接显示器不显示</title>
+      <link>https://fhxisdog.github.io/2019/05/manjaro-i3wm%E6%8E%A5%E5%85%A5%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/</link>
+      <pubDate>Wed, 29 May 2019 11:59:08 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/manjaro-i3wm%E6%8E%A5%E5%85%A5%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/</guid>
+      <description>装了manjaro的i3wm桌面环境后，发现外界显示器无法显示。搜索资料后发现解决方法如下。 查看设备输入 终端输入: xrandr 可以看到结果如下，其中 e</description>
+    </item>
+    
+  </channel>
+</rss>

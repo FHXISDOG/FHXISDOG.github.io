@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on just for fun</title>
+    <link>https://fhxisdog.github.io/tags/java/</link>
+    <description>Recent content in java on just for fun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 04 Sep 2019 16:48:24 +0800</lastBuildDate>
+    
+        <atom:link href="https://fhxisdog.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>将vue打包到springboot静态资源中</title>
+      <link>https://fhxisdog.github.io/2019/09/%E5%B0%86vue%E6%89%93%E5%8C%85%E5%88%B0springboot%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E4%B8%AD/</link>
+      <pubDate>Wed, 04 Sep 2019 16:48:24 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/09/%E5%B0%86vue%E6%89%93%E5%8C%85%E5%88%B0springboot%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E4%B8%AD/</guid>
+      <description>项目中遇到需要将vue打包到spring boot 中的static中，直接访问，不需要使用Nginx来访问nginx.具体做法如下: 将vue工程放到</description>
+    </item>
+    
+    <item>
+      <title>Spring Boot 分环境打包</title>
+      <link>https://fhxisdog.github.io/2019/09/spring-boot-%E5%88%86%E7%8E%AF%E5%A2%83%E6%89%93%E5%8C%85/</link>
+      <pubDate>Wed, 04 Sep 2019 16:33:58 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/09/spring-boot-%E5%88%86%E7%8E%AF%E5%A2%83%E6%89%93%E5%8C%85/</guid>
+      <description>使用spring boot工程时，虽然官方提供了application.profiles.active参数去激活不同环境，但是如果打包时忘了修</description>
+    </item>
+    
+    <item>
+      <title>Spring Boot Thymeleaf 引用contexpath</title>
+      <link>https://fhxisdog.github.io/2019/09/spring-boot-thymeleaf-%E5%BC%95%E7%94%A8contexpath/</link>
+      <pubDate>Wed, 04 Sep 2019 16:03:04 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/09/spring-boot-thymeleaf-%E5%BC%95%E7%94%A8contexpath/</guid>
+      <description>spring boot 设置contextPath后，如果js中的请求路径不设置，会造成404的问题。 设置方法: 在html页面header中添加配置: &amp;lt;meta name=&amp;quot;ctx&amp;quot; th:content=&amp;quot;${#httpServletRequest.getContextPath()}&amp;quot; &amp;gt; j</description>
+    </item>
+    
+    <item>
+      <title>nacos使用指南</title>
+      <link>https://fhxisdog.github.io/2019/05/nacos%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Wed, 29 May 2019 15:33:57 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/nacos%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>服务启动 本地单机启动 下载源码 从github上下载源码方式: git clone https://github.com/alibaba/nacos.git cd nacos/ mvn -Prelease-nacos clean install -U ls -al distribution/target/ // change the $version to your actual path cd distribution/target/nacos-server-$version/nacos/bin 下载编译后压缩包方式 从 最新稳定版本 下</description>
+    </item>
+    
+    <item>
+      <title>skywalking使用指南</title>
+      <link>https://fhxisdog.github.io/2019/05/skywalking%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Wed, 29 May 2019 15:33:57 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/skywalking%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>运行 单机运行 下载最新release包 解压，sh ${skywalkingpath}/bin/startup.sh 在springboot启动命令前加入启动参数 -javaagent:${path}/skywalking-agent.jar #path为skywalking解压的agen</description>
+    </item>
+    
+    <item>
+      <title>深入浅出 JIT 编译器</title>
+      <link>https://fhxisdog.github.io/2019/04/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/</link>
+      <pubDate>Sun, 21 Apr 2019 18:23:51 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/04/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/</guid>
+      <description>转自:https://www.ibm.com/developerworks/cn/java/j-lo-just-in-time/ JIT 简介 JIT 是 just</description>
+    </item>
+    
+  </channel>
+</rss>

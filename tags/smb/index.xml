@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>smb on just for fun</title>
+    <link>https://fhxisdog.github.io/tags/smb/</link>
+    <description>Recent content in smb on just for fun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 28 May 2019 13:05:29 +0800</lastBuildDate>
+    
+        <atom:link href="https://fhxisdog.github.io/tags/smb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Smb无法连接windows共享文件夹</title>
+      <link>https://fhxisdog.github.io/2019/05/smb%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5windows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Tue, 28 May 2019 13:05:29 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/smb%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5windows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>问题描述 使用pacmanfm在地址栏输入:smb://fhxisdog-win/temp访问windows共享文件夹，提示NO FILE OR DIRECTIONARY 在命令行</description>
+    </item>
+    
+  </channel>
+</rss>
