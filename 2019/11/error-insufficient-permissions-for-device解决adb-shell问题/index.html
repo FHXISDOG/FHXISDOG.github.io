@@ -29,7 +29,8 @@
   
 
   <link rel="stylesheet" href="https://fhxisdog.github.io/css/style.css">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
   <meta property="og:title" content="Error: Insufficient Permissions for Device(解决adb Shell问题)" />
 <meta property="og:description" content="在linux连接android手机，使用adb出现error: insufficient permissions for device 输入 adb-devices显示: List of devices attached 6180bb53 no permissions; see [http://developer.android.com/tools/device.html] 解决方法: 1.首先在" />
 <meta property="og:type" content="article" />
@@ -284,7 +285,7 @@
       <div class="article-meta">
         <span class="article-date">
   <i class="icon icon-calendar-check"></i>
-<a href="https://fhxisdog.github.io/2019/11/error-insufficient-permissions-for-device%E8%A7%A3%E5%86%B3adb-shell%E9%97%AE%E9%A2%98/" class="article-date">
+<a href="https://fhxisdog.github.io/2019/11/error-insufficient-permissions-for-device%E8%A7%A3%E5%86%B3adb-shell%E9%97%AE%E9%A2%98/" class="article-title">
   <time datetime="2019-11-10 08:07:07 &#43;0800 CST" itemprop="datePublished">2019-11-10</time>
 </a>
 </span><span class="article-category">
@@ -416,5 +417,20 @@ hljs.initHighlightingOnLoad();
       </script>
 <script type="text/javascript" src="https://fhxisdog.github.io/js/insight.js"></script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '25cb16a0cefbf9358b4d',
+        clientSecret: '304421f8e707e448d98a330df684406736483f34',
+        repo: 'fhxisdog.github.io',
+        owner: 'FHXISDOG',
+        admin: ['FHXISDOG'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
+</script>
   </body>
 </html>

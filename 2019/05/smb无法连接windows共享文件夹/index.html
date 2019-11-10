@@ -29,7 +29,8 @@
   
 
   <link rel="stylesheet" href="https://fhxisdog.github.io/css/style.css">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
   <meta property="og:title" content="Smb无法连接windows共享文件夹" />
 <meta property="og:description" content="问题描述 使用pacmanfm在地址栏输入:smb://fhxisdog-win/temp访问windows共享文件夹，提示NO FILE OR DIRECTIONARY 在命令行" />
 <meta property="og:type" content="article" />
@@ -434,5 +435,20 @@ hljs.initHighlightingOnLoad();
       </script>
 <script type="text/javascript" src="https://fhxisdog.github.io/js/insight.js"></script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '25cb16a0cefbf9358b4d',
+        clientSecret: '304421f8e707e448d98a330df684406736483f34',
+        repo: 'fhxisdog.github.io',
+        owner: 'FHXISDOG',
+        admin: ['FHXISDOG'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
+</script>
   </body>
 </html>

@@ -29,7 +29,8 @@
 
   <link rel="alternate" type="application/rss+xml" href="https://fhxisdog.github.io/posts/index.xml" title="just for fun" />
   <link rel="stylesheet" href="https://fhxisdog.github.io/css/style.css">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
   <meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -330,21 +331,11 @@
                         aria-labelledby="heading2019">
                         <div class="panel-body">
                             <div class="collection">
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="panel-body">
-        <div class="article-meta">
-            <time datetime="2019-11-10 08:07:07 &#43;0800 CST"
-                itemprop="datePublished">2019-11-10</time>
-        </div>
-        <h3 class="article-title" itemprop="name">
-            <a class="article-link" href="https://fhxisdog.github.io/2019/11/error-insufficient-permissions-for-device%E8%A7%A3%E5%86%B3adb-shell%E9%97%AE%E9%A2%98/">Error: Insufficient Permissions for Device(解决adb Shell问题)</a>
-        </h3>
-    </div>
-    <div class="panel-footer">
-        <a href="https://fhxisdog.github.io/tags/flutter" class="label label-default mb">flutter</a>
-        <a href="https://fhxisdog.github.io/tags/android" class="label label-default mb">android</a>
-    </div>
-</article>
+<a href="https://fhxisdog.github.io/2019/11/error-insufficient-permissions-for-device%E8%A7%A3%E5%86%B3adb-shell%E9%97%AE%E9%A2%98/" class="collection-item" itemprop="url"  target="_blank" >
+    <time datetime="2019-11-10 08:07:07 &#43;0800 CST"
+        itemprop="datePublished">2019-11-10</time>
+    <span>&nbsp;&nbsp;&nbsp;</span>Error: Insufficient Permissions for Device(解决adb Shell问题)
+</a>
             
 <a href="https://fhxisdog.github.io/2019/11/android-platform-28-sdk-license-not-accepted/" class="collection-item" itemprop="url"  target="_blank" >
     <time datetime="2019-11-10 06:07:07 &#43;0800 CST"
@@ -495,5 +486,20 @@ hljs.initHighlightingOnLoad();
       </script>
 <script type="text/javascript" src="https://fhxisdog.github.io/js/insight.js"></script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '25cb16a0cefbf9358b4d',
+        clientSecret: '304421f8e707e448d98a330df684406736483f34',
+        repo: 'fhxisdog.github.io',
+        owner: 'FHXISDOG',
+        admin: ['FHXISDOG'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
+</script>
   </body>
 </html>
