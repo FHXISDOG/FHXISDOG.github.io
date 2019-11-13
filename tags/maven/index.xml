@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>maven on just for fun</title>
+    <link>https://fhxisdog.github.io/tags/maven/</link>
+    <description>Recent content in maven on just for fun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 12 Nov 2019 13:28:47 +0800</lastBuildDate>
+    
+        <atom:link href="https://fhxisdog.github.io/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>多模块Maven工程单独打包某一模块工程</title>
+      <link>https://fhxisdog.github.io/2019/11/%E5%A4%9A%E6%A8%A1%E5%9D%97maven%E5%B7%A5%E7%A8%8B%E5%8D%95%E7%8B%AC%E6%89%93%E5%8C%85%E6%9F%90%E4%B8%80%E6%A8%A1%E5%9D%97%E5%B7%A5%E7%A8%8B/</link>
+      <pubDate>Tue, 12 Nov 2019 13:28:47 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/11/%E5%A4%9A%E6%A8%A1%E5%9D%97maven%E5%B7%A5%E7%A8%8B%E5%8D%95%E7%8B%AC%E6%89%93%E5%8C%85%E6%9F%90%E4%B8%80%E6%A8%A1%E5%9D%97%E5%B7%A5%E7%A8%8B/</guid>
+      <description>问题描述 如果项目是多模块，如果只想打包某一模块，会出现找不到依赖的错误提示。 项目结构如下: A: ----B ----C ----D 如果想只打包C模块，可以执行以下命令: mvn -pl</description>
+    </item>
+    
+  </channel>
+</rss>
