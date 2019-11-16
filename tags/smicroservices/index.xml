@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>smicroservices on just for fun</title>
+    <link>https://fhxisdog.github.io/tags/smicroservices/</link>
+    <description>Recent content in smicroservices on just for fun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 16 Nov 2019 14:07:16 +0800</lastBuildDate>
+    
+        <atom:link href="https://fhxisdog.github.io/tags/smicroservices/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Restful、gRpc、Rsocket</title>
+      <link>https://fhxisdog.github.io/2019/11/restfulgrpcrsocket/</link>
+      <pubDate>Sat, 16 Nov 2019 14:07:16 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/11/restfulgrpcrsocket/</guid>
+      <description>什么是Restful? REST这个词，是Roy Thomas Fielding在他2000年的博士论文中提出的。 Fielding是一个非常重要的人，他是H</description>
+    </item>
+    
+  </channel>
+</rss>

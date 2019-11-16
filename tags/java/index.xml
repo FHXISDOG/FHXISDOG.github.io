@@ -5,10 +5,19 @@
     <link>https://fhxisdog.github.io/tags/java/</link>
     <description>Recent content in java on just for fun</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 12 Nov 2019 13:28:47 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Nov 2019 14:07:16 +0800</lastBuildDate>
     
         <atom:link href="https://fhxisdog.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Restful、gRpc、Rsocket</title>
+      <link>https://fhxisdog.github.io/2019/11/restfulgrpcrsocket/</link>
+      <pubDate>Sat, 16 Nov 2019 14:07:16 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/11/restfulgrpcrsocket/</guid>
+      <description>什么是Restful? REST这个词，是Roy Thomas Fielding在他2000年的博士论文中提出的。 Fielding是一个非常重要的人，他是H</description>
+    </item>
     
     <item>
       <title>多模块Maven工程单独打包某一模块工程</title>

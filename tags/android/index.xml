@@ -5,10 +5,19 @@
     <link>https://fhxisdog.github.io/tags/android/</link>
     <description>Recent content in android on just for fun</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 10 Nov 2019 06:07:07 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Nov 2019 08:07:07 +0800</lastBuildDate>
     
         <atom:link href="https://fhxisdog.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Error: Insufficient Permissions for Device(解决adb Shell问题)</title>
+      <link>https://fhxisdog.github.io/2019/11/error-insufficient-permissions-for-device%E8%A7%A3%E5%86%B3adb-shell%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 10 Nov 2019 08:07:07 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/11/error-insufficient-permissions-for-device%E8%A7%A3%E5%86%B3adb-shell%E9%97%AE%E9%A2%98/</guid>
+      <description>在linux连接android手机，使用adb出现error: insufficient permissions for device 输入 adb-devices显示: List of devices attached 6180bb53 no permissions; see [http://developer.android.com/tools/device.html] 解决方法: 1.首先在</description>
+    </item>
     
     <item>
       <title>Android Platform 28 SDK License Not Accepted</title>
