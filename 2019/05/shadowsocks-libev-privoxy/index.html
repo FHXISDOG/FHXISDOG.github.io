@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="本文所用到的工具 shadowsocks-libev privoxy gfwlist2privoxy shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev 配置: 在/etc/shadowsocks/下新建co" />
-  <meta name="generator" content="Hugo 0.59.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
   <title>Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy - just for fun</title>
   
 
@@ -39,16 +39,13 @@
 <meta property="article:modified_time" content="2019-05-28T12:01:14+08:00" />
 <meta itemprop="name" content="Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy">
 <meta itemprop="description" content="本文所用到的工具 shadowsocks-libev privoxy gfwlist2privoxy shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev 配置: 在/etc/shadowsocks/下新建co">
-
-
 <meta itemprop="datePublished" content="2019-05-28T12:01:14&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-28T12:01:14&#43;08:00" />
-<meta itemprop="wordCount" content="465">
+<meta itemprop="wordCount" content="464">
 
 
 
-<meta itemprop="keywords" content="linux,shadowsocks,vpn," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="linux,shadowsocks,vpn," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy"/>
 <meta name="twitter:description" content="本文所用到的工具 shadowsocks-libev privoxy gfwlist2privoxy shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev 配置: 在/etc/shadowsocks/下新建co"/>
 
@@ -159,7 +156,8 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/docker/" class="category-list-link">docker</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/nacos/" class="category-list-link">nacos</a><span class="category-list-count">1</span></li>
@@ -177,7 +175,7 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/android/" class="tag-list-link">android</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/docker/" class="tag-list-link">docker</a><span
@@ -189,7 +187,11 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/flutter/" class="tag-list-link">flutter</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/i3wm/" class="tag-list-link">i3wm</a><span
@@ -274,18 +276,16 @@
       <nav id="toc" class="article-toc">
         <h3 class="toc-title">文章目录</h3>
         <div class="toc-content always-active"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#本文所用到的工具">本文所用到的工具</a></li>
-<li><a href="#shadowsocks-libev安装配置">shadowsocks-libev安装配置</a></li>
-<li><a href="#privoxy-gfwlist2privoxy安装配置">privoxy+gfwlist2privoxy安装配置</a></li>
-<li><a href="#设置环境变量">设置环境变量</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">本文所用到的工具</a></li>
+        <li><a href="#shadowsocks-libev">shadowsocks-libev安装配置</a></li>
+        <li><a href="#privoxygfwlist2privoxy">privoxy+gfwlist2privoxy安装配置</a></li>
+        <li><a href="#heading-1">设置环境变量</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
       </nav>
@@ -329,95 +329,66 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/05/shadowsocks-libev-privoxy/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计:465字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计:464字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长:1分 </span>
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
-      
-
-<h3 id="本文所用到的工具">本文所用到的工具</h3>
-
+      <h3 id="heading">本文所用到的工具</h3>
 <ul>
 <li><a href="https://github.com/shadowsocks/shadowsocks-libev">shadowsocks-libev</a></li>
 <li><a href="https://www.privoxy.org/">privoxy</a></li>
 <li><a href="https://github.com/zfl9/gfwlist2privoxy">gfwlist2privoxy</a></li>
 </ul>
-
-<h3 id="shadowsocks-libev安装配置">shadowsocks-libev安装配置</h3>
-
+<h3 id="shadowsocks-libev">shadowsocks-libev安装配置</h3>
 <p>下载安装:<code>sudo pacman -S shadowsocks-libev</code></p>
-
 <p>配置:</p>
-
 <ul>
 <li>在<code>/etc/shadowsocks/</code>下新建<code>config.json</code>文件</li>
-
-<li><p>编辑<code>config.json</code>：</p>
-
-<pre><code class="language-json">{
-	&quot;server&quot;:&quot;xxxxxx&quot;,  #服务器IP
-	&quot;server_port&quot;:xxx, #服务器端口
-	&quot;local_address&quot;:&quot;127.0.0.1&quot;, #本地监听IP
-	&quot;local_port&quot;:1080, #本地监听端口
-	&quot;password&quot;:&quot;xxx&quot;, #密码
-	&quot;method&quot;:&quot;xxx&quot;, #加密方式
-	&quot;fast_open&quot;:false, # tcp_fastopen
-	&quot;timeout&quot;:1000, #超时时间
-	&quot;workers&quot;:1 #workder进程数
+<li>编辑<code>config.json</code>：</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+	<span style="color:#f92672">&#34;server&#34;</span>:<span style="color:#e6db74">&#34;xxxxxx&#34;</span>,  <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#960050;background-color:#1e0010">服</span><span style="color:#960050;background-color:#1e0010">务</span><span style="color:#960050;background-color:#1e0010">器</span><span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">P</span>
+	<span style="color:#f92672">&#34;server_port&#34;</span>:<span style="color:#960050;background-color:#1e0010">x</span><span style="color:#960050;background-color:#1e0010">x</span><span style="color:#960050;background-color:#1e0010">x</span>, <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#960050;background-color:#1e0010">服</span><span style="color:#960050;background-color:#1e0010">务</span><span style="color:#960050;background-color:#1e0010">器</span><span style="color:#960050;background-color:#1e0010">端</span><span style="color:#960050;background-color:#1e0010">口</span>
+	<span style="color:#f92672">&#34;local_address&#34;</span>:<span style="color:#e6db74">&#34;127.0.0.1&#34;</span>, <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#960050;background-color:#1e0010">本</span><span style="color:#960050;background-color:#1e0010">地</span><span style="color:#960050;background-color:#1e0010">监</span><span style="color:#960050;background-color:#1e0010">听</span><span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">P</span>
+	<span style="color:#f92672">&#34;local_port&#34;</span>:<span style="color:#ae81ff">1080</span>, <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#960050;background-color:#1e0010">本</span><span style="color:#960050;background-color:#1e0010">地</span><span style="color:#960050;background-color:#1e0010">监</span><span style="color:#960050;background-color:#1e0010">听</span><span style="color:#960050;background-color:#1e0010">端</span><span style="color:#960050;background-color:#1e0010">口</span>
+	<span style="color:#f92672">&#34;password&#34;</span>:<span style="color:#e6db74">&#34;xxx&#34;</span>, <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#960050;background-color:#1e0010">密</span><span style="color:#960050;background-color:#1e0010">码</span>
+	<span style="color:#f92672">&#34;method&#34;</span>:<span style="color:#e6db74">&#34;xxx&#34;</span>, <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#960050;background-color:#1e0010">加</span><span style="color:#960050;background-color:#1e0010">密</span><span style="color:#960050;background-color:#1e0010">方</span><span style="color:#960050;background-color:#1e0010">式</span>
+	<span style="color:#f92672">&#34;fast_open&#34;</span>:<span style="color:#66d9ef">false</span>, <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">_</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">n</span>
+	<span style="color:#f92672">&#34;timeout&#34;</span>:<span style="color:#ae81ff">1000</span>, <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#960050;background-color:#1e0010">超</span><span style="color:#960050;background-color:#1e0010">时</span><span style="color:#960050;background-color:#1e0010">时</span><span style="color:#960050;background-color:#1e0010">间</span>
+	<span style="color:#f92672">&#34;workers&#34;</span>:<span style="color:#ae81ff">1</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#960050;background-color:#1e0010">w</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">k</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">进</span><span style="color:#960050;background-color:#1e0010">程</span><span style="color:#960050;background-color:#1e0010">数</span>
 }
-</code></pre></li>
-
-<li><p>启动ss-local: <code>ss-local -c /etc/shadowsocks/config.json</code></p></li>
-
-<li><p>测试:<code>curl -x socks5://127.0.0.1:1080 http://www.google.com</code></p></li>
-
-<li><p>设置守护进程启动:<code>systemctl start shadowsocks-libev@config</code>
-** 注意：这里<code>@config</code>是指 <code>/etc/shadowsocks/</code>下面的配置文件 **</p></li>
-
-<li><p>设置开机自启动: <code>systemctl enable shadows-libev@config</code></p>
-
-<h3 id="privoxy-gfwlist2privoxy安装配置">privoxy+gfwlist2privoxy安装配置</h3>
-
-<p>下载privoxy：<code>sudo pacman -S privoxy</code></p></li>
+</code></pre></div><ul>
+<li>启动ss-local: <code>ss-local -c /etc/shadowsocks/config.json</code></li>
+<li>测试:<code>curl -x socks5://127.0.0.1:1080 http://www.google.com</code></li>
+<li>设置守护进程启动:<code>systemctl start shadowsocks-libev@config</code>
+** 注意：这里<code>@config</code>是指 <code>/etc/shadowsocks/</code>下面的配置文件 **</li>
+<li>设置开机自启动: <code>systemctl enable shadows-libev@config</code></li>
 </ul>
-
+<h3 id="privoxygfwlist2privoxy">privoxy+gfwlist2privoxy安装配置</h3>
+<p>下载privoxy：<code>sudo pacman -S privoxy</code></p>
 <p>获取 gfwlist2privoxy 脚本:<code>curl -skL https://raw.github.com/zfl9/gfwlist2privoxy/master/gfwlist2privoxy -o gfwlist2privoxy</code></p>
-
-<p>生成 gfwlist.action 文件: <code>bash gfwlist2privoxy '127.0.0.1:1080'</code></p>
-
-<p>拷贝至 privoxy 配置目录:<code>cp -af gfwlist.action /etc/privoxy/
-</code></p>
-
-<p>加载 gfwlist.action 文件 <code>echo 'actionsfile gfwlist.action' &gt;&gt; /etc/privoxy/config
-</code></p>
-
+<p>生成 gfwlist.action 文件: <code>bash gfwlist2privoxy '127.0.0.1:1080' </code></p>
+<p>拷贝至 privoxy 配置目录:<code>cp -af gfwlist.action /etc/privoxy/</code></p>
+<p>加载 gfwlist.action 文件 <code>echo 'actionsfile gfwlist.action' &gt;&gt; /etc/privoxy/config</code></p>
 <p>启动privoxy:<code>sysemctl start privoxy</code></p>
-
 <p>设置开机自启动: <code>systemctl enable privoxy</code></p>
-
-<p>测试:
-- 设置环境变量:</p>
-
-<pre><code class="language-shell"># 8118 为privoxy默认监听端口
-export http_proxy = http:127.0.0.1:8118 
-export https_proxy = http:127.0.0.1:8118 
-</code></pre>
-
+<p>测试:</p>
 <ul>
-<li>curl测试: <code>curl www.google.com</code></li>
+<li>设置环境变量:</li>
 </ul>
-
-<h3 id="设置环境变量">设置环境变量</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 8118 为privoxy默认监听端口</span>
+export http_proxy <span style="color:#f92672">=</span> http:127.0.0.1:8118 
+export https_proxy <span style="color:#f92672">=</span> http:127.0.0.1:8118 
+</code></pre></div><ul>
+<li>curl测试: <code>curl www.google.com </code></li>
+</ul>
+<h3 id="heading-1">设置环境变量</h3>
 <p>编辑 <code>/etc/prifile</code>,加入以下两行:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export http_proxy <span style="color:#f92672">=</span> http:127.0.0.1:8118 
+export https_proxy <span style="color:#f92672">=</span> http:127.0.0.1:8118 
 
-<pre><code class="language-shell">export http_proxy = http:127.0.0.1:8118 
-export https_proxy = http:127.0.0.1:8118 
-
-</code></pre>
-
-<p>重启，打开浏览器验证</p>
+</code></pre></div><p>重启，打开浏览器验证</p>
 
     </div>
   </article>
@@ -514,7 +485,7 @@ export https_proxy = http:127.0.0.1:8118
 </ul>
   <div class="copyright">
     &copy;2017  -
-    2019
+    2020
     <div class="publishby">
         Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>

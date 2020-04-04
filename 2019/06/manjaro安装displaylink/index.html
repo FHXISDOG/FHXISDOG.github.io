@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安" />
-  <meta name="generator" content="Hugo 0.59.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
   <title>Manjaro安装displaylink - just for fun</title>
   
 
@@ -39,16 +39,13 @@
 <meta property="article:modified_time" content="2019-06-24T13:06:10+08:00" />
 <meta itemprop="name" content="Manjaro安装displaylink">
 <meta itemprop="description" content="使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安">
-
-
 <meta itemprop="datePublished" content="2019-06-24T13:06:10&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-24T13:06:10&#43;08:00" />
 <meta itemprop="wordCount" content="398">
 
 
 
-<meta itemprop="keywords" content="manjaro,linux," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="manjaro,linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manjaro安装displaylink"/>
 <meta name="twitter:description" content="使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安"/>
 
@@ -159,7 +156,8 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/docker/" class="category-list-link">docker</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/nacos/" class="category-list-link">nacos</a><span class="category-list-count">1</span></li>
@@ -177,7 +175,7 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/android/" class="tag-list-link">android</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/docker/" class="tag-list-link">docker</a><span
@@ -189,7 +187,11 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/flutter/" class="tag-list-link">flutter</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/i3wm/" class="tag-list-link">i3wm</a><span
@@ -274,19 +276,13 @@
       <nav id="toc" class="article-toc">
         <h3 class="toc-title">文章目录</h3>
         <div class="toc-content always-active"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#使用华硕的便携笔记本需要安装displaylink驱动-官方又只提供windows驱动-在manjaro上使用需要自己安装驱动-经过研究-安装方法如下">使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安装方法如下:</a>
-<ul>
-<li>
-<ul>
-<li><a href="#准备工作">准备工作</a></li>
-<li><a href="#开始配置">开始配置</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#displaylinkwindowsmanjaro">使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安装方法如下:</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
       </nav>
@@ -331,30 +327,22 @@
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
-      
-
-<hr />
-
-<h2 id="使用华硕的便携笔记本需要安装displaylink驱动-官方又只提供windows驱动-在manjaro上使用需要自己安装驱动-经过研究-安装方法如下">使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安装方法如下:</h2>
-
-<h4 id="准备工作">准备工作</h4>
-
+      <hr>
+<h2 id="displaylinkwindowsmanjaro">使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安装方法如下:</h2>
+<h4 id="heading">准备工作</h4>
 <ol>
 <li><code>uname -r</code>查看内核版本,输出:<code>4.19.23-1-MANJARO</code>,说明我的内核版本是419,执行<code>pacman -Ss linux-headers</code>查看库中的依赖，执行<code>sudo pacman -S core/liux419-headers</code>安装头文件</li>
-<li>安装evdi:<code>yay -S evdi-git</code> 3</li>
+<li>安装evdi:<code>yay -S evdi-git</code>	3</li>
 <li>安装displaylink <code>yay -S displaylink</code></li>
 </ol>
-
-<h4 id="开始配置">开始配置</h4>
-
+<h4 id="heading-1">开始配置</h4>
 <ol>
 <li>装载evdi: <code>sudo modprobe evdi</code></li>
 <li>装载udl: <code>sudo modprobe udl</code></li>
 <li>启用displaylink.sevice: <code>systemctl enable display link</code></li>
 <li>开启displaylink.service:<code>systemctl start displaylink</code></li>
-
-<li><p>新增配置文件</p>
-
+<li>新增配置文件</li>
+</ol>
 <pre><code>/usr/share/X11/xorg.conf.d/20-evdidevice.conf
 ---
 Section &quot;OutputClass&quot;
@@ -363,16 +351,14 @@ Section &quot;OutputClass&quot;
 	Driver &quot;modesetting&quot;
 	Option  &quot;AccelMethod&quot; &quot;none&quot;
 EndSection
-</code></pre></li>
-
-<li><p>执行<code>xandr --listproviders</code>,可以看到输出:</p>
-
+</code></pre><ol start="6">
+<li>执行<code>xandr --listproviders</code>,可以看到输出:</li>
+</ol>
 <pre><code>Providers: number : 2
 Provider 0: id: 0x45 cap: 0xb, Source Output, Sink Output, Sink Offload crtcs: 4 outputs: 2 associated providers: 1 name:Intel 
 Provider 1: id: 0x14d cap: 0x2, Sink Output crtcs: 1 outputs: 1 associated providers: 1 name:modesetting
-</code></pre></li>
-
-<li><p><code>lxrandr</code>开启屏幕</p></li>
+</code></pre><ol start="7">
+<li><code>lxrandr</code>开启屏幕</li>
 </ol>
 
     </div>
@@ -470,7 +456,7 @@ Provider 1: id: 0x14d cap: 0x2, Sink Output crtcs: 1 outputs: 1 associated provi
 </ul>
   <div class="copyright">
     &copy;2017  -
-    2019
+    2020
     <div class="publishby">
         Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>

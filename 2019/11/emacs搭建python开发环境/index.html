@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="安装python必须的依赖 sudo pip install jedi elpy rope pylint emacs配置 在～/.emacs.d/路径新建文件init.el 添加以下配置: (require &#39;package) (package-initialize) ;;配置包管理列" />
-  <meta name="generator" content="Hugo 0.59.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
   <title>Emacs搭建python开发环境 - just for fun</title>
   
 
@@ -39,16 +39,13 @@
 <meta property="article:modified_time" content="2019-11-10T05:07:07+08:00" />
 <meta itemprop="name" content="Emacs搭建python开发环境">
 <meta itemprop="description" content="安装python必须的依赖 sudo pip install jedi elpy rope pylint emacs配置 在～/.emacs.d/路径新建文件init.el 添加以下配置: (require &#39;package) (package-initialize) ;;配置包管理列">
-
-
 <meta itemprop="datePublished" content="2019-11-10T05:07:07&#43;08:00" />
 <meta itemprop="dateModified" content="2019-11-10T05:07:07&#43;08:00" />
 <meta itemprop="wordCount" content="362">
 
 
 
-<meta itemprop="keywords" content="linux,emacs," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="linux,emacs," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Emacs搭建python开发环境"/>
 <meta name="twitter:description" content="安装python必须的依赖 sudo pip install jedi elpy rope pylint emacs配置 在～/.emacs.d/路径新建文件init.el 添加以下配置: (require &#39;package) (package-initialize) ;;配置包管理列"/>
 
@@ -159,7 +156,8 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/docker/" class="category-list-link">docker</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/nacos/" class="category-list-link">nacos</a><span class="category-list-count">1</span></li>
@@ -177,7 +175,7 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/android/" class="tag-list-link">android</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/docker/" class="tag-list-link">docker</a><span
@@ -189,7 +187,11 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/flutter/" class="tag-list-link">flutter</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/i3wm/" class="tag-list-link">i3wm</a><span
@@ -274,17 +276,15 @@
       <nav id="toc" class="article-toc">
         <h3 class="toc-title">文章目录</h3>
         <div class="toc-content always-active"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#安装python必须的依赖">安装python必须的依赖</a></li>
-<li><a href="#emacs配置">emacs配置</a></li>
-<li><a href="#emacs配置-1">emacs配置</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#python">安装python必须的依赖</a></li>
+        <li><a href="#emacs">emacs配置</a></li>
+        <li><a href="#emacs-1">emacs配置</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
       </nav>
@@ -332,18 +332,11 @@
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
-      
-
-<h3 id="安装python必须的依赖">安装python必须的依赖</h3>
-
+      <h3 id="python">安装python必须的依赖</h3>
 <p><code>sudo pip install jedi elpy rope pylint</code></p>
-
-<h3 id="emacs配置">emacs配置</h3>
-
+<h3 id="emacs">emacs配置</h3>
 <p>在<code>～/.emacs.d/</code>路径新建文件<code>init.el</code></p>
-
 <p>添加以下配置:</p>
-
 <pre><code>(require 'package)
 
 (package-initialize)
@@ -400,14 +393,9 @@
                 (neotree-find file-name)))
         (message &quot;Could not find git project root.&quot;))))
 
-</code></pre>
-
-<h3 id="emacs配置-1">emacs配置</h3>
-
+</code></pre><h3 id="emacs-1">emacs配置</h3>
 <p>进入Emacs,<code>ALT-X</code>输入<code>list-packages</code></p>
-
 <p>安装必须的包:</p>
-
 <pre><code>		      company
 		      better-deafults
 		      material-theme
@@ -417,10 +405,7 @@
 		      projectile
 		      neotree
 
-</code></pre>
-
-<p>解释:</p>
-
+</code></pre><p>解释:</p>
 <pre><code>
 		      company   ;;自动补全
 
@@ -438,7 +423,6 @@
 
 		      neotree   ;;树形文件结构
 </code></pre>
-
     </div>
   </article>
 <section id="comments">
@@ -534,7 +518,7 @@
 </ul>
   <div class="copyright">
     &copy;2017  -
-    2019
+    2020
     <div class="publishby">
         Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>

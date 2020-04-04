@@ -5,10 +5,19 @@
     <link>https://fhxisdog.github.io/posts/</link>
     <description>Recent content in Posts on just for fun</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 16 Nov 2019 14:07:16 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 17:16:31 +0800</lastBuildDate>
     
         <atom:link href="https://fhxisdog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git不完全使用指南</title>
+      <link>https://fhxisdog.github.io/2020/03/git%E4%B8%8D%E5%AE%8C%E5%85%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Mon, 30 Mar 2020 17:16:31 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2020/03/git%E4%B8%8D%E5%AE%8C%E5%85%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>基本概念 四度空间: 工作区:Workspace 就是你在电脑里能看到的目录 暂存区: Index/Stage/Cached 英文叫stage, 或index。一般存放在 &amp;ldquo;.g</description>
+    </item>
     
     <item>
       <title>Restful、gRpc、Rsocket</title>
@@ -26,15 +35,6 @@
       
       <guid>https://fhxisdog.github.io/2019/11/%E5%A4%9A%E6%A8%A1%E5%9D%97maven%E5%B7%A5%E7%A8%8B%E5%8D%95%E7%8B%AC%E6%89%93%E5%8C%85%E6%9F%90%E4%B8%80%E6%A8%A1%E5%9D%97%E5%B7%A5%E7%A8%8B/</guid>
       <description>问题描述 如果项目是多模块，如果只想打包某一模块，会出现找不到依赖的错误提示。 项目结构如下: A: ----B ----C ----D 如果想只打包C模块，可以执行以下命令: mvn -pl</description>
-    </item>
-    
-    <item>
-      <title>Error: Insufficient Permissions for Device(解决adb Shell问题)</title>
-      <link>https://fhxisdog.github.io/2019/11/error-insufficient-permissions-for-device%E8%A7%A3%E5%86%B3adb-shell%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Sun, 10 Nov 2019 08:07:07 +0800</pubDate>
-      
-      <guid>https://fhxisdog.github.io/2019/11/error-insufficient-permissions-for-device%E8%A7%A3%E5%86%B3adb-shell%E9%97%AE%E9%A2%98/</guid>
-      <description>在linux连接android手机，使用adb出现error: insufficient permissions for device 输入 adb-devices显示: List of devices attached 6180bb53 no permissions; see [http://developer.android.com/tools/device.html] 解决方法: 1.首先在</description>
     </item>
     
     <item>

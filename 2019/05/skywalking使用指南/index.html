@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="运行 单机运行 下载最新release包 解压，sh ${skywalkingpath}/bin/startup.sh 在springboot启动命令前加入启动参数 -javaagent:${path}/skywalking-agent.jar #path为skywalking解压的agen" />
-  <meta name="generator" content="Hugo 0.59.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
   <title>skywalking使用指南 - just for fun</title>
   
 
@@ -39,16 +39,13 @@
 <meta property="article:modified_time" content="2019-05-29T15:33:57+08:00" />
 <meta itemprop="name" content="skywalking使用指南">
 <meta itemprop="description" content="运行 单机运行 下载最新release包 解压，sh ${skywalkingpath}/bin/startup.sh 在springboot启动命令前加入启动参数 -javaagent:${path}/skywalking-agent.jar #path为skywalking解压的agen">
-
-
 <meta itemprop="datePublished" content="2019-05-29T15:33:57&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-29T15:33:57&#43;08:00" />
 <meta itemprop="wordCount" content="1558">
 
 
 
-<meta itemprop="keywords" content="java,skywalking,spring cloud," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="java,skywalking,spring cloud," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="skywalking使用指南"/>
 <meta name="twitter:description" content="运行 单机运行 下载最新release包 解压，sh ${skywalkingpath}/bin/startup.sh 在springboot启动命令前加入启动参数 -javaagent:${path}/skywalking-agent.jar #path为skywalking解压的agen"/>
 
@@ -159,7 +156,8 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/docker/" class="category-list-link">docker</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/nacos/" class="category-list-link">nacos</a><span class="category-list-count">1</span></li>
@@ -177,7 +175,7 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/android/" class="tag-list-link">android</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/docker/" class="tag-list-link">docker</a><span
@@ -189,7 +187,11 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/flutter/" class="tag-list-link">flutter</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/i3wm/" class="tag-list-link">i3wm</a><span
@@ -274,69 +276,34 @@
       <nav id="toc" class="article-toc">
         <h3 class="toc-title">文章目录</h3>
         <div class="toc-content always-active"><nav id="TableOfContents">
-<ul>
-<li><a href="#运行">运行</a>
-<ul>
-<li><a href="#单机运行">单机运行</a></li>
-<li><a href="#docker-运行">docker 运行</a>
-<ul>
-<li><a href="#前置条件">前置条件</a>
-<ul>
-<li><a href="#下载">下载</a></li>
-<li><a href="#构建docker-bridge">构建docker bridge</a></li>
-<li><a href="#使用数据库">使用数据库</a>
-<ul>
-<li><a href="#elasticsearch">ElasticSearch</a>
-<ul>
-<li><a href="#启动es">启动es</a></li>
-<li><a href="#初始化数据库">初始化数据库</a></li>
-</ul></li>
-<li><a href="#mysql">mysql</a>
-<ul>
-<li><a href="#复制mysql驱动到-path-apapch-skywalking-bin-oap-libs">复制mysql驱动到${path}/apapch-skywalking-bin/oap-libs</a></li>
-<li><a href="#编辑-path-apache-skywalking-bin-config-appliccation-yml">编辑 ${path}/apache-skywalking-bin/config/appliccation.yml</a></li>
-<li><a href="#编辑-path-apache-skywalking-bin-config-datasource-setting-properties">编辑${path}/apache-skywalking-bin/config/datasource-setting.properties</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#构建oap镜像">构建OAP镜像</a>
-<ul>
-<li><a href="#准备条件">准备条件</a></li>
-<li><a href="#编写启动脚本">编写启动脚本</a></li>
-<li><a href="#编写dockerfile">编写Dockerfile</a></li>
-<li><a href="#构建镜像">构建镜像</a></li>
-<li><a href="#启动容器">启动容器</a></li>
-</ul></li>
-<li><a href="#构建ui镜像">构建ui镜像</a>
-<ul>
-<li><a href="#准备条件-1">准备条件</a></li>
-<li><a href="#编写启动脚本-1">编写启动脚本:</a></li>
-<li><a href="#编写dockerfile-1">编写Dockerfile:</a></li>
-<li><a href="#构建镜像-1">构建镜像</a></li>
-<li><a href="#修改配置">修改配置</a></li>
-<li><a href="#启动容器-1">启动容器</a></li>
-<li><a href="#修改agent配置">修改agent配置</a></li>
-<li><a href="#启动应用并访问服务器8080端口查看信息">启动应用并访问服务器8080端口查看信息</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#连接-elasticsearch-基于上一步docker运行skywalking">连接<code>elasticsearch</code>(基于上一步docker运行skywalking)</a>
-<ul>
-<li><a href="#启动-esasticsearch">启动<code>esasticsearch</code></a></li>
-<li><a href="#初始化-elasticsearch">初始化<code>elasticsearch</code></a></li>
-<li><a href="#将-es-接入-skywalking-bridge">将<code>es</code>接入 skywalking bridge</a></li>
-<li><a href="#修改-skywalking-配置文件">修改<code>skywalking</code>配置文件</a></li>
-<li><a href="#重启-skywalking-oap">重启<code>skywalking-oap</code></a></li>
-</ul></li>
-</ul></li>
-<li><a href="#plugin使用">plugin使用</a>
-<ul>
-<li><a href="#apm-toolkit-logback-1-x">apm-toolkit-logback-1.x</a>
-<ul>
-<li><a href="#项目pom文件引入">项目pom文件引入</a></li>
-<li><a href="#编辑logback-yml">编辑logback.yml</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading-1">单机运行</a></li>
+    <li><a href="#docker-">docker 运行</a>
+      <ul>
+        <li><a href="#heading-2">前置条件</a></li>
+        <li><a href="#oap">构建OAP镜像</a></li>
+        <li><a href="#ui">构建ui镜像</a></li>
+      </ul>
+    </li>
+    <li><a href="#elasticsearchdockerskywalking">连接elasticsearch(基于上一步docker运行skywalking)</a>
+      <ul>
+        <li><a href="#esasticsearch">启动esasticsearch</a></li>
+        <li><a href="#elasticsearch-1">初始化elasticsearch</a></li>
+        <li><a href="#es-skywalking-bridge">将es接入 skywalking bridge</a></li>
+        <li><a href="#skywalking">修改skywalking配置文件</a></li>
+        <li><a href="#skywalking-oap">重启skywalking-oap</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#apm-toolkit-logback-1x">apm-toolkit-logback-1.x</a>
+      <ul>
+        <li><a href="#pom">项目pom文件引入</a></li>
+        <li><a href="#logbackyml">编辑logback.yml</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
       </nav>
@@ -385,50 +352,29 @@
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
-      
-
-<h1 id="运行">运行</h1>
-
-<h2 id="单机运行">单机运行</h2>
-
+      <h1 id="heading">运行</h1>
+<h2 id="heading-1">单机运行</h2>
 <ul>
 <li>下载最新<a href="http://skywalking.apache.org/downloads/">release</a>包</li>
 <li>解压，sh ${skywalkingpath}/bin/startup.sh</li>
-
-<li><p>在<code>springboot</code>启动命令前加入启动参数</p>
-
-<pre><code>-javaagent:${path}/skywalking-agent.jar  #path为skywalking解压的agent目录
-</code></pre></li>
-
-<li><p>访问localhost:8080查看结果</p></li>
+<li>在<code>springboot</code>启动命令前加入启动参数</li>
 </ul>
-
-<h2 id="docker-运行">docker 运行</h2>
-
-<h3 id="前置条件">前置条件</h3>
-
-<h4 id="下载">下载</h4>
-
+<pre><code>-javaagent:${path}/skywalking-agent.jar  #path为skywalking解压的agent目录
+</code></pre><ul>
+<li>访问localhost:8080查看结果</li>
+</ul>
+<h2 id="docker-">docker 运行</h2>
+<h3 id="heading-2">前置条件</h3>
+<h4 id="heading-3">下载</h4>
 <p>下载最新<a href="http:/skywalking.apache.org/downloads/">release</a>包并解压</p>
-
-<h4 id="构建docker-bridge">构建docker bridge</h4>
-
+<h4 id="docker-bridge">构建docker bridge</h4>
 <pre><code>dcoker network create skywalking
-</code></pre>
-
-<h4 id="使用数据库">使用数据库</h4>
-
+</code></pre><h4 id="heading-4">使用数据库</h4>
 <h5 id="elasticsearch">ElasticSearch</h5>
-
-<h6 id="启动es">启动es</h6>
-
+<h6 id="es">启动es</h6>
 <pre><code>docker run -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; docker.elastic.co/elasticsearch/elasticsearch:6.4.3 #skywalking目前只支持6.x(6.1.0版本)
-</code></pre>
-
-<h6 id="初始化数据库">初始化数据库</h6>
-
+</code></pre><h6 id="heading-5">初始化数据库</h6>
 <p>编辑 <code>${path}/apache-skywalking-bin/config/appliccation.yml</code></p>
-
 <pre><code>storage:
   #elasticsearch:
     nameSpace: ${SW_NAMESPACE:&quot;&quot;}
@@ -445,39 +391,24 @@
     metadataQueryMaxSize: ${SW_STORAGE_ES_QUERY_MAX_SIZE:5000}
     segmentQueryMaxSize: ${SW_STORAGE_ES_QUERY_SEGMENT_SIZE:200}
 
-</code></pre>
-
-<p>执行</p>
-
+</code></pre><p>执行</p>
 <pre><code>sh ${path}/apache-skywalking-bin/bin/oapServiceInit.sh 
 
-</code></pre>
-
-<p>执行</p>
-
+</code></pre><p>执行</p>
 <pre><code>
 tail -f ${path}/apache-skywalking-bin/config/skywalking-oap-server.log
 
-</code></pre>
-
-<p>等待执行完成</p>
-
+</code></pre><p>等待执行完成</p>
 <h5 id="mysql">mysql</h5>
-
-<h6 id="复制mysql驱动到-path-apapch-skywalking-bin-oap-libs">复制mysql驱动到${path}/apapch-skywalking-bin/oap-libs</h6>
-
-<h6 id="编辑-path-apache-skywalking-bin-config-appliccation-yml">编辑 ${path}/apache-skywalking-bin/config/appliccation.yml</h6>
-
+<h6 id="mysqlpathapapch-skywalking-binoap-libs">复制mysql驱动到${path}/apapch-skywalking-bin/oap-libs</h6>
+<h6 id="-pathapache-skywalking-binconfigappliccationyml">编辑 ${path}/apache-skywalking-bin/config/appliccation.yml</h6>
 <pre><code>
 storage:
   mysql:
     metadataQueryMaxSize: ${SW_STORAGE_H2_QUERY_MAX_SIZE:5000}
 
 
-</code></pre>
-
-<h6 id="编辑-path-apache-skywalking-bin-config-datasource-setting-properties">编辑${path}/apache-skywalking-bin/config/datasource-setting.properties</h6>
-
+</code></pre><h6 id="pathapache-skywalking-binconfigdatasource-settingproperties">编辑${path}/apache-skywalking-bin/config/datasource-setting.properties</h6>
 <pre><code>
 jdbcUrl=jdbc:mysql://dev.iotechina.com:3316/sky_walking
 dataSource.user= you know
@@ -493,30 +424,17 @@ dataSource.cacheServerConfiguration=true
 dataSource.elideSetAutoCommits=true
 dataSource.maintainTimeStats=false
 
-</code></pre>
+</code></pre><pre><code>sh ${path}/apache-skywalking-bin/bin/oapServiceInit.sh 
 
-<pre><code>sh ${path}/apache-skywalking-bin/bin/oapServiceInit.sh 
-
-</code></pre>
-
-<p>执行</p>
-
+</code></pre><p>执行</p>
 <pre><code>tail -f ${path}/apache-skywalking-bin/config/skywalking-oap-server.log
 
-</code></pre>
-
-<p>等待执行完成</p>
-
-<h3 id="构建oap镜像">构建OAP镜像</h3>
-
-<h4 id="准备条件">准备条件</h4>
-
+</code></pre><p>等待执行完成</p>
+<h3 id="oap">构建OAP镜像</h3>
+<h4 id="heading-6">准备条件</h4>
 <p>复制<code>oap-libs</code>文件夹到<code>/root/skywalking/oap</code>目录</p>
-
 <p>复制<code>config</code>目录到<code>/root/skywalking/oap</code>目录</p>
-
 <p>编辑<code>config</code>目录下<code>log4j2.xml</code>：</p>
-
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 
 &lt;Configuration status=&quot;INFO&quot;&gt;
@@ -537,12 +455,8 @@ dataSource.maintainTimeStats=false
     &lt;/Loggers&gt;
 &lt;/Configuration&gt;
 
-</code></pre>
-
-<h4 id="编写启动脚本">编写启动脚本</h4>
-
+</code></pre><h4 id="heading-7">编写启动脚本</h4>
 <p>新建<code>docker-entrypoint.sh</code>:</p>
-
 <pre><code>#!/bin/bash
 
 set -ex
@@ -555,12 +469,8 @@ done
 
 exec java -Xms256M -Xmx512M -classpath $CLASSPATH org.apache.skywalking.oap.server.starter.OAPServerStartUp &quot;$@&quot;
 
-</code></pre>
-
-<h4 id="编写dockerfile">编写Dockerfile</h4>
-
+</code></pre><h4 id="dockerfile">编写Dockerfile</h4>
 <p>新建<code>Dcokerfile</code>:</p>
-
 <pre><code>FROM openjdk:8-jre-alpine
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo 'Asia/Shanghai' &gt;/etc/timezone  #设置时区，不然ui会查不到数据
@@ -571,45 +481,25 @@ COPY docker-entrypoint.sh /skywalking
 COPY oap-libs/ /skywalking/oap-libs
 EXPOSE 12800 11800
 ENTRYPOINT [&quot;sh&quot;,&quot;docker-entrypoint.sh&quot;]
-</code></pre>
-
-<h4 id="构建镜像">构建镜像</h4>
-
+</code></pre><h4 id="heading-8">构建镜像</h4>
 <pre><code>dcoker build -t {your tag} .
-</code></pre>
-
-<h4 id="启动容器">启动容器</h4>
-
+</code></pre><h4 id="heading-9">启动容器</h4>
 <pre><code>docker run --name skywalking-oap -d -v /root/skywalking/oap/config:/skywalking/config -p 12800:12800 -p  11800:11800 --network skywalking {your tag}
-</code></pre>
-
-<h3 id="构建ui镜像">构建ui镜像</h3>
-
-<h4 id="准备条件-1">准备条件</h4>
-
+</code></pre><h3 id="ui">构建ui镜像</h3>
+<h4 id="heading-10">准备条件</h4>
 <p>复制<code>webapp</code>文件夹到<code>/root/skywalking/ui</code>目录</p>
-
 <p>在<code>/root/skywalking/ui/webapp</code>目录下新建文件<code>logback.xml</code>：</p>
-
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;configuration&gt;
     &lt;include resource=&quot;org/springframework/boot/logging/logback/base.xml&quot; /&gt;
 &lt;/configuration&gt;
-</code></pre>
-
-<h4 id="编写启动脚本-1">编写启动脚本:</h4>
-
+</code></pre><h4 id="heading-11">编写启动脚本:</h4>
 <p>新建<code>docker-entrypoint.sh</code>：</p>
-
 <pre><code>#!/bin/bash
 
 exec java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -jar /skywalking/webapp/skywalking-webapp.jar --logging.config=/skywalking/webapp/logback.xml  --spring.config.location=/skywalking/webapp/webapp.yml &quot;$@&quot;
-</code></pre>
-
-<h4 id="编写dockerfile-1">编写Dockerfile:</h4>
-
+</code></pre><h4 id="dockerfile-1">编写Dockerfile:</h4>
 <p>新建<code>Dockerfile</code>：</p>
-
 <pre><code>FROM openjdk:8-jre-alpine
 
 
@@ -626,17 +516,10 @@ EXPOSE 8080
 
 ENTRYPOINT [&quot;bash&quot;, &quot;docker-entrypoint.sh&quot;]
 
-</code></pre>
-
-<h4 id="构建镜像-1">构建镜像</h4>
-
+</code></pre><h4 id="heading-12">构建镜像</h4>
 <pre><code>dcoker build -t  {your tag} .
-</code></pre>
-
-<h4 id="修改配置">修改配置</h4>
-
+</code></pre><h4 id="heading-13">修改配置</h4>
 <p>编辑<code>/root/skywalking/webapp/webapp.yml</code></p>
-
 <pre><code>server:
   port: 8080
 
@@ -650,34 +533,18 @@ security:
     user:
         admin:
             password: you know
-</code></pre>
-
-<h4 id="启动容器-1">启动容器</h4>
-
+</code></pre><h4 id="heading-14">启动容器</h4>
 <pre><code> docker run --name skywalking-ui -d -v /root/skywalking/ui/webapp:/skywalking/webapp -p 8080:8080 --network skywalking  {your tag}
-</code></pre>
-
-<h4 id="修改agent配置">修改agent配置</h4>
-
+</code></pre><h4 id="agent">修改agent配置</h4>
 <p>修改 <code>path/agent/config/agent.config</code>：</p>
-
 <pre><code>collector.backend_service=${SW_AGENT_COLLECTOR_BACKEND_SERVICES:你的服务器地址:11800}
 
-</code></pre>
-
-<h4 id="启动应用并访问服务器8080端口查看信息">启动应用并访问服务器8080端口查看信息</h4>
-
-<h2 id="连接-elasticsearch-基于上一步docker运行skywalking">连接<code>elasticsearch</code>(基于上一步docker运行skywalking)</h2>
-
-<h3 id="启动-esasticsearch">启动<code>esasticsearch</code></h3>
-
+</code></pre><h4 id="8080">启动应用并访问服务器8080端口查看信息</h4>
+<h2 id="elasticsearchdockerskywalking">连接<code>elasticsearch</code>(基于上一步docker运行skywalking)</h2>
+<h3 id="esasticsearch">启动<code>esasticsearch</code></h3>
 <pre><code> docker run -d --name es-skywalking  -p 9201:9200 -p 9301:9300 -e &quot;discovery.type=single-node&quot; elasticsearch:6.4.3  #skywalking 6.1.0 貌似不支持 es 7.x的版本
-</code></pre>
-
-<h3 id="初始化-elasticsearch">初始化<code>elasticsearch</code></h3>
-
+</code></pre><h3 id="elasticsearch-1">初始化<code>elasticsearch</code></h3>
 <p>修改本地 <code>path/config/application.yml</code>:</p>
-
 <pre><code>storage:
   elasticsearch:
     #nameSpace: ${SW_NAMESPACE:&quot;&quot;}
@@ -693,22 +560,12 @@ security:
     concurrentRequests: ${SW_STORAGE_ES_CONCURRENT_REQUESTS:2} # the number of concurrent requests
     metadataQueryMaxSize: ${SW_STORAGE_ES_QUERY_MAX_SIZE:5000}
     segmentQueryMaxSize: ${SW_STORAGE_ES_QUERY_SEGMENT_SIZE:200}
-</code></pre>
-
-<p>执行</p>
-
+</code></pre><p>执行</p>
 <pre><code>sh {path}/bin/oapServiceInit.sh 
-</code></pre>
-
-<h3 id="将-es-接入-skywalking-bridge">将<code>es</code>接入 skywalking bridge</h3>
-
+</code></pre><h3 id="es-skywalking-bridge">将<code>es</code>接入 skywalking bridge</h3>
 <pre><code>docker network connect skywalking es-skywalking
-</code></pre>
-
-<h3 id="修改-skywalking-配置文件">修改<code>skywalking</code>配置文件</h3>
-
+</code></pre><h3 id="skywalking">修改<code>skywalking</code>配置文件</h3>
 <p>修改<code>/root/skywalking/oap/config/application.yml</code>：</p>
-
 <pre><code>storage:
   elasticsearch:
     #nameSpace: ${SW_NAMESPACE:&quot;&quot;}
@@ -725,28 +582,17 @@ security:
     metadataQueryMaxSize: ${SW_STORAGE_ES_QUERY_MAX_SIZE:5000}
     segmentQueryMaxSize: ${SW_STORAGE_ES_QUERY_SEGMENT_SIZE:200}
 
-</code></pre>
-
-<h3 id="重启-skywalking-oap">重启<code>skywalking-oap</code></h3>
-
+</code></pre><h3 id="skywalking-oap">重启<code>skywalking-oap</code></h3>
 <pre><code>docker restart skywalking-oap 
-</code></pre>
-
-<h1 id="plugin使用">plugin使用</h1>
-
-<h2 id="apm-toolkit-logback-1-x">apm-toolkit-logback-1.x</h2>
-
-<h3 id="项目pom文件引入">项目pom文件引入</h3>
-
+</code></pre><h1 id="plugin">plugin使用</h1>
+<h2 id="apm-toolkit-logback-1x">apm-toolkit-logback-1.x</h2>
+<h3 id="pom">项目pom文件引入</h3>
 <pre><code>        &lt;dependency&gt;
             &lt;groupId&gt;org.apache.skywalking&lt;/groupId&gt;
             &lt;artifactId&gt;apm-toolkit-logback-1.x&lt;/artifactId&gt;
             &lt;version&gt;6.1.0&lt;/version&gt;
         &lt;/dependency&gt;
-</code></pre>
-
-<h3 id="编辑logback-yml">编辑logback.yml</h3>
-
+</code></pre><h3 id="logbackyml">编辑logback.yml</h3>
 <pre><code>   &lt;appender name=&quot;console&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
         &lt;encoder class=&quot;ch.qos.logback.core.encoder.LayoutWrappingEncoder&quot;&gt;
             &lt;layout class=&quot;org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout&quot;&gt;
@@ -755,7 +601,6 @@ security:
         &lt;/encoder&gt;
     &lt;/appender&gt;
 </code></pre>
-
     </div>
   </article>
 <section id="comments">
@@ -851,7 +696,7 @@ security:
 </ul>
   <div class="copyright">
     &copy;2017  -
-    2019
+    2020
     <div class="publishby">
         Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>

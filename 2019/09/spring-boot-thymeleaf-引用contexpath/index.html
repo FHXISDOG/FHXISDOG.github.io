@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="spring boot 设置contextPath后，如果js中的请求路径不设置，会造成404的问题。 设置方法: 在html页面header中添加配置: &amp;lt;meta name=&amp;quot;ctx&amp;quot; th:content=&amp;quot;${#httpServletRequest.getContextPath()}&amp;quot; &amp;gt; j" />
-  <meta name="generator" content="Hugo 0.59.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
   <title>Spring Boot Thymeleaf 引用contexpath - just for fun</title>
   
 
@@ -39,16 +39,13 @@
 <meta property="article:modified_time" content="2019-09-04T16:03:04+08:00" />
 <meta itemprop="name" content="Spring Boot Thymeleaf 引用contexpath">
 <meta itemprop="description" content="spring boot 设置contextPath后，如果js中的请求路径不设置，会造成404的问题。 设置方法: 在html页面header中添加配置: &lt;meta name=&quot;ctx&quot; th:content=&quot;${#httpServletRequest.getContextPath()}&quot; &gt; j">
-
-
 <meta itemprop="datePublished" content="2019-09-04T16:03:04&#43;08:00" />
 <meta itemprop="dateModified" content="2019-09-04T16:03:04&#43;08:00" />
 <meta itemprop="wordCount" content="97">
 
 
 
-<meta itemprop="keywords" content="java,spring boot," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="java,spring boot," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Spring Boot Thymeleaf 引用contexpath"/>
 <meta name="twitter:description" content="spring boot 设置contextPath后，如果js中的请求路径不设置，会造成404的问题。 设置方法: 在html页面header中添加配置: &lt;meta name=&quot;ctx&quot; th:content=&quot;${#httpServletRequest.getContextPath()}&quot; &gt; j"/>
 
@@ -159,7 +156,8 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/docker/" class="category-list-link">docker</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/nacos/" class="category-list-link">nacos</a><span class="category-list-count">1</span></li>
@@ -177,7 +175,7 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/android/" class="tag-list-link">android</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/docker/" class="tag-list-link">docker</a><span
@@ -189,7 +187,11 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/flutter/" class="tag-list-link">flutter</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/i3wm/" class="tag-list-link">i3wm</a><span
@@ -273,7 +275,7 @@
     <div class="slimContent">
       <nav id="toc" class="article-toc">
         <h3 class="toc-title">文章目录</h3>
-        <div class="toc-content always-active">
+        <div class="toc-content always-active"><nav id="TableOfContents"></nav>
         </div>
       </nav>
     </div>
@@ -322,18 +324,11 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       <p>spring boot 设置contextPath后，如果js中的请求路径不设置，会造成404的问题。
 设置方法:</p>
-
 <p>在html页面header中添加配置:</p>
-
 <pre><code>&lt;meta name=&quot;ctx&quot; th:content=&quot;${#httpServletRequest.getContextPath()}&quot; &gt;
-</code></pre>
-
-<p>js中引用:</p>
-
+</code></pre><p>js中引用:</p>
 <pre><code> var ctx = $(&quot;meta[name='ctx']&quot;).attr(&quot;content&quot;);
-</code></pre>
-
-<p>变量ctx就是contextPath</p>
+</code></pre><p>变量ctx就是contextPath</p>
 
     </div>
   </article>
@@ -430,7 +425,7 @@
 </ul>
   <div class="copyright">
     &copy;2017  -
-    2019
+    2020
     <div class="publishby">
         Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>

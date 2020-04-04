@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="问题描述 使用pacmanfm在地址栏输入:smb://fhxisdog-win/temp访问windows共享文件夹，提示NO FILE OR DIRECTIONARY 在命令行" />
-  <meta name="generator" content="Hugo 0.59.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
   <title>Smb无法连接windows共享文件夹 - just for fun</title>
   
 
@@ -39,16 +39,13 @@
 <meta property="article:modified_time" content="2019-05-28T13:05:29+08:00" />
 <meta itemprop="name" content="Smb无法连接windows共享文件夹">
 <meta itemprop="description" content="问题描述 使用pacmanfm在地址栏输入:smb://fhxisdog-win/temp访问windows共享文件夹，提示NO FILE OR DIRECTIONARY 在命令行">
-
-
 <meta itemprop="datePublished" content="2019-05-28T13:05:29&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-28T13:05:29&#43;08:00" />
 <meta itemprop="wordCount" content="616">
 
 
 
-<meta itemprop="keywords" content="smb,linux," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="smb,linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Smb无法连接windows共享文件夹"/>
 <meta name="twitter:description" content="问题描述 使用pacmanfm在地址栏输入:smb://fhxisdog-win/temp访问windows共享文件夹，提示NO FILE OR DIRECTIONARY 在命令行"/>
 
@@ -159,7 +156,8 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/docker/" class="category-list-link">docker</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/nacos/" class="category-list-link">nacos</a><span class="category-list-count">1</span></li>
@@ -177,7 +175,7 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/android/" class="tag-list-link">android</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/docker/" class="tag-list-link">docker</a><span
@@ -189,7 +187,11 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/flutter/" class="tag-list-link">flutter</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/i3wm/" class="tag-list-link">i3wm</a><span
@@ -274,17 +276,15 @@
       <nav id="toc" class="article-toc">
         <h3 class="toc-title">文章目录</h3>
         <div class="toc-content always-active"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#问题描述">问题描述</a></li>
-<li><a href="#解决方法">解决方法</a></li>
-<li><a href="#smb简介">smb简介</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">问题描述</a></li>
+        <li><a href="#heading-1">解决方法</a></li>
+        <li><a href="#smb">smb简介</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
       </nav>
@@ -332,36 +332,26 @@
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
-      
-
-<h3 id="问题描述">问题描述</h3>
-
+      <h3 id="heading">问题描述</h3>
 <p>使用<code>pacmanfm</code>在地址栏输入:<code>smb://fhxisdog-win/temp</code>访问windows共享文件夹，提示<code>NO FILE OR DIRECTIONARY</code></p>
-
 <p>在命令行使用命令:<code>smbclient -L fhxisdog-win -U%</code> 提示:<code>NT_STATUS_ACCESS_DENIED</code></p>
-
 <p>使用:<code>smbclient -L fhxisdog-win -m SMB2</code>可以访问</p>
-
-<h3 id="解决方法">解决方法</h3>
-
+<h3 id="heading-1">解决方法</h3>
 <p>编辑 <code>/etc/samba/smb.conf</code>:在<code>[gloabl]</code>下加入:</p>
-
 <pre><code>min protocOl = SMB2
 max protocol = SMB2
 client min protocol = SMB2
 client max protocol = SMB2
-</code></pre>
-
-<h3 id="smb简介">smb简介</h3>
-
+</code></pre><h3 id="smb">smb简介</h3>
 <blockquote>
 <p>服务器消息块（Server Message Block，缩写为SMB），又称网络文件共享系统（Common Internet File System，缩写为CIFS, /ˈsɪfs/），一种应用层网络传输协议，由微软开发，主要功能是使网络上的机器能够共享计算机文件、打印机、串行端口和通讯等资源。它也提供经认证的行程间通信机能。它主要用在装有Microsoft Windows的机器上，在这样的机器上被称为Microsoft Windows Network。</p>
-
+</blockquote>
+<blockquote>
 <p>经过Unix服务器厂商重新开发后，它可以用于连接Unix服务器和Windows客户机，执行打印和文件共享等任务。</p>
-
+</blockquote>
+<blockquote>
 <p>与功能类似的网络文件系统（NFS）相比，NFS的消息格式是固定长度，而CIFS的消息格式大多数是可变长度，这增加了协议的复杂性。CIFS消息一般使用NetBIOS或TCP协议发送，分别使用不同的端口139或445，当前倾向于使用445端口。CIFS的消息包括一个信头（32字节）和消息体（1个或多个，可变长）。</p>
 </blockquote>
-
 <p>参考连接:<a href="https://zh.wikipedia.org/zh-cn/%E4%BC%BA%E6%9C%8D%E5%99%A8%E8%A8%8A%E6%81%AF%E5%8D%80%E5%A1%8A">wiki</a></p>
 
     </div>
@@ -459,7 +449,7 @@ client max protocol = SMB2
 </ul>
   <div class="copyright">
     &copy;2017  -
-    2019
+    2020
     <div class="publishby">
         Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>

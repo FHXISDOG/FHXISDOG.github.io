@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="问题描述 如果项目是多模块，如果只想打包某一模块，会出现找不到依赖的错误提示。 项目结构如下: A: ----B ----C ----D 如果想只打包C模块，可以执行以下命令: mvn -pl" />
-  <meta name="generator" content="Hugo 0.59.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
   <title>多模块Maven工程单独打包某一模块工程 - just for fun</title>
   
 
@@ -39,16 +39,13 @@
 <meta property="article:modified_time" content="2019-11-12T13:28:47+08:00" />
 <meta itemprop="name" content="多模块Maven工程单独打包某一模块工程">
 <meta itemprop="description" content="问题描述 如果项目是多模块，如果只想打包某一模块，会出现找不到依赖的错误提示。 项目结构如下: A: ----B ----C ----D 如果想只打包C模块，可以执行以下命令: mvn -pl">
-
-
 <meta itemprop="datePublished" content="2019-11-12T13:28:47&#43;08:00" />
 <meta itemprop="dateModified" content="2019-11-12T13:28:47&#43;08:00" />
 <meta itemprop="wordCount" content="233">
 
 
 
-<meta itemprop="keywords" content="maven,java,spring boot," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="maven,java,spring boot," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="多模块Maven工程单独打包某一模块工程"/>
 <meta name="twitter:description" content="问题描述 如果项目是多模块，如果只想打包某一模块，会出现找不到依赖的错误提示。 项目结构如下: A: ----B ----C ----D 如果想只打包C模块，可以执行以下命令: mvn -pl"/>
 
@@ -159,7 +156,8 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/docker/" class="category-list-link">docker</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/nacos/" class="category-list-link">nacos</a><span class="category-list-count">1</span></li>
@@ -177,7 +175,7 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/android/" class="tag-list-link">android</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/docker/" class="tag-list-link">docker</a><span
@@ -189,7 +187,11 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/flutter/" class="tag-list-link">flutter</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/i3wm/" class="tag-list-link">i3wm</a><span
@@ -274,16 +276,14 @@
       <nav id="toc" class="article-toc">
         <h3 class="toc-title">文章目录</h3>
         <div class="toc-content always-active"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#问题描述">问题描述</a></li>
-<li><a href="#参考">参考:</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">问题描述</a></li>
+        <li><a href="#heading-1">参考:</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
       </nav>
@@ -332,34 +332,21 @@
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
-      
-
-<h3 id="问题描述">问题描述</h3>
-
+      <h3 id="heading">问题描述</h3>
 <p>如果项目是多模块，如果只想打包某一模块，会出现找不到依赖的错误提示。</p>
-
 <p>项目结构如下:</p>
-
 <pre><code>A:
 ----B
 ----C
 ----D
-</code></pre>
-
-<p>如果想只打包C模块，可以执行以下命令:</p>
-
+</code></pre><p>如果想只打包C模块，可以执行以下命令:</p>
 <p><code>mvn -pl -am  C package -DskipTests -Ptest</code></p>
-
 <p>多模块工程的打包命令参考：</p>
-
 <pre><code>-am --also-make 同时构建所列模块的依赖模块；
 -amd -also-make-dependents 同时构建依赖于所列模块的模块；
 -pl --projects &lt;arg&gt; 构建制定的模块，模块间用逗号分隔；
 -rf -resume-from &lt;arg&gt; 从指定的模块恢复反应堆。
-</code></pre>
-
-<p>看英文的更助于理解：</p>
-
+</code></pre><p>看英文的更助于理解：</p>
 <pre><code>-am,--also-make
     If project list is specified, also build projects required by the list
 
@@ -371,14 +358,10 @@
 
 -rf,--resume-from &lt;arg&gt;
     Resume reactor from specified project
-</code></pre>
-
-<h3 id="参考">参考:</h3>
-
+</code></pre><h3 id="heading-1">参考:</h3>
 <blockquote>
 <p><a href="https://my.oschina.net/ccor/blog/704365">https://my.oschina.net/ccor/blog/704365</a></p>
 </blockquote>
-
 <p>@</p>
 
     </div>
@@ -390,7 +373,7 @@
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://fhxisdog.github.io/2019/11/error-insufficient-permissions-for-device%E8%A7%A3%E5%86%B3adb-shell%E9%97%AE%E9%A2%98/" title="Error: Insufficient Permissions for Device(解决adb Shell问题)"><i
+                <a href="https://fhxisdog.github.io/2019/11/android-platform-28-sdk-license-not-accepted/" title="Android Platform 28 SDK License Not Accepted"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
             </li>
@@ -476,7 +459,7 @@
 </ul>
   <div class="copyright">
     &copy;2017  -
-    2019
+    2020
     <div class="publishby">
         Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>

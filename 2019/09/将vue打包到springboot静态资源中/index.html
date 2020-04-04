@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="项目中遇到需要将vue打包到spring boot 中的static中，直接访问，不需要使用Nginx来访问nginx.具体做法如下: 将vue工程放到" />
-  <meta name="generator" content="Hugo 0.59.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
   <title>将vue打包到springboot静态资源中 - just for fun</title>
   
 
@@ -39,16 +39,13 @@
 <meta property="article:modified_time" content="2019-09-04T16:48:24+08:00" />
 <meta itemprop="name" content="将vue打包到springboot静态资源中">
 <meta itemprop="description" content="项目中遇到需要将vue打包到spring boot 中的static中，直接访问，不需要使用Nginx来访问nginx.具体做法如下: 将vue工程放到">
-
-
 <meta itemprop="datePublished" content="2019-09-04T16:48:24&#43;08:00" />
 <meta itemprop="dateModified" content="2019-09-04T16:48:24&#43;08:00" />
 <meta itemprop="wordCount" content="264">
 
 
 
-<meta itemprop="keywords" content="vue,java,spring boot," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="vue,java,spring boot," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="将vue打包到springboot静态资源中"/>
 <meta name="twitter:description" content="项目中遇到需要将vue打包到spring boot 中的static中，直接访问，不需要使用Nginx来访问nginx.具体做法如下: 将vue工程放到"/>
 
@@ -159,7 +156,8 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/docker/" class="category-list-link">docker</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/nacos/" class="category-list-link">nacos</a><span class="category-list-count">1</span></li>
@@ -177,7 +175,7 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/android/" class="tag-list-link">android</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/docker/" class="tag-list-link">docker</a><span
@@ -189,7 +187,11 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/flutter/" class="tag-list-link">flutter</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/i3wm/" class="tag-list-link">i3wm</a><span
@@ -274,17 +276,15 @@
       <nav id="toc" class="article-toc">
         <h3 class="toc-title">文章目录</h3>
         <div class="toc-content always-active"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#将vue工程放到spring-boot工程最外层">将vue工程放到spring boot工程最外层</a></li>
-<li><a href="#修改pom文件">修改pom文件</a></li>
-<li><a href="#配置拦截器-此步可以省略-应为springboot-static-路径是默认放开的">配置拦截器(此步可以省略,应为springboot static 路径是默认放开的)</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#vuespring-boot">将vue工程放到spring boot工程最外层</a></li>
+        <li><a href="#pom">修改pom文件</a></li>
+        <li><a href="#springboot-static-">配置拦截器(此步可以省略,应为springboot static 路径是默认放开的)</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
       </nav>
@@ -333,14 +333,9 @@
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
-      
-
-<p>项目中遇到需要将vue打包到spring boot 中的static中，直接访问，不需要使用Nginx来访问nginx.具体做法如下:</p>
-
-<h3 id="将vue工程放到spring-boot工程最外层">将vue工程放到spring boot工程最外层</h3>
-
-<h3 id="修改pom文件">修改pom文件</h3>
-
+      <p>项目中遇到需要将vue打包到spring boot 中的static中，直接访问，不需要使用Nginx来访问nginx.具体做法如下:</p>
+<h3 id="vuespring-boot">将vue工程放到spring boot工程最外层</h3>
+<h3 id="pom">修改pom文件</h3>
 <pre><code>      &lt;plugin&gt;
                 &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
                 &lt;artifactId&gt;exec-maven-plugin&lt;/artifactId&gt;
@@ -388,17 +383,13 @@
                 &lt;/executions&gt;
             &lt;/plugin&gt;
         &lt;/plugins&gt;
-</code></pre>
-
-<h3 id="配置拦截器-此步可以省略-应为springboot-static-路径是默认放开的">配置拦截器(此步可以省略,应为springboot static 路径是默认放开的)</h3>
-
+</code></pre><h3 id="springboot-static-">配置拦截器(此步可以省略,应为springboot static 路径是默认放开的)</h3>
 <pre><code>    @Override
     public void addResourceHandlers(org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry registry) {
         registry.addResourceHandler(&quot;/static/**&quot;)
                 .addResourceLocations(&quot;classpath:/static/&quot;);
     }            
 </code></pre>
-
     </div>
   </article>
 <section id="comments">
@@ -494,7 +485,7 @@
 </ul>
   <div class="copyright">
     &copy;2017  -
-    2019
+    2020
     <div class="publishby">
         Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>
