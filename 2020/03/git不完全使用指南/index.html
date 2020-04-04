@@ -41,7 +41,7 @@
 <meta itemprop="description" content="基本概念 四度空间: 工作区:Workspace 就是你在电脑里能看到的目录 暂存区: Index/Stage/Cached 英文叫stage, 或index。一般存放在 &ldquo;.g">
 <meta itemprop="datePublished" content="2020-03-30T17:16:31&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-30T17:16:31&#43;08:00" />
-<meta itemprop="wordCount" content="6542">
+<meta itemprop="wordCount" content="6556">
 
 
 
@@ -365,7 +365,7 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/03/git%E4%B8%8D%E5%AE%8C%E5%85%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计:6542字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计:6556字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长:14分 </span>
       </div>
     </div>
@@ -544,7 +544,7 @@ git checkout -b &lt;new-branch&gt; &lt;existing-branch&gt; <span style="color:#7
 </li>
 </ul>
 <p>但，如果两个分支修改了同一部分内容，<code>merge</code> 的自动算法就搞不定了。这种情况 Git 称之为：冲突（Conflict）。</p>
-<p><img src="%5Cstatic%5Cimg%5CGit%5Cmerge_cnflict.jpg" alt=""></p>
+<p><img src="/img/Git/merge_cnflict.jpg" alt=""></p>
 <p>解决方法:</p>
 <ol>
 <li>解决掉冲突</li>
@@ -635,12 +635,12 @@ git rebase -i HEAD~3
 <p>此时我在 feature_666 分支,非常聚精会神加持高专注地实现一个功能 666 模块，简直键盘如飞的编写代码～～～
 然后这时，客户反馈出一个 bug , 非常严重，必须立马解决，优先级为 0 ！！！
 于是，我需要去到 release 分支去 checkout 新的分支去工作了，但是 666 功能还没完成怎么办？
-此时我面临着一个选择题：
-A：提交后切换，代码保存到分支 feature_666，却产生一个无意义的提交
-B：不提交直接切换，然而这个选项根本没人会选。</p>
+此时我面临着一个选择题：</p>
+<p>A：提交后切换，代码保存到分支 feature_666，却产生一个无意义的提交</p>
+<p>B：不提交直接切换，然而这个选项根本没人会选。(因为不提交没办法切换分支)</p>
 <p>是不是很难选，此时，别忘记还有 C 选项！</p>
-<p>C：使用 git stash , 将当前修改(未提交的代码)存入缓存区，切换分支修改 bug ,回来再通过 git stash pop 取出来。
-————————————————
+<p>C：使用 git stash , 将当前修改(未提交的代码)存入缓存区，切换分支修改 bug ,回来再通过 git stash pop 取出来。</p>
+<p>————————————————
 版权声明：本文为CSDN博主「DRPrincess」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/qq_32452623/article/details/76100140</p>
 </blockquote>
