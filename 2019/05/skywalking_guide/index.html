@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        skywalking使用指南 - just for fun
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="运行 单机运行 下载最新release包 解压，sh ${skywalkingpath}/bin/startup.sh 在springboot启动命令前加入启动参数 -javaagent:${path}/skywalking-agent.jar #path为skywalking解压的agen" />
+  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
+  <title>skywalking使用指南 - just for fun</title>
+  
+  
+  <link rel="stylesheet" href="https://fhxisdog.github.io/css/style.min.c4bc7071f132c964c2116bca53b392933f377e5ca7b7051ed245187c621a2d3e.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="skywalking使用指南" />
+<meta property="og:description" content="运行 单机运行 下载最新release包 解压，sh ${skywalkingpath}/bin/startup.sh 在springboot启动命令前加入启动参数 -javaagent:${path}/skywalking-agent.jar #path为skywalking解压的agen" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fhxisdog.github.io/2019/05/skywalking_guide/" />
+<meta property="article:published_time" content="2019-05-29T15:33:57+08:00" />
+<meta property="article:modified_time" content="2019-05-29T15:33:57+08:00" />
+<meta itemprop="name" content="skywalking使用指南">
+<meta itemprop="description" content="运行 单机运行 下载最新release包 解压，sh ${skywalkingpath}/bin/startup.sh 在springboot启动命令前加入启动参数 -javaagent:${path}/skywalking-agent.jar #path为skywalking解压的agen">
+<meta itemprop="datePublished" content="2019-05-29T15:33:57&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-29T15:33:57&#43;08:00" />
+<meta itemprop="wordCount" content="1558">
+
+
+
+<meta itemprop="keywords" content="java,skywalking,spring cloud," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="skywalking使用指南"/>
+<meta name="twitter:description" content="运行 单机运行 下载最新release包 解压，sh ${skywalkingpath}/bin/startup.sh 在springboot启动命令前加入启动参数 -javaagent:${path}/skywalking-agent.jar #path为skywalking解压的agen"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://fhxisdog.github.io" target="_blank">
+            <img class="img-circle img-rotate" src="https://fhxisdog.github.io/hj.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">FHXISDOG</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">just for fun</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>GuangZhou, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-links">
+                <a href="https://kviccn.github.io">
+                    <i class="icon icon-friendship"></i>
+                  <span class="menu-title">kviccn</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>just for fun</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/docker/" class="category-list-link">docker</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/nacos/" class="category-list-link">nacos</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/orther/" class="category-list-link">orther</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/skywalking/" class="category-list-link">skywalking</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/smicroservices/" class="category-list-link">smicroservices</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/spring-boot/" class="category-list-link">spring-boot</a><span class="category-list-count">4</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/android/" class="tag-list-link">android</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/docker/" class="tag-list-link">docker</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/emacs/" class="tag-list-link">emacs</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/flutter/" class="tag-list-link">flutter</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/i3wm/" class="tag-list-link">i3wm</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/java/" class="tag-list-link">java</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/jvm/" class="tag-list-link">jvm</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/linux/" class="tag-list-link">linux</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/manjaro/" class="tag-list-link">manjaro</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/maven/" class="tag-list-link">maven</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/modmap/" class="tag-list-link">modmap</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/nacos/" class="tag-list-link">nacos</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/orther/" class="tag-list-link">orther</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/shadowsocks/" class="tag-list-link">shadowsocks</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/skywalking/" class="tag-list-link">skywalking</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/smb/" class="tag-list-link">smb</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/smicroservices/" class="tag-list-link">smicroservices</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/spring-boot/" class="tag-list-link">spring-boot</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/spring-cloud/" class="tag-list-link">spring-cloud</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/vpn/" class="tag-list-link">vpn</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/vue/" class="tag-list-link">vue</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/04/test/" class="title">Test</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 13:12:30 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/03/git_guide/" class="title">Git不完全使用指南</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-03-30 17:16:31 &#43;0800 CST" itemprop="datePublished">2020-03-30</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2019/11/restful_grpc_rsocket/" class="title">Restful、gRpc、Rsocket</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-11-16 14:07:16 &#43;0800 CST" itemprop="datePublished">2019-11-16</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2019/05/skywalking_guide/"
+    >skywalking使用指南</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://fhxisdog.github.io/2019/05/skywalking_guide/" class="article-date">
+  <time datetime="2019-05-29 15:33:57 &#43;0800 CST" itemprop="datePublished">2019-05-29</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/skywalking/"> skywalking </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/java/"> java </a>
+    <a class="article-tag-link" href="/tags/skywalking/"> skywalking </a>
+    <a class="article-tag-link" href="/tags/spring-cloud/"> spring cloud </a>
+  </span>
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2019/05/skywalking_guide/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1558字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="heading">运行</h1>
+<h2 id="heading-1">单机运行</h2>
+<ul>
+<li>下载最新<a href="http://skywalking.apache.org/downloads/">release</a>包</li>
+<li>解压，sh ${skywalkingpath}/bin/startup.sh</li>
+<li>在<code>springboot</code>启动命令前加入启动参数</li>
+</ul>
+<pre><code>-javaagent:${path}/skywalking-agent.jar  #path为skywalking解压的agent目录
+</code></pre><ul>
+<li>访问localhost:8080查看结果</li>
+</ul>
+<h2 id="docker-">docker 运行</h2>
+<h3 id="heading-2">前置条件</h3>
+<h4 id="heading-3">下载</h4>
+<p>下载最新<a href="http:/skywalking.apache.org/downloads/">release</a>包并解压</p>
+<h4 id="docker-bridge">构建docker bridge</h4>
+<pre><code>dcoker network create skywalking
+</code></pre><h4 id="heading-4">使用数据库</h4>
+<h5 id="elasticsearch">ElasticSearch</h5>
+<h6 id="es">启动es</h6>
+<pre><code>docker run -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; docker.elastic.co/elasticsearch/elasticsearch:6.4.3 #skywalking目前只支持6.x(6.1.0版本)
+</code></pre><h6 id="heading-5">初始化数据库</h6>
+<p>编辑 <code>${path}/apache-skywalking-bin/config/appliccation.yml</code></p>
+<pre><code>storage:
+  #elasticsearch:
+    nameSpace: ${SW_NAMESPACE:&quot;&quot;}
+    clusterNodes: ${SW_STORAGE_ES_CLUSTER_NODES:dev.iotechina.com:9201}
+    #user: ${SW_ES_USER:&quot;&quot;}
+    #password: ${SW_ES_PASSWORD:&quot;&quot;}
+    indexShardsNumber: ${SW_STORAGE_ES_INDEX_SHARDS_NUMBER:2}
+    indexReplicasNumber: ${SW_STORAGE_ES_INDEX_REPLICAS_NUMBER:0}
+    #Batch process setting, refer to https://www.elastic.co/guide/en/elasticsearch/client/java-api/5.5/java-docs-bulk-processor.html
+    bulkActions: ${SW_STORAGE_ES_BULK_ACTIONS:2000} # Execute the bulk every 2000 requests
+    bulkSize: ${SW_STORAGE_ES_BULK_SIZE:20} # flush the bulk every 20mb
+    flushInterval: ${SW_STORAGE_ES_FLUSH_INTERVAL:10} # flush the bulk every 10 seconds whatever the number of requests
+    concurrentRequests: ${SW_STORAGE_ES_CONCURRENT_REQUESTS:2} # the number of concurrent requests
+    metadataQueryMaxSize: ${SW_STORAGE_ES_QUERY_MAX_SIZE:5000}
+    segmentQueryMaxSize: ${SW_STORAGE_ES_QUERY_SEGMENT_SIZE:200}
+
+</code></pre><p>执行</p>
+<pre><code>sh ${path}/apache-skywalking-bin/bin/oapServiceInit.sh 
+
+</code></pre><p>执行</p>
+<pre><code>
+tail -f ${path}/apache-skywalking-bin/config/skywalking-oap-server.log
+
+</code></pre><p>等待执行完成</p>
+<h5 id="mysql">mysql</h5>
+<h6 id="mysqlpathapapch-skywalking-binoap-libs">复制mysql驱动到${path}/apapch-skywalking-bin/oap-libs</h6>
+<h6 id="-pathapache-skywalking-binconfigappliccationyml">编辑 ${path}/apache-skywalking-bin/config/appliccation.yml</h6>
+<pre><code>
+storage:
+  mysql:
+    metadataQueryMaxSize: ${SW_STORAGE_H2_QUERY_MAX_SIZE:5000}
+
+
+</code></pre><h6 id="pathapache-skywalking-binconfigdatasource-settingproperties">编辑${path}/apache-skywalking-bin/config/datasource-setting.properties</h6>
+<pre><code>
+jdbcUrl=jdbc:mysql://dev.iotechina.com:3316/sky_walking
+dataSource.user= you know
+dataSource.password=you know
+dataSource.cachePrepStmts=true
+dataSource.prepStmtCacheSize=250
+dataSource.prepStmtCacheSqlLimit=2048
+dataSource.useServerPrepStmts=true
+dataSource.useLocalSessionState=true
+dataSource.rewriteBatchedStatements=true
+dataSource.cacheResultSetMetadata=true
+dataSource.cacheServerConfiguration=true
+dataSource.elideSetAutoCommits=true
+dataSource.maintainTimeStats=false
+
+</code></pre><pre><code>sh ${path}/apache-skywalking-bin/bin/oapServiceInit.sh 
+
+</code></pre><p>执行</p>
+<pre><code>tail -f ${path}/apache-skywalking-bin/config/skywalking-oap-server.log
+
+</code></pre><p>等待执行完成</p>
+<h3 id="oap">构建OAP镜像</h3>
+<h4 id="heading-6">准备条件</h4>
+<p>复制<code>oap-libs</code>文件夹到<code>/root/skywalking/oap</code>目录</p>
+<p>复制<code>config</code>目录到<code>/root/skywalking/oap</code>目录</p>
+<p>编辑<code>config</code>目录下<code>log4j2.xml</code>：</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;Configuration status=&quot;INFO&quot;&gt;
+    &lt;Appenders&gt;
+        &lt;Console name=&quot;Console&quot; target=&quot;SYSTEM_OUT&quot;&gt;
+            &lt;PatternLayout charset=&quot;UTF-8&quot; pattern=&quot;%d - %c -%-4r [%t] %-5p %x - %m%n&quot;/&gt;
+        &lt;/Console&gt;
+    &lt;/Appenders&gt;
+    &lt;Loggers&gt;
+        &lt;logger name=&quot;org.eclipse.jetty&quot; level=&quot;INFO&quot;/&gt;
+        &lt;logger name=&quot;org.apache.zookeeper&quot; level=&quot;INFO&quot;/&gt;
+        &lt;logger name=&quot;org.elasticsearch.common.network.IfConfig&quot; level=&quot;INFO&quot;/&gt;
+        &lt;logger name=&quot;io.grpc.netty&quot; level=&quot;INFO&quot;/&gt;
+        &lt;logger name=&quot;org.apache.skywalking.oap.server.receiver.istio.telemetry&quot; level=&quot;DEBUG&quot;/&gt;
+        &lt;Root level=&quot;INFO&quot;&gt;
+            &lt;AppenderRef ref=&quot;Console&quot;/&gt;
+        &lt;/Root&gt;
+    &lt;/Loggers&gt;
+&lt;/Configuration&gt;
+
+</code></pre><h4 id="heading-7">编写启动脚本</h4>
+<p>新建<code>docker-entrypoint.sh</code>:</p>
+<pre><code>#!/bin/bash
+
+set -ex
+
+CLASSPATH=&quot;config:$CLASSPATH&quot;
+for i in oap-libs/*.jar
+do
+    CLASSPATH=&quot;$i:$CLASSPATH&quot;
+done
+
+exec java -Xms256M -Xmx512M -classpath $CLASSPATH org.apache.skywalking.oap.server.starter.OAPServerStartUp &quot;$@&quot;
+
+</code></pre><h4 id="dockerfile">编写Dockerfile</h4>
+<p>新建<code>Dcokerfile</code>:</p>
+<pre><code>FROM openjdk:8-jre-alpine
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN echo 'Asia/Shanghai' &gt;/etc/timezone  #设置时区，不然ui会查不到数据
+WORKDIR /skywalking
+RUN apk add --no-cache \
+    bash
+COPY docker-entrypoint.sh /skywalking
+COPY oap-libs/ /skywalking/oap-libs
+EXPOSE 12800 11800
+ENTRYPOINT [&quot;sh&quot;,&quot;docker-entrypoint.sh&quot;]
+</code></pre><h4 id="heading-8">构建镜像</h4>
+<pre><code>dcoker build -t {your tag} .
+</code></pre><h4 id="heading-9">启动容器</h4>
+<pre><code>docker run --name skywalking-oap -d -v /root/skywalking/oap/config:/skywalking/config -p 12800:12800 -p  11800:11800 --network skywalking {your tag}
+</code></pre><h3 id="ui">构建ui镜像</h3>
+<h4 id="heading-10">准备条件</h4>
+<p>复制<code>webapp</code>文件夹到<code>/root/skywalking/ui</code>目录</p>
+<p>在<code>/root/skywalking/ui/webapp</code>目录下新建文件<code>logback.xml</code>：</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;configuration&gt;
+    &lt;include resource=&quot;org/springframework/boot/logging/logback/base.xml&quot; /&gt;
+&lt;/configuration&gt;
+</code></pre><h4 id="heading-11">编写启动脚本:</h4>
+<p>新建<code>docker-entrypoint.sh</code>：</p>
+<pre><code>#!/bin/bash
+
+exec java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -jar /skywalking/webapp/skywalking-webapp.jar --logging.config=/skywalking/webapp/logback.xml  --spring.config.location=/skywalking/webapp/webapp.yml &quot;$@&quot;
+</code></pre><h4 id="dockerfile-1">编写Dockerfile:</h4>
+<p>新建<code>Dockerfile</code>：</p>
+<pre><code>FROM openjdk:8-jre-alpine
+
+
+RUN apk add --no-cache \
+    bash
+
+RUN echo 'Asia/Shanghai' &gt;/etc/timezone
+WORKDIR /skywalking
+
+
+COPY docker-entrypoint.sh .
+
+EXPOSE 8080
+
+ENTRYPOINT [&quot;bash&quot;, &quot;docker-entrypoint.sh&quot;]
+
+</code></pre><h4 id="heading-12">构建镜像</h4>
+<pre><code>dcoker build -t  {your tag} .
+</code></pre><h4 id="heading-13">修改配置</h4>
+<p>编辑<code>/root/skywalking/webapp/webapp.yml</code></p>
+<pre><code>server:
+  port: 8080
+
+collector:
+  path: /graphql
+  ribbon:
+    ReadTimeout: 10000
+    # Point to all backend's restHost:restPort, split by ,
+    listOfServers: skywalking-oap:12800  #服务端地址
+security:
+    user:
+        admin:
+            password: you know
+</code></pre><h4 id="heading-14">启动容器</h4>
+<pre><code> docker run --name skywalking-ui -d -v /root/skywalking/ui/webapp:/skywalking/webapp -p 8080:8080 --network skywalking  {your tag}
+</code></pre><h4 id="agent">修改agent配置</h4>
+<p>修改 <code>path/agent/config/agent.config</code>：</p>
+<pre><code>collector.backend_service=${SW_AGENT_COLLECTOR_BACKEND_SERVICES:你的服务器地址:11800}
+
+</code></pre><h4 id="8080">启动应用并访问服务器8080端口查看信息</h4>
+<h2 id="elasticsearchdockerskywalking">连接<code>elasticsearch</code>(基于上一步docker运行skywalking)</h2>
+<h3 id="esasticsearch">启动<code>esasticsearch</code></h3>
+<pre><code> docker run -d --name es-skywalking  -p 9201:9200 -p 9301:9300 -e &quot;discovery.type=single-node&quot; elasticsearch:6.4.3  #skywalking 6.1.0 貌似不支持 es 7.x的版本
+</code></pre><h3 id="elasticsearch-1">初始化<code>elasticsearch</code></h3>
+<p>修改本地 <code>path/config/application.yml</code>:</p>
+<pre><code>storage:
+  elasticsearch:
+    #nameSpace: ${SW_NAMESPACE:&quot;&quot;}
+    clusterNodes: ${SW_STORAGE_ES_CLUSTER_NODES:你的服务器地址:9201}
+    #user: ${SW_ES_USER:&quot;&quot;}
+    #password: ${SW_ES_PASSWORD:&quot;&quot;}
+    indexShardsNumber: ${SW_STORAGE_ES_INDEX_SHARDS_NUMBER:2}
+    indexReplicasNumber: ${SW_STORAGE_ES_INDEX_REPLICAS_NUMBER:0}
+    # Batch process setting, refer to https://www.elastic.co/guide/en/elasticsearch/client/java-api/5.5/java-docs-bulk-processor.html
+    bulkActions: ${SW_STORAGE_ES_BULK_ACTIONS:2000} # Execute the bulk every 2000 requests
+    bulkSize: ${SW_STORAGE_ES_BULK_SIZE:20} # flush the bulk every 20mb
+    flushInterval: ${SW_STORAGE_ES_FLUSH_INTERVAL:10} # flush the bulk every 10 seconds whatever the number of requests
+    concurrentRequests: ${SW_STORAGE_ES_CONCURRENT_REQUESTS:2} # the number of concurrent requests
+    metadataQueryMaxSize: ${SW_STORAGE_ES_QUERY_MAX_SIZE:5000}
+    segmentQueryMaxSize: ${SW_STORAGE_ES_QUERY_SEGMENT_SIZE:200}
+</code></pre><p>执行</p>
+<pre><code>sh {path}/bin/oapServiceInit.sh 
+</code></pre><h3 id="es-skywalking-bridge">将<code>es</code>接入 skywalking bridge</h3>
+<pre><code>docker network connect skywalking es-skywalking
+</code></pre><h3 id="skywalking">修改<code>skywalking</code>配置文件</h3>
+<p>修改<code>/root/skywalking/oap/config/application.yml</code>：</p>
+<pre><code>storage:
+  elasticsearch:
+    #nameSpace: ${SW_NAMESPACE:&quot;&quot;}
+    clusterNodes: ${SW_STORAGE_ES_CLUSTER_NODES:es-skywalking:9200}
+    #user: ${SW_ES_USER:&quot;&quot;}
+    #password: ${SW_ES_PASSWORD:&quot;&quot;}
+    indexShardsNumber: ${SW_STORAGE_ES_INDEX_SHARDS_NUMBER:2}
+    indexReplicasNumber: ${SW_STORAGE_ES_INDEX_REPLICAS_NUMBER:0}
+    # Batch process setting, refer to https://www.elastic.co/guide/en/elasticsearch/client/java-api/5.5/java-docs-bulk-processor.html
+    bulkActions: ${SW_STORAGE_ES_BULK_ACTIONS:2000} # Execute the bulk every 2000 requests
+    bulkSize: ${SW_STORAGE_ES_BULK_SIZE:20} # flush the bulk every 20mb
+    flushInterval: ${SW_STORAGE_ES_FLUSH_INTERVAL:10} # flush the bulk every 10 seconds whatever the number of requests
+    concurrentRequests: ${SW_STORAGE_ES_CONCURRENT_REQUESTS:2} # the number of concurrent requests
+    metadataQueryMaxSize: ${SW_STORAGE_ES_QUERY_MAX_SIZE:5000}
+    segmentQueryMaxSize: ${SW_STORAGE_ES_QUERY_SEGMENT_SIZE:200}
+
+</code></pre><h3 id="skywalking-oap">重启<code>skywalking-oap</code></h3>
+<pre><code>docker restart skywalking-oap 
+</code></pre><h1 id="plugin">plugin使用</h1>
+<h2 id="apm-toolkit-logback-1x">apm-toolkit-logback-1.x</h2>
+<h3 id="pom">项目pom文件引入</h3>
+<pre><code>        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.skywalking&lt;/groupId&gt;
+            &lt;artifactId&gt;apm-toolkit-logback-1.x&lt;/artifactId&gt;
+            &lt;version&gt;6.1.0&lt;/version&gt;
+        &lt;/dependency&gt;
+</code></pre><h3 id="logbackyml">编辑logback.yml</h3>
+<pre><code>   &lt;appender name=&quot;console&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+        &lt;encoder class=&quot;ch.qos.logback.core.encoder.LayoutWrappingEncoder&quot;&gt;
+            &lt;layout class=&quot;org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout&quot;&gt;
+                &lt;Pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [%tid] [%thread] %-5level %logger{36} -%msg%n&lt;/Pattern&gt;
+            &lt;/layout&gt;
+        &lt;/encoder&gt;
+    &lt;/appender&gt;
+</code></pre>
+    </div>
+    <div class="article-footer">
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://fhxisdog.github.io/2019/05/manjaro-i3wm_external_mirror/" title="Manjaro I3wm接入外接显示器不显示"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://fhxisdog.github.io/2019/05/nacos_guide/"
+                    title="nacos使用指南"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        
+        <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal"
+            data-target="#donateModal"><span>赏</span></button>
+        
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content donate">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <div class="modal-body">
+                <div class="donate-box">
+                    <div class="donate-head">
+                        <p>感谢您的支持,我会继续努力的!</p>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+                            <div class="donate-payimg">
+                                <img src="https://fhxisdog.github.io/donate/alipayimg.jpg"
+                                    alt="扫码支持" title="扫一扫" />
+                            </div>
+                            <p class="text-muted mv">扫码打赏, 多少你说了算~</p>
+                            <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦~</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+                            <div class="donate-payimg">
+                                <img src="https://fhxisdog.github.io/donate/wechatpayimg.jpg"
+                                    alt="扫码支持" title="扫一扫" />
+                            </div>
+                            <p class="text-muted mv">扫码打赏, 多少你说了算~</p>
+                            <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+                        </div>
+                    </div>
+                    <div class="donate-footer">
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay"
+                                    aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab"
+                                    aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i>
+                                    微信支付</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/FHXISDOG" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://fhxisdog.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2017  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://fhxisdog.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://fhxisdog.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/fhxisdog.github.io',
+            CONTENT_URL: 'https:\/\/fhxisdog.github.io\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://fhxisdog.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '25cb16a0cefbf9358b4d',
+        clientSecret: '304421f8e707e448d98a330df684406736483f34',
+        repo: 'fhxisdog.github.io',
+        owner: 'FHXISDOG',
+        admin: ['FHXISDOG'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
+</script>
+
+  </body>
+</html>

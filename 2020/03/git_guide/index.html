@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Git不完全使用指南 - just for fun
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="基本概念 四度空间: 工作区:Workspace 就是你在电脑里能看到的目录 暂存区: Index/Stage/Cached 英文叫stage, 或index。一般存放在 &amp;ldquo;.g" />
+  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
+  <title>Git不完全使用指南 - just for fun</title>
+  
+  
+  <link rel="stylesheet" href="https://fhxisdog.github.io/css/style.min.c4bc7071f132c964c2116bca53b392933f377e5ca7b7051ed245187c621a2d3e.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="Git不完全使用指南" />
+<meta property="og:description" content="基本概念 四度空间: 工作区:Workspace 就是你在电脑里能看到的目录 暂存区: Index/Stage/Cached 英文叫stage, 或index。一般存放在 &ldquo;.g" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fhxisdog.github.io/2020/03/git_guide/" />
+<meta property="article:published_time" content="2020-03-30T17:16:31+08:00" />
+<meta property="article:modified_time" content="2020-03-30T17:16:31+08:00" />
+<meta itemprop="name" content="Git不完全使用指南">
+<meta itemprop="description" content="基本概念 四度空间: 工作区:Workspace 就是你在电脑里能看到的目录 暂存区: Index/Stage/Cached 英文叫stage, 或index。一般存放在 &ldquo;.g">
+<meta itemprop="datePublished" content="2020-03-30T17:16:31&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-30T17:16:31&#43;08:00" />
+<meta itemprop="wordCount" content="6556">
+
+
+
+<meta itemprop="keywords" content="Git," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git不完全使用指南"/>
+<meta name="twitter:description" content="基本概念 四度空间: 工作区:Workspace 就是你在电脑里能看到的目录 暂存区: Index/Stage/Cached 英文叫stage, 或index。一般存放在 &ldquo;.g"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://fhxisdog.github.io" target="_blank">
+            <img class="img-circle img-rotate" src="https://fhxisdog.github.io/hj.jpg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">FHXISDOG</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">just for fun</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>GuangZhou, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-links">
+                <a href="https://kviccn.github.io">
+                    <i class="icon icon-friendship"></i>
+                  <span class="menu-title">kviccn</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>just for fun</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/docker/" class="category-list-link">docker</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/nacos/" class="category-list-link">nacos</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/orther/" class="category-list-link">orther</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/skywalking/" class="category-list-link">skywalking</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/smicroservices/" class="category-list-link">smicroservices</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/spring-boot/" class="category-list-link">spring-boot</a><span class="category-list-count">4</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/android/" class="tag-list-link">android</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/docker/" class="tag-list-link">docker</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/emacs/" class="tag-list-link">emacs</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/flutter/" class="tag-list-link">flutter</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/i3wm/" class="tag-list-link">i3wm</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/java/" class="tag-list-link">java</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/jvm/" class="tag-list-link">jvm</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/linux/" class="tag-list-link">linux</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/manjaro/" class="tag-list-link">manjaro</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/maven/" class="tag-list-link">maven</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/modmap/" class="tag-list-link">modmap</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/nacos/" class="tag-list-link">nacos</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/orther/" class="tag-list-link">orther</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/shadowsocks/" class="tag-list-link">shadowsocks</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/skywalking/" class="tag-list-link">skywalking</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/smb/" class="tag-list-link">smb</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/smicroservices/" class="tag-list-link">smicroservices</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/spring-boot/" class="tag-list-link">spring-boot</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/spring-cloud/" class="tag-list-link">spring-cloud</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/vpn/" class="tag-list-link">vpn</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/vue/" class="tag-list-link">vue</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/04/test/" class="title">Test</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 13:12:30 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/03/git_guide/" class="title">Git不完全使用指南</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-03-30 17:16:31 &#43;0800 CST" itemprop="datePublished">2020-03-30</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2019/11/restful_grpc_rsocket/" class="title">Restful、gRpc、Rsocket</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-11-16 14:07:16 &#43;0800 CST" itemprop="datePublished">2019-11-16</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/03/git_guide/"
+    >Git不完全使用指南</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://fhxisdog.github.io/2020/03/git_guide/" class="article-date">
+  <time datetime="2020-03-30 17:16:31 &#43;0800 CST" itemprop="datePublished">2020-03-30</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/git/"> Git </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/git/"> Git </a>
+  </span>
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/03/git_guide/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 6556字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 14分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h2 id="heading">基本概念</h2>
+<h3 id="heading-1">四度空间:</h3>
+<p><strong>工作区:Workspace</strong></p>
+<p> 就是你在电脑里能看到的目录</p>
+<p><strong>暂存区: Index/Stage/Cached</strong></p>
+<p>英文叫stage, 或index。一般存放在 &ldquo;.git目录下&rdquo; 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）</p>
+<p><strong>版本库:Repository</strong></p>
+<p>工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</p>
+<p><strong>远程仓库: Remote Repository</strong></p>
+<p>远程仓库则被设置在一个能被所有团队成员访问到的远程服务器上，基本上都是在互联网上或者是本地局域网中</p>
+<h3 id="heading-2">五种状态:</h3>
+<p><strong>未修改(Unmodify):</strong></p>
+<p>记录在工作区,没有被修改的文件</p>
+<p><strong>未追踪(Untracked):</strong></p>
+<p>新增的文件的状态，未受Git管理，记录在工作区</p>
+<p><strong>已修改(Modified):</strong></p>
+<p>受Git管理过的文件的改动状态（包括改动内容、删除文件），记录在工作区</p>
+<p><strong>已暂存(Staged):</strong></p>
+<p>将记录在工作区的文件变动状态通知了Git，记录在暂存区</p>
+<p><strong>已提交(Commited):</strong></p>
+<p>已提交到本地仓库</p>
+<p><strong>已推送(pushed):</strong></p>
+<p>已推送到远程仓库</p>
+<h4 id="heading-3">一张图概括:</h4>
+<p><img src="/img/Git/%E5%9B%9B%E5%BA%A6%E7%A9%BA%E9%97%B4.png" alt=""></p>
+<h4 id="heading-4"></h4>
+<h2 id="heading-5">新建一个仓库</h2>
+<pre><code class="language-git" data-lang="git">git init #在当前目录新建一个git仓库
+
+git clone #clone一个远程的仓库到当前目录
+</code></pre><p>当你创建一个带有<code>.git</code>文件夹的目录后,这个目录中的所有操作都将会被<code>git</code>记录,这就故事开始的地方,让我们开启这个游戏!</p>
+<h2 id="heading-6">加入暂存区</h2>
+<p>这个目录就是被git记录的工作区,在这个目录下的所有增删改都会被git纳入到版本控制.</p>
+<p>可以使用<code>git status</code>查看当前目录的哪些文件的变化:</p>
+<pre><code class="language-git" data-lang="git">git status #查看当前工作区文件状态
+
+git status -s #简短形式输出当前工作状态
+</code></pre><p>修改完后使用<code>git add </code>加入到缓存区.</p>
+<pre><code class="language-git" data-lang="git">git add . #将当前目录所有文件做修改都加入缓存区
+git add &lt;file name&gt; #将某个文件的修改就如缓存区
+</code></pre><p>如果有操作想被git忽略有3钟种方式:</p>
+<ul>
+<li><code>.gitignore</code>文件</li>
+</ul>
+<p><code>.gitignore</code>只会忽略尚未加入版本控制的文件,如果文件已被加入版本控制,写入<code>.gitignore</code>文件<code>git</code>仍会记录文件的变化.如果已经纳入版本控制的文件想忽略,例如:在远程服务器中的配置文件,想本地修改,又不想被<code>git</code>记录可以使用下面两种命令</p>
+<ul>
+<li><code>git update-index --assume-unchanged</code></li>
+</ul>
+<pre><code class="language-git" data-lang="git">git update-index --assume-unchanged &lt;file name&gt; # 这个会关闭文件与远程仓库的跟踪，认为这个文件远程仓库是不会修改，所以每次pull都是本地的文件
+</code></pre><p>反向操作</p>
+<pre><code class="language-git" data-lang="git">git update-index --no-assume-unchanged &lt;file name&gt;
+</code></pre><ul>
+<li><code>git update-index --skip-worktree</code></li>
+</ul>
+<pre><code class="language-git" data-lang="git">git update-index --skip-worktree &lt;file name&gt; # 这个不会关闭文件与远程仓库的跟踪，只是告诉Git不要跟踪对本地文件/文件夹的更改，每次pull时会拉取最新的变化会提示冲突，但因为没有跟踪本地更改，所以需要no-skip-worktree再合并最新的变化 或者使用git stash将本地的更改保存起来,再git pull,然后再git stash pop,再合并冲突,比较麻烦
+</code></pre><p>反向操作:</p>
+<pre><code class="language-git" data-lang="git">git update-index --no-skip-worktree &lt;file name&gt;
+</code></pre><h2 id="heading-7">提交</h2>
+<h3 id="heading-8">改写提交</h3>
+<p>如果提交完发现自己漏提了文件,或者提交信息写错了可以使用<code>--amend</code>来改写提交</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit --amend <span style="color:#75715e">#如果有漏提的文件,add到缓存区即可,然后git会打开默认的编辑器让你重新编写提交信息</span>
+</code></pre></div><h3 id="heading-9">复制提交</h3>
+<p><code>cherry-pick</code>可以将其它提交复制到当前再提交一遍</p>
+<p>执行:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git cherry-pick c2 c4
+</code></pre></div><p><img src="/img/Git/cherry-pick.gif" alt=""></p>
+<h2 id="heading-10">恢复</h2>
+<h3 id="heading-11">文件已被修改尚未加入到缓存区</h3>
+<pre><code class="language-git" data-lang="git">git restore &lt;file name&gt; #将文件恢复到和缓存区(index)一样的状态
+</code></pre><h3 id="heading-12">文件被修改并提交到缓存区</h3>
+<pre><code class="language-git" data-lang="git">git restore --staged &lt;file name&gt; #将文件从缓存区(index)移动出来    
+</code></pre><h3 id="untracked">新增的文件删除(untracked状态)</h3>
+<pre><code class="language-git" data-lang="git">git clean -f &lt;file name&gt; #将untracked状态的文件删除
+</code></pre><h2 id="git">Git指针</h2>
+<p>指针是git的精髓,理解的指针的移动对于很多命令的理解和记忆更胜一筹.</p>
+<p>Git中指针大致有五类:</p>
+<ul>
+<li>
+<p>HEAD<br>
+指向当前正在操作的 commit。</p>
+</li>
+<li>
+<p>分支指针</p>
+<p>指向当前分支所在的commit</p>
+</li>
+<li>
+<p>ORIG_HEAD<br>
+当使用一些在 Git 看来比较危险的操作去移动 HEAD 指针的时候，ORIG_HEAD 就会被创建出来，记录危险操作之前的 HEAD，方便 HEAD 的恢复，有点像修改前的备份。</p>
+</li>
+<li>
+<p>FETCH_HEAD<br>
+记录从远程仓库拉取的记录。</p>
+</li>
+<li>
+<p>MERGE_HEAD<br>
+当运行 <code>git merge</code> 时，MERGE_HEAD 记录你正在合并到你的分支中的提交。<code>MERGE_HEAD</code>在合并的时候会出现，合并结束，就删除了这个文件。</p>
+</li>
+<li>
+<p>CHERRY_PICK_HEAD<br>
+记录您在运行 <code>git cherry-pick</code>时要合并的提交。同上，这个文件只在 cherry-pick 期间存在。</p>
+</li>
+</ul>
+<p>这里我们主要理解HEAD指针和分支指针.</p>
+<p>正常情况下HEAD指针是指向当前分支指针,如图:</p>
+<p><img src="/img/Git/HEAD%E6%8C%87%E5%90%91%E5%88%86%E6%94%AF.jpg" alt=""></p>
+<h3 id="git-checkout-commit-id"><code>git checkout &lt;commit id&gt;</code></h3>
+<p><strong>git checkout 本质就是移动HEAD指针</strong> (个人理解,待验证)</p>
+<p>当执行<code>git checkout &lt;commit id&gt;</code> 或 <code>git checkout HEAD^</code>时,进入指针分离模式,HEAD指针指向一条commit id,不再指向分支指针,此时如果提交代码,只有HEAD指针会指向新提交的commit id,而分支指针不会移动.</p>
+<p><img src="/img/Git/%E6%8C%87%E9%92%88%E5%88%86%E7%A6%BB.gif" alt=""></p>
+<p>此时如果想让HEAD重新指向分支指针,执行<code>git checkout &lt;branch name&gt;</code>即可.</p>
+<h3 id="git-reset"><code>git reset</code></h3>
+<p><strong>reset 的本质：移动 HEAD 以及它所指向的 branch</strong></p>
+<p>实质上，<code>reset</code> 这个指令虽然可以用来撤销 <code>commit</code> ，但它的实质行为并不是撤销，而是移动 <code>HEAD</code> ，并且「捎带」上 <code>HEAD</code> 所指向的 <code>branch</code>（如果有的话）。也就是说，<code>reset</code> 这个指令的行为其实和它的字面意思 &ldquo;reset&rdquo;（重置）十分相符：它是用来重置 <code>HEAD</code> 以及它所指向的 <code>branch</code> 的位置的。</p>
+<p>而 <code>reset --hard HEAD^</code> 之所以起到了撤销 <code>commit</code> 的效果，是因为它把 <code>HEAD</code> 和它所指向的 <code>branch</code> 一起移动到了当前 <code>commit</code> 的父 <code>commit</code> 上，从而起到了「撤销」的效果：</p>
+<p><img src="/img/Git/reset%E6%9C%AC%E8%B4%A8.gif" alt=""></p>
+<blockquote>
+<p>git reset 各个选项解释:</p>
+<ul>
+<li>&ndash;soft – 缓存区和工作目录都不会被改变</li>
+<li>&ndash;mixed – 默认选项。缓存区和你指定的提交同步，但工作目录不受影响</li>
+<li>&ndash;hard – 缓存区和工作目录都同步到你指定的提交</li>
+</ul>
+<p>把这些标记想成定义 <code>git reset</code> 操作的作用域就容易理解多了。</p>
+</blockquote>
+<h3 id="git-branch--f-branch-name-"><code>git branch -f &lt;branch name&gt; </code></h3>
+<p>这条命令是将分支指针移动到指定位置.运行<code>git branch -f master c1</code>:</p>
+<p><img src="/img/Git/branch-f.gif" alt=""></p>
+<h3 id="heading-13">匿名分支与头指针分离处理</h3>
+<ul>
+<li>匿名分支</li>
+</ul>
+<p>当git进入头指针分离状态,进行提交会产生一个匿名分支,如果一直匿名分支,就会被git清理掉,</p>
+<p>可以使用`git branch <!-- raw HTML omitted -->``起个名字,来避免这种情况.</p>
+<p><img src="/img/Git/branch-name.gif" alt=""></p>
+<ul>
+<li>强制回退丢失 <code>commit id</code></li>
+</ul>
+<p>如果意外使用如:<code>git reset --hard HEAD^</code>时,可能会使commit消失,这时候可以使用<code>git reflog</code>来找回命令</p>
+<h2 id="heading-14">分支</h2>
+<blockquote>
+<p>几乎所有的版本控制系统都以某种形式支持分支。
+使用分支意味着你可以把你的工作从开发主线上分离开来，以免影响开发主线。
+在很多版本控制系统中，这是一个略微低效的过程——常常需要完全创建一个源代码目录的副本。对于大项目来说，这样的过程会耗费很多时间。</p>
+<p>有人把 Git 的分支模型称为它的“必杀技特性”，也正因为这一特性，使得 Git 从众多版本控制系统中脱颖而出。
+为何 Git 的分支模型如此出众呢？
+Git 处理分支的方式可谓是难以置信的轻量，创建新分支这一操作几乎能在瞬间完成，并且在不同分支之间的切换操作也是一样便捷。
+与许多其它版本控制系统不同，Git 鼓励在工作流程中频繁地使用分支与合并，哪怕一天之内进行许多次。
+理解和精通这一特性，你便会意识到 Git 是如此的强大而又独特，并且从此真正改变你的开发方式。</p>
+</blockquote>
+<h3 id="heading-15">命令</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git branch <span style="color:#75715e">#列出仓库中所有分支。</span>
+git branch &lt;branch&gt; <span style="color:#75715e">#创建一个名为 &lt;branch&gt; 的分支。不会 自动切换到那个分支去。</span>
+git branch -d &lt;branch&gt; <span style="color:#75715e">#删除指定分支。这是一个安全的操作，Git 会阻止你删除包含未合并更改的分支。</span>
+git branch -D &lt;branch&gt; <span style="color:#75715e">#强制删除指定分支，即使包含未合并更改。如果你希望永远删除某条开发线的所有提交，你应该用这个命令。</span>
+git branch -m &lt;branch&gt; <span style="color:#75715e">#将当前分支命名为 &lt;branch&gt;。</span>
+
+
+git checkout &lt;existing-branch&gt; <span style="color:#75715e">#查看特定分支，分支应该已经通过 git branch 创建。这使得 &lt;existing-branch&gt; 成为当前的分支，并更新工作目录的版本。</span>
+git checkout -b &lt;new-branch&gt; <span style="color:#75715e">#创建并查看 &lt;new-branch&gt;，-b 选项是一个方便的标记，告诉Git在运行 git checkout &lt;new-branch&gt; 之前运行 git branch &lt;new-branch&gt;。</span>
+git checkout -b &lt;new-branch&gt; &lt;existing-branch&gt; <span style="color:#75715e">#和上一条相同，但将 &lt;existing-branch&gt; 作为新分支的基，而不是当前分支。</span>
+</code></pre></div><h3 id="heading-16">分支合并的两种姿势</h3>
+<h4 id="git-merge">git merge</h4>
+<p><img src="/img/Git/merge.gif" alt=""></p>
+<h5 id="merge">merge的三种特殊情况</h5>
+<ul>
+<li>
+<p><strong>冲突</strong></p>
+<p><code>merge</code> 在做合并的时候，是有一定的自动合并能力的：如果一个分支改了 A 文件，另一个分支改了 B 
+文件，那么合并后就是既改 A 也改 B，这个动作会自动完成；如果两个分支都改了同一个文件，但一个改的是第 1 行，另一个改的是第 2 
+行，那么合并后就是第 1 行和第 2 行都改，也是自动完成。</p>
+<p><img src="/img/Git/merge_no_conflict.gif" alt=""></p>
+</li>
+</ul>
+<p>但，如果两个分支修改了同一部分内容，<code>merge</code> 的自动算法就搞不定了。这种情况 Git 称之为：冲突（Conflict）。</p>
+<p><img src="/img/Git/merge_cnflict.jpg" alt=""></p>
+<p>解决方法:</p>
+<ol>
+<li>解决掉冲突</li>
+<li>手动 <code>commit</code> 一下</li>
+</ol>
+<p>或者放弃合并:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git merge --abort
+</code></pre></div><ul>
+<li>
+<p><strong>HEAD 领先于目标 commit</strong></p>
+<p>如果 <code>merge</code> 时的目标 <code>commit</code> 和 <code>HEAD</code> 处的 <code>commit</code> 并不存在分叉，而是 <code>HEAD</code> 领先于目标 <code>commit</code>：</p>
+</li>
+</ul>
+<p><img src="/img/Git/headaftercommit.jpg" alt=""></p>
+<p>那么 <code>merge</code> 就没必要再创建一个新的 <code>commit</code> 来进行合并操作，因为并没有什么需要合并的。在这种情况下， Git 什么也不会做，<code>merge</code> 是一个空操作。</p>
+<ul>
+<li>
+<p><strong>HEAD 落后于 目标 commit——fast-forward</strong></p>
+<p>而另一种情况：如果 <code>HEAD</code> 和目标 <code>commit</code> 依然是不存在分叉，但 <code>HEAD</code> 不是领先于目标 <code>commit</code>，而是落后于目标 <code>commit</code>.</p>
+<p>那么 Git 会直接把 <code>HEAD</code>（以及它所指向的 <code>branch</code>，如果有的话）移动到目标 <code>commit</code></p>
+<p><img src="/img/Git/fast-forward.gif" alt=""></p>
+</li>
+</ul>
+<h4 id="git-rebase"><code>git rebase</code></h4>
+<p><code>rebase</code> 的意思是，给你的 <code>commit</code> 序列重新设置基础点（也就是父 <code>commit</code>）。展开来说就是，把你指定的 <code>commit</code> 以及它所在的 <code>commit</code> 串，以指定的目标 <code>commit</code> 为基础，依次重新提交一次。例如下面这个 <code>merge</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git merge branch1
+</code></pre></div><p><img src="/img/Git/merge.gif" alt=""></p>
+<p>如果把 <code>merge</code> 换成 <code>rebase</code>，可以这样操作：</p>
+<pre><code>git checkout branch1
+git rebase master
+</code></pre><p><img src="/img/Git/rebase.gif" alt=""></p>
+<p>另外，在 <code>rebase</code> 之后，记得切回 <code>master</code> 再 <code>merge</code> 一下，把 <code>master</code> 移到最新的 <code>commit</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout master
+git merge branch1
+</code></pre></div><blockquote>
+<p>为什么要从 <code>branch1</code> 来 <code>rebase</code>，然后再切回 <code>master</code> 再 <code>merge</code> 一下这么麻烦，而不是直接在 <code>master</code> 上执行 <code>rebase</code>？</p>
+<p>从图中可以看出，<code>rebase</code> 后的 <code>commit</code> 虽然内容和 <code>rebase</code> 之前相同，但它们已经是不同的 <code>commits</code> 了。如果直接从 <code>master</code> 执行 <code>rebase</code> 的话，就会是下面这样：</p>
+<p><img src="/img/Git/rebase_error.gif" alt=""></p>
+<p>这就导致 <code>master</code> 上之前的两个最新 <code>commit</code> 被剔除了。如果这两个 <code>commit</code> 之前已经在中央仓库存在，这就会导致没法 <code>push</code> 了：</p>
+<p><img src="/img/Git/rebase_error.jpg" alt=""></p>
+</blockquote>
+<p>它会把整个 branch1分支移动到 master 分支的后面，有效地把所有 master 分支上新的提交并入过来。但是，rebase 为原分支上每一个提交创建一个新的提交，重写了项目历史，并且不会带来合并提交。</p>
+<p>rebase最大的好处是你的项目历史会非常整洁。首先，它不像 <code>git merge</code> 那样引入不必要的合并提交。其次，如上图所示，rebase 导致最后的项目历史呈现出完美的线性——你可以从项目终点到起点浏览而不需要任何的 fork。这让你更容易使用 <code>git log</code>、<code>git bisect</code> 和 <code>gitk</code> 来查看项目历史。</p>
+<p>不过，这种简单的提交历史会带来两个后果：安全性和可跟踪性。如果你违反了 rebase 黄金法则，重写项目历史可能会给你的协作工作流带来灾难性的影响。此外，rebase 不会有合并提交中附带的信息——你看不到 branch分支中并入了上游的哪些更改。</p>
+<h5 id="rebase">交互式rebase</h5>
+<p>交互式的 rebase 允许你更改并入新分支的提交。这比自动的 rebase 更加强大，因为它提供了对分支上提交历史完整的控制。一般来说，这被用于将 feature 分支并入 master 分支之前，清理混乱的历史。</p>
+<p>把 <code>-i</code> 传入 <code>git rebase</code> 选项来开始一个交互式的rebase过程：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout feature
+git rebase -i master
+</code></pre></div><p>它会打开一个文本编辑器，显示所有将被移动的提交：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pick 33d5b7a Message <span style="color:#66d9ef">for</span> commit <span style="color:#75715e">#1</span>
+pick 9480b3d Message <span style="color:#66d9ef">for</span> commit <span style="color:#75715e">#2</span>
+pick 5c67e61 Message <span style="color:#66d9ef">for</span> commit <span style="color:#75715e">#3</span>
+</code></pre></div><p>这个列表定义了 rebase 将被执行后分支会是什么样的。更改 <code>pick</code> 命令或者重新排序，这个分支的历史就能如你所愿了。比如说，如果第二个提交修复了第一个提交中的小问题，你可以用 <code>fixup</code> 命令把它们合到一个提交中：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pick 33d5b7a Message <span style="color:#66d9ef">for</span> commit <span style="color:#75715e">#1</span>
+fixup 9480b3d Message <span style="color:#66d9ef">for</span> commit <span style="color:#75715e">#2</span>
+pick 5c67e61 Message <span style="color:#66d9ef">for</span> commit <span style="color:#75715e">#3</span>
+</code></pre></div><p>忽略不重要的提交会让你的 feature 分支的历史更清晰易读。这是 <code>git merge</code> 做不到的。</p>
+<h5 id="rebase-1">Rebase的黄金法则</h5>
+<p>当你理解 rebase 是什么的时候，最重要的就是什么时候 <em>不能</em> 用 rebase。<code>git rebase</code> 的黄金法则便是，绝不要在公共的分支上使用它。</p>
+<p>这次 rebase 将 master 分支上的所有提交都移到了 feature 
+分支后面。问题是它只发生在你的代码仓库中，其他所有的开发者还在原来的 master 上工作。因为 rebase 引起了新的提交，Git 
+会认为你的 master 分支和其他人的 master 已经分叉了。</p>
+<p>同步两个 master 分支的唯一办法是把它们 merge 到一起，导致一个额外的合并提交和两堆包含同样更改的提交。不用说，这会让人非常困惑。</p>
+<p>所以，在你运行 <code>git rebase</code> 之前，一定要问问你自己「有没有别人正在这个分支上工作？」。如果答案是肯定的，那么把你的爪子放回去，重新找到一个无害的方式（如 <code>git revert</code>）来提交你的更改。不然的话，你可以随心所欲地重写历史。</p>
+<h5 id="heading-17">强制推送</h5>
+<p>如果你想把 rebase 之后的 master 分支推送到远程仓库，Git 会阻止你这么做，因为两个分支包含冲突。但你可以传入 <code>--force</code> 标记来强行推送。就像下面一样：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 小心使用这个命令！</span>
+git push --force
+</code></pre></div><p>它会重写远程的 master 分支来匹配你仓库中 rebase 之后的 master 分支，对于团队中其他成员来说这看上去很诡异。所以，务必小心这个命令，只有当你知道你在做什么的时候再使用。</p>
+<p>仅有的几个强制推送的使用场景之一是，当你在想向远程仓库推送了一个私有分支之后，执行了一个本地的清理（比如说为了回滚）。这就像是在说「哦，其实我并不想推送之前那个
+feature 分支的。用我现在的版本替换掉吧。」同样，你要注意没有别人正在这个 feature 分支上工作。</p>
+<h5 id="heading-18">本地清理</h5>
+<p>在你工作流中使用 rebase 最好的用法之一就是清理本地正在开发的分支。隔一段时间执行一次交互式 rebase，你可以保证你 feature 分支中的每一个提交都是专注和有意义的。你在写代码时不用担心造成孤立的提交——因为你后面一定能修复。</p>
+<p>调用 <code>git rebase</code> 的时候，你有两个基（base）可以选择：上游分支（比如 master）或者你 
+feature 分支中早先的一个提交。我们在「交互式 rebase」一节看到了第一种的例子。后一种在当你只需要修改最新几次提交时也很有用。比如说，下面的命令对最新的 3 次提交进行了交互式 
+rebase：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout feature
+git rebase -i HEAD~3
+</code></pre></div><p>通过指定 <code>HEAD~3</code> 作为新的基提交，你实际上没有移动分支——你只是将之后的 3 次提交重写了。注意它不会把上游分支的更改并入到 feature 分支中。</p>
+<p>如果你想用这个方法重写整个 feature 分支，<code>git merge-base</code> 命令非常方便地找出 feature 分支开始分叉的基。下面这段命令返回基提交的 ID，你可以接下来将它传给 <code>git rebase</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git merge-base feature master
+</code></pre></div><p>交互式 rebase 是在你工作流中引入 <code>git rebase</code> 的的好办法，因为它只影响本地分支。其他开发者只能看到你已经完成的结果，那就是一个非常整洁、易于追踪的分支历史。</p>
+<p>但同样的，这只能用在私有分支上。如果你在同一个 feature 分支和其他开发者合作的话，这个分支是公开的，你不能重写这个历史。</p>
+<p>用带有交互式的 rebase 清理本地提交，这是无法用 <code>git merge</code> 命令代替的。</p>
+<h3 id="heading-19">保存当前工作状态</h3>
+<blockquote>
+<p>此时我在 feature_666 分支,非常聚精会神加持高专注地实现一个功能 666 模块，简直键盘如飞的编写代码～～～
+然后这时，客户反馈出一个 bug , 非常严重，必须立马解决，优先级为 0 ！！！
+于是，我需要去到 release 分支去 checkout 新的分支去工作了，但是 666 功能还没完成怎么办？
+此时我面临着一个选择题：</p>
+<p>A：提交后切换，代码保存到分支 feature_666，却产生一个无意义的提交</p>
+<p>B：不提交直接切换，然而这个选项根本没人会选。(因为不提交没办法切换分支)</p>
+<p>是不是很难选，此时，别忘记还有 C 选项！</p>
+<p>C：使用 git stash , 将当前修改(未提交的代码)存入缓存区，切换分支修改 bug ,回来再通过 git stash pop 取出来。</p>
+<p>————————————————
+版权声明：本文为CSDN博主「DRPrincess」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_32452623/article/details/76100140</p>
+</blockquote>
+<p>命令:</p>
+<pre><code class="language-git" data-lang="git">git stash #将修改储存到暂存区,工作区会删除修改
+
+git stash show #查看刚才暂存的修改
+
+git stash pop #取出修改并删除记录列表中对应记录
+
+git stash list #查看暂存区的所有暂存修改记录
+
+git stash save &lt;message&gt; #给stash 存储的修改起个名字并保存
+
+git stash apply stash@{X} #取出相应的暂存
+
+git stash drop stash@{X} #将记录列表中取出的对应暂存记录删除
+</code></pre><h2 id="heading-20">标签</h2>
+<p>命令:</p>
+<pre><code class="language-git" data-lang="git">git tag &lt;tag name&gt; #打一个标签
+
+git checkout &lt;tag name&gt; #检出一个标签
+
+git tag -d &lt;tag name&gt; #删除一个标签
+</code></pre><h2 id="heading-21">远程交互</h2>
+<h3 id="git-init">添加远程仓库(git init方式)</h3>
+<ul>
+<li>初始化</li>
+</ul>
+<pre><code class="language-git" data-lang="git">git init
+</code></pre><ul>
+<li>添加远程仓库</li>
+</ul>
+<p><code>git remote add &lt;repository name&gt; &lt;url&gt; </code></p>
+<pre><code class="language-git" data-lang="git">git remote add origin xxx.git
+</code></pre><ul>
+<li>拉取代码</li>
+</ul>
+<pre><code class="language-git" data-lang="git">git fetch
+</code></pre><ul>
+<li>将当前分支关联远程分支</li>
+</ul>
+<pre><code class="language-git" data-lang="git">git branch -u origin/master
+</code></pre><ul>
+<li>关联关系</li>
+</ul>
+<pre><code class="language-git" data-lang="git">git merge origin/master --allwo-unrelated-histories
+</code></pre><ul>
+<li>合并当前与远程分支</li>
+</ul>
+<pre><code class="language-git" data-lang="git">git merge origin/dev
+</code></pre><h3 id="git-clone">克隆方式(git clone)</h3>
+<ul>
+<li>克隆仓库</li>
+</ul>
+<pre><code class="language-git" data-lang="git">git clone url
+</code></pre><ul>
+<li>检出分支</li>
+</ul>
+<pre><code class="language-git" data-lang="git">git checkout -b &lt;local branch name&gt; &lt;remote branch name&gt; #拉取本地分支与远程分支关联
+</code></pre><h3 id="heading-22">有关远程分支的命令</h3>
+<pre><code class="language-git" data-lang="git">git branch -a #查看远程分支
+
+git branch -vv #查看本地分支与远程分支的关联
+</code></pre><h3 id="heading-23">本地分支与远程分支名称问题</h3>
+<p>本地分支与远程对应的分支尽量同名,如果不同命会出现问题:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    fatal: The upstream branch of your current branch does not match
+the name of your current branch.  To push to the upstream branch
+on the remote, use
+
+    git push origin HEAD:dev
+
+To push to the branch of the same name on the remote, use
+
+    git push origin HEAD
+
+To choose either option permanently, see push.default in <span style="color:#e6db74">&#39;git help config&#39;</span>.
+</code></pre></div><p>可以使用命令提交:</p>
+<pre><code class="language-git" data-lang="git">git push origin dev2:dev
+</code></pre><p>或者更改git 配置:</p>
+<pre><code class="language-git" data-lang="git">git config --global push.default upstream
+</code></pre><h3 id="heading-24">操纵远程分支</h3>
+<ul>
+<li>将本地分支推送到远程</li>
+</ul>
+<pre><code class="language-git" data-lang="git">git checkout -b feature-branch    #创建并切换到分支feature-branch  
+
+git push origin feature-branch:feature-branch    #推送本地的feature-branch(冒号前面的)分支到远程origin的feature-branch(冒号后面的)分支(没有会自动创建)
+</code></pre><ul>
+<li>删除远程分支</li>
+</ul>
+<pre><code class="language-git" data-lang="git">git push origin --delete &lt;branch name&gt; 
+# 或者
+git branch -r -d origin/&lt;branch  name&gt;
+
+git push origin :&lt;branch name&gt;
+</code></pre>
+    </div>
+    <div class="article-footer">
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://fhxisdog.github.io/2019/11/restful_grpc_rsocket/" title="Restful、gRpc、Rsocket"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://fhxisdog.github.io/2020/04/git_work_flow/"
+                    title="Git几种常见工作流"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        
+        <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal"
+            data-target="#donateModal"><span>赏</span></button>
+        
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content donate">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <div class="modal-body">
+                <div class="donate-box">
+                    <div class="donate-head">
+                        <p>感谢您的支持,我会继续努力的!</p>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+                            <div class="donate-payimg">
+                                <img src="https://fhxisdog.github.io/donate/alipayimg.jpg"
+                                    alt="扫码支持" title="扫一扫" />
+                            </div>
+                            <p class="text-muted mv">扫码打赏, 多少你说了算~</p>
+                            <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦~</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+                            <div class="donate-payimg">
+                                <img src="https://fhxisdog.github.io/donate/wechatpayimg.jpg"
+                                    alt="扫码支持" title="扫一扫" />
+                            </div>
+                            <p class="text-muted mv">扫码打赏, 多少你说了算~</p>
+                            <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+                        </div>
+                    </div>
+                    <div class="donate-footer">
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay"
+                                    aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab"
+                                    aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i>
+                                    微信支付</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/FHXISDOG" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://fhxisdog.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2017  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://fhxisdog.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://fhxisdog.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/fhxisdog.github.io',
+            CONTENT_URL: 'https:\/\/fhxisdog.github.io\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://fhxisdog.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '25cb16a0cefbf9358b4d',
+        clientSecret: '304421f8e707e448d98a330df684406736483f34',
+        repo: 'fhxisdog.github.io',
+        owner: 'FHXISDOG',
+        admin: ['FHXISDOG'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
+</script>
+
+  </body>
+</html>

@@ -11,57 +11,183 @@
     
     
     <item>
+      <title>Test</title>
+      <link>https://fhxisdog.github.io/2020/04/test/</link>
+      <pubDate>Sat, 11 Apr 2020 13:12:30 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2020/04/test/</guid>
+      <description>test</description>
+    </item>
+    
+    <item>
+      <title>Arch安装记录</title>
+      <link>https://fhxisdog.github.io/2020/04/arch_install/</link>
+      <pubDate>Fri, 10 Apr 2020 10:26:30 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2020/04/arch_install/</guid>
+      <description>本文记录本人安装Arch的过程以及后续配置,不做为教程,只作为备忘使用,仅供参考 前期准备 下载镜像 下载Rufus 由于我的电脑支持efi启动,制</description>
+    </item>
+    
+    <item>
+      <title>Git几种常见工作流</title>
+      <link>https://fhxisdog.github.io/2020/04/git_work_flow/</link>
+      <pubDate>Sat, 04 Apr 2020 21:17:49 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2020/04/git_work_flow/</guid>
+      <description>本文转自xirong,已获得原作者授权,如需转载,请与原作者联系 说明： 个人在学习Git工作流的过程中，从原有的 SVN 模式很难完全理解Git的协作</description>
+    </item>
+    
+    <item>
+      <title>Git不完全使用指南</title>
+      <link>https://fhxisdog.github.io/2020/03/git_guide/</link>
+      <pubDate>Mon, 30 Mar 2020 17:16:31 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2020/03/git_guide/</guid>
+      <description>基本概念 四度空间: 工作区:Workspace 就是你在电脑里能看到的目录 暂存区: Index/Stage/Cached 英文叫stage, 或index。一般存放在 &amp;ldquo;.g</description>
+    </item>
+    
+    <item>
+      <title>Restful、gRpc、Rsocket</title>
+      <link>https://fhxisdog.github.io/2019/11/restful_grpc_rsocket/</link>
+      <pubDate>Sat, 16 Nov 2019 14:07:16 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/11/restful_grpc_rsocket/</guid>
+      <description>什么是Restful? REST这个词，是Roy Thomas Fielding在他2000年的博士论文中提出的。 Fielding是一个非常重要的人，他是H</description>
+    </item>
+    
+    <item>
+      <title>多模块Maven工程单独打包某一模块工程</title>
+      <link>https://fhxisdog.github.io/2019/11/multi_module_maven/</link>
+      <pubDate>Tue, 12 Nov 2019 13:28:47 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/11/multi_module_maven/</guid>
+      <description>问题描述 如果项目是多模块，如果只想打包某一模块，会出现找不到依赖的错误提示。 项目结构如下: A: ----B ----C ----D 如果想只打包C模块，可以执行以下命令: mvn -pl</description>
+    </item>
+    
+    <item>
+      <title>Android Platform 28 SDK License Not Accepted</title>
+      <link>https://fhxisdog.github.io/2019/11/adb_error/</link>
+      <pubDate>Sun, 10 Nov 2019 06:07:07 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/11/adb_error/</guid>
+      <description>&amp;gt; Configure project :core Checking the license for package Android SDK Platform 28 in /opt/android/sdk/licenses Warning: License for package Android SDK Platform 28 not accepted. FAILURE: Build failed with an exception. * What went wrong: A problem occurred configuring project &#39;:core&#39;. &amp;gt; Failed to install the following Android SDK packages as some licences have not been accepted. platforms;android-28 Android SDK Platform 28 To build this project, accept the SDK license</description>
+    </item>
+    
+    <item>
       <title>Emacs搭建python开发环境</title>
-      <link>https://fhxisdog.github.io/2019/11/emacs%E6%90%AD%E5%BB%BApython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <link>https://fhxisdog.github.io/2019/11/emacs_python_development_env/</link>
       <pubDate>Sun, 10 Nov 2019 05:07:07 +0800</pubDate>
       
-      <guid>https://fhxisdog.github.io/2019/11/emacs%E6%90%AD%E5%BB%BApython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <guid>https://fhxisdog.github.io/2019/11/emacs_python_development_env/</guid>
       <description>安装python必须的依赖 sudo pip install jedi elpy rope pylint emacs配置 在～/.emacs.d/路径新建文件init.el 添加以下配置: (require &#39;package) (package-initialize) ;;配置包管理列</description>
     </item>
     
     <item>
       <title>Emacs快捷键</title>
-      <link>https://fhxisdog.github.io/2019/11/emacs%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <link>https://fhxisdog.github.io/2019/11/emacs_shortcuts/</link>
       <pubDate>Sun, 10 Nov 2019 04:07:07 +0800</pubDate>
       
-      <guid>https://fhxisdog.github.io/2019/11/emacs%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <guid>https://fhxisdog.github.io/2019/11/emacs_shortcuts/</guid>
       <description>含义 C -&amp;gt; CTRL M -&amp;gt; ALT S-&amp;gt;SHIFT 基本命令 快捷键 含义 快捷键 含义 C-x C-f 打开文件 C-x C-c 关闭emacs C-x C-s 保存文件 C-x C-w 当前缓冲区另存为 C-g 取消命令 C-x C-b 打开当前缓冲区列表</description>
     </item>
     
     <item>
+      <title>将vue打包到springboot静态资源中</title>
+      <link>https://fhxisdog.github.io/2019/09/springbootvuepackagejar/</link>
+      <pubDate>Wed, 04 Sep 2019 16:48:24 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/09/springbootvuepackagejar/</guid>
+      <description>项目中遇到需要将vue打包到spring boot 中的static中，直接访问，不需要使用Nginx来访问nginx.具体做法如下: 将vue工程放到</description>
+    </item>
+    
+    <item>
+      <title>Spring Boot 分环境打包</title>
+      <link>https://fhxisdog.github.io/2019/09/springboot-profile/</link>
+      <pubDate>Wed, 04 Sep 2019 16:33:58 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/09/springboot-profile/</guid>
+      <description>使用spring boot工程时，虽然官方提供了application.profiles.active参数去激活不同环境，但是如果打包时忘了修</description>
+    </item>
+    
+    <item>
+      <title>Spring Boot Thymeleaf 引用contexpath</title>
+      <link>https://fhxisdog.github.io/2019/09/springbootthymeleafcontextpath/</link>
+      <pubDate>Wed, 04 Sep 2019 16:03:04 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/09/springbootthymeleafcontextpath/</guid>
+      <description>spring boot 设置contextPath后，如果js中的请求路径不设置，会造成404的问题。 设置方法: 在html页面header中添加配置: &amp;lt;meta name=&amp;quot;ctx&amp;quot; th:content=&amp;quot;${#httpServletRequest.getContextPath()}&amp;quot; &amp;gt; j</description>
+    </item>
+    
+    <item>
+      <title>Manjaro安装displaylink</title>
+      <link>https://fhxisdog.github.io/2019/06/manjaro_install_displaylink/</link>
+      <pubDate>Mon, 24 Jun 2019 13:06:10 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/06/manjaro_install_displaylink/</guid>
+      <description>使用华硕的便携笔记本需要安装displaylink驱动，官方又只提供windows驱动，在manjaro上使用需要自己安装驱动，经过研究，安</description>
+    </item>
+    
+    <item>
+      <title>Docker Compose：链接外部容器的几种方式</title>
+      <link>https://fhxisdog.github.io/2019/06/docker_compose_external_image_method/</link>
+      <pubDate>Tue, 04 Jun 2019 15:01:04 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/06/docker_compose_external_image_method/</guid>
+      <description>在Docker中，容器之间的链接是一种很常见的操作：它提供了访问其中的某个容器的网络服务而不需要将所需的端口暴露给Docker Host主机的</description>
+    </item>
+    
+    <item>
+      <title>Alpha、Beta、RC、GA版本的区别</title>
+      <link>https://fhxisdog.github.io/2019/06/version_name/</link>
+      <pubDate>Tue, 04 Jun 2019 14:17:25 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/06/version_name/</guid>
+      <description>Alpha：是内部测试版,一般不向外部发布,会有很多Bug.一般只有测试人员使用。 Beta：也是测试版，这个阶段的版本会一直加入新的功能。在</description>
+    </item>
+    
+    <item>
+      <title>nacos使用指南</title>
+      <link>https://fhxisdog.github.io/2019/05/nacos_guide/</link>
+      <pubDate>Wed, 29 May 2019 15:33:57 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/nacos_guide/</guid>
+      <description>服务启动 本地单机启动 下载源码 从github上下载源码方式: git clone https://github.com/alibaba/nacos.git cd nacos/ mvn -Prelease-nacos clean install -U ls -al distribution/target/ // change the $version to your actual path cd distribution/target/nacos-server-$version/nacos/bin 下载编译后压缩包方式 从 最新稳定版本 下</description>
+    </item>
+    
+    <item>
+      <title>skywalking使用指南</title>
+      <link>https://fhxisdog.github.io/2019/05/skywalking_guide/</link>
+      <pubDate>Wed, 29 May 2019 15:33:57 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/skywalking_guide/</guid>
+      <description>运行 单机运行 下载最新release包 解压，sh ${skywalkingpath}/bin/startup.sh 在springboot启动命令前加入启动参数 -javaagent:${path}/skywalking-agent.jar #path为skywalking解压的agen</description>
+    </item>
+    
+    <item>
       <title>Manjaro I3wm接入外接显示器不显示</title>
-      <link>https://fhxisdog.github.io/2019/05/manjaro-i3wm%E6%8E%A5%E5%85%A5%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/</link>
+      <link>https://fhxisdog.github.io/2019/05/manjaro-i3wm_external_mirror/</link>
       <pubDate>Wed, 29 May 2019 11:59:08 +0800</pubDate>
       
-      <guid>https://fhxisdog.github.io/2019/05/manjaro-i3wm%E6%8E%A5%E5%85%A5%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/</guid>
+      <guid>https://fhxisdog.github.io/2019/05/manjaro-i3wm_external_mirror/</guid>
       <description>装了manjaro的i3wm桌面环境后，发现外界显示器无法显示。搜索资料后发现解决方法如下。 查看设备输入 终端输入: xrandr 可以看到结果如下，其中 e</description>
     </item>
     
     <item>
       <title>Linux使用modmap替换super和CapsLock位置</title>
-      <link>https://fhxisdog.github.io/2019/05/linux%E4%BD%BF%E7%94%A8modmap%E6%9B%BF%E6%8D%A2super%E5%92%8Ccapslock%E4%BD%8D%E7%BD%AE/</link>
+      <link>https://fhxisdog.github.io/2019/05/linux_use_modmap_switch_super_capslock/</link>
       <pubDate>Tue, 28 May 2019 15:50:39 +0800</pubDate>
       
-      <guid>https://fhxisdog.github.io/2019/05/linux%E4%BD%BF%E7%94%A8modmap%E6%9B%BF%E6%8D%A2super%E5%92%8Ccapslock%E4%BD%8D%E7%BD%AE/</guid>
+      <guid>https://fhxisdog.github.io/2019/05/linux_use_modmap_switch_super_capslock/</guid>
       <description>manjaro的i3wm版本默认的mod键是super(就是windows键)，为了拯救我的小拇指，所以使用xmodmap将super键和C</description>
     </item>
     
     <item>
       <title>Smb无法连接windows共享文件夹</title>
-      <link>https://fhxisdog.github.io/2019/05/smb%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5windows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <link>https://fhxisdog.github.io/2019/05/smb_connect_windows/</link>
       <pubDate>Tue, 28 May 2019 13:05:29 +0800</pubDate>
       
-      <guid>https://fhxisdog.github.io/2019/05/smb%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5windows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <guid>https://fhxisdog.github.io/2019/05/smb_connect_windows/</guid>
       <description>问题描述 使用pacmanfm在地址栏输入:smb://fhxisdog-win/temp访问windows共享文件夹，提示NO FILE OR DIRECTIONARY 在命令行</description>
-    </item>
-    
-    <item>
-      <title>Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy</title>
-      <link>https://fhxisdog.github.io/2019/05/shadowsocks-libev-privoxy/</link>
-      <pubDate>Tue, 28 May 2019 12:01:14 +0800</pubDate>
-      
-      <guid>https://fhxisdog.github.io/2019/05/shadowsocks-libev-privoxy/</guid>
-      <description>本文所用到的工具 shadowsocks-libev privoxy gfwlist2privoxy shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev 配置: 在/etc/shadowsocks/下新建co</description>
     </item>
     
   </channel>

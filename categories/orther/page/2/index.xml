@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>orther on just for fun</title>
+    <link>https://fhxisdog.github.io/categories/orther/</link>
+    <description>Recent content in orther on just for fun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 04 Jun 2019 14:17:25 +0800</lastBuildDate>
+    
+        <atom:link href="https://fhxisdog.github.io/categories/orther/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy</title>
+      <link>https://fhxisdog.github.io/2019/05/shadowsocks-libev-privoxy/</link>
+      <pubDate>Tue, 28 May 2019 12:01:14 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/shadowsocks-libev-privoxy/</guid>
+      <description>本文所用到的工具 shadowsocks-libev privoxy gfwlist2privoxy shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev 配置: 在/etc/shadowsocks/下新建co</description>
+    </item>
+    
+    <item>
+      <title>深入浅出 JIT 编译器</title>
+      <link>https://fhxisdog.github.io/2019/04/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/</link>
+      <pubDate>Sun, 21 Apr 2019 18:23:51 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/04/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/</guid>
+      <description>转自:https://www.ibm.com/developerworks/cn/java/j-lo-just-in-time/ JIT 简介 JIT 是 just</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -27,10 +27,12 @@
   <meta name="generator" content="Hugo 0.61.0 with theme pure" />
   <title>深入浅出 JIT 编译器 - just for fun</title>
   
-
-  <link rel="stylesheet" href="https://fhxisdog.github.io/css/style.css">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css"> 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  
+  <link rel="stylesheet" href="https://fhxisdog.github.io/css/style.min.c4bc7071f132c964c2116bca53b392933f377e5ca7b7051ed245187c621a2d3e.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
   <meta property="og:title" content="深入浅出 JIT 编译器" />
 <meta property="og:description" content="转自:https://www.ibm.com/developerworks/cn/java/j-lo-just-in-time/ JIT 简介 JIT 是 just" />
 <meta property="og:type" content="article" />
@@ -60,6 +62,10 @@
 
 </head>
   </head>
+
+  
+  
+
   <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
     <div class="slimContent">
       <div class="navbar-header">
@@ -144,7 +150,8 @@
       </nav>
     </div>
   </header>
-  <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
   <div class="slimContent">
     
       <div class="widget">
@@ -163,7 +170,7 @@
         <ul class="category-list">
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/docker/" class="category-list-link">docker</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/flutter/" class="category-list-link">flutter</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/git/" class="category-list-link">git</a><span class="category-list-count">2</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://fhxisdog.github.io/categories/nacos/" class="category-list-link">nacos</a><span class="category-list-count">1</span></li>
@@ -197,7 +204,7 @@
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/git/" class="tag-list-link">git</a><span
-                    class="tag-list-count">1</span></li>
+                    class="tag-list-count">2</span></li>
             
             
             <li class="tag-list-item"><a href="https://fhxisdog.github.io/tags/i3wm/" class="tag-list-link">i3wm</a><span
@@ -272,33 +279,76 @@
     </div>
 </div>
       
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/04/test/" class="title">Test</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 13:12:30 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/03/git_guide/" class="title">Git不完全使用指南</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-03-30 17:16:31 &#43;0800 CST" itemprop="datePublished">2020-03-30</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2019/11/restful_grpc_rsocket/" class="title">Restful、gRpc、Rsocket</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-11-16 14:07:16 &#43;0800 CST" itemprop="datePublished">2019-11-16</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
   </div>
 </aside>
 
     
     
-  <aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
-    <div class="slimContent">
-      <nav id="toc" class="article-toc">
-        <h3 class="toc-title">文章目录</h3>
-        <div class="toc-content always-active"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#jit-">JIT 简介</a></li>
-        <li><a href="#hot-spot-">Hot Spot 编译</a></li>
-        <li><a href="#heading-1">初级调优：客户模式或服务器模式</a></li>
-        <li><a href="#heading-2">中级编译器调优</a></li>
-        <li><a href="#heading-6">高级编译器调优</a></li>
-        <li><a href="#heading-8">结束语</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        </div>
-      </nav>
-    </div>
-  </aside>
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
 <main class="main" role="main"><div class="content">
   <article id="-" class="article article-type-" itemscope
     itemtype="http://schema.org/BlogPosting">
@@ -313,17 +363,19 @@
 </h1>
 
       <div class="article-meta">
-        <span class="article-date">
-  <i class="icon icon-calendar-check"></i>
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
 <a href="https://fhxisdog.github.io/2019/04/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/" class="article-date">
   <time datetime="2019-04-21 18:23:51 &#43;0800 CST" itemprop="datePublished">2019-04-21</time>
 </a>
-</span><span class="article-category">
-  <i class="icon icon-folder"></i>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
   <a class="article-category-link" href="/categories/jvm/"> jvm </a>
 </span>  
   <span class="article-tag">
-    <i class="icon icon-tags"></i>
+    <i class="icon icon-tags"></i>&nbsp;
     <a class="article-tag-link" href="/tags/jvm/"> jvm </a>
     <a class="article-tag-link" href="/tags/java/"> java </a>
   </span>
@@ -334,13 +386,13 @@
 			<span id="busuanzi_value_page_pv">0</span>
 		</span>
 	</span>
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/04/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2019/04/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计:5436字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长:11分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 5436字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 11分 </span>
       </div>
     </div>
-    <div class="article-entry marked-body" itemprop="articleBody">
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
       <p>转自:<a href="https://www.ibm.com/developerworks/cn/java/j-lo-just-in-time/">https://www.ibm.com/developerworks/cn/java/j-lo-just-in-time/</a></p>
 <h3 id="jit-">JIT 简介</h3>
 <p>JIT 是 just in time 的缩写, 也就是即时编译编译器。使用即时编译器技术，能够加速 Java 程序的执行速度。下面，就对该编译器技术做个简单的讲解。</p>
@@ -427,6 +479,8 @@ CompiledFailedInvalid TimeFailedTypeFailedMethod
 <p>本文详细介绍了 JIT 编译器的工作原理。从优化的角度讲，最简单的选择就是使用 server 编译器的分层编译技术，这将解决大约 90%左右的与编译器直接相关的性能问题。最后，请保证代码缓存的大小设置的足够大，这样编译器将会提供最高的编译性能。</p>
 
     </div>
+    <div class="article-footer">
+    </div>
   </article>
 <section id="comments">
 </section>
@@ -436,7 +490,7 @@ CompiledFailedInvalid TimeFailedTypeFailedMethod
         <ul class="pager pull-left">
             <li class="next">
                 <a href="https://fhxisdog.github.io/2019/05/shadowsocks-libev-privoxy/"
-                    title="Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy"><span>下一篇&nbsp;&nbsp;</span><i
+                    title="Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy"><span>上一篇&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
@@ -460,6 +514,7 @@ CompiledFailedInvalid TimeFailedTypeFailedMethod
         </div>
     </div>
 </nav>
+
 
 <div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -522,41 +577,52 @@ CompiledFailedInvalid TimeFailedTypeFailedMethod
     </div>
   </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script>
-   window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
-<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
-<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/rust.min.js"></script>
-<script type="text/javascript"
-   src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
-<script>
-hljs.configure({
-  tabReplace: '    ', 
-  classPrefix: ''     
-                      
-})
-hljs.initHighlightingOnLoad();
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
 </script>
-<script type="text/javascript" src="https://fhxisdog.github.io/js/application.js"></script>
-<script type="text/javascript" src="https://fhxisdog.github.io/js/plugin.js"></script>
+<script src="https://fhxisdog.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://fhxisdog.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
 <script>
-      (function (window) {
-          var INSIGHT_CONFIG = {
-              TRANSLATION: {
-                  POSTS: '文章',
-                  PAGES: '页面',
-                  CATEGORIES: '分类',
-                  TAGS: '标签',
-                  UNTITLED: '(未命名)',
-              },
-              ROOT_URL: 'https:\/\/fhxisdog.github.io',
-              CONTENT_URL: 'https:\/\/fhxisdog.github.io\/searchindex.json ',
-          };
-          window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-      })(window);
-      </script>
-<script type="text/javascript" src="https://fhxisdog.github.io/js/insight.js"></script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/fhxisdog.github.io',
+            CONTENT_URL: 'https:\/\/fhxisdog.github.io\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://fhxisdog.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
 
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
@@ -574,5 +640,6 @@ hljs.initHighlightingOnLoad();
     });
     gitalk.render('comments');
 </script>
+
   </body>
 </html>
