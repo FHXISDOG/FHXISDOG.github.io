@@ -3,6 +3,76 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://fhxisdog.github.io/categories/</loc>
+    <lastmod>2020-04-11T16:53:23+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/</loc>
+    <lastmod>2020-04-11T16:53:23+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/posts/</loc>
+    <lastmod>2020-04-11T16:53:23+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/tags/</loc>
+    <lastmod>2020-04-11T16:53:23+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/tags/tips/</loc>
+    <lastmod>2020-04-11T16:53:23+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/categories/tips/</loc>
+    <lastmod>2020-04-11T16:53:23+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/2020/04/win10_xiaohe/</loc>
+    <lastmod>2020-04-11T16:53:23+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/categories/git/</loc>
+    <lastmod>2020-04-11T15:06:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/tags/git/</loc>
+    <lastmod>2020-04-11T15:06:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/2020/04/git_submodule/</loc>
+    <lastmod>2020-04-11T15:06:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://fhxisdog.github.io/tags/arch/</loc>
     <lastmod>2020-04-10T10:26:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -11,20 +81,6 @@
   
   <url>
     <loc>https://fhxisdog.github.io/2020/04/arch_install/</loc>
-    <lastmod>2020-04-10T10:26:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://fhxisdog.github.io/categories/</loc>
-    <lastmod>2020-04-10T10:26:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://fhxisdog.github.io/</loc>
     <lastmod>2020-04-10T10:26:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -40,34 +96,6 @@
   <url>
     <loc>https://fhxisdog.github.io/tags/linux/</loc>
     <lastmod>2020-04-10T10:26:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://fhxisdog.github.io/posts/</loc>
-    <lastmod>2020-04-10T10:26:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://fhxisdog.github.io/tags/</loc>
-    <lastmod>2020-04-10T10:26:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://fhxisdog.github.io/categories/git/</loc>
-    <lastmod>2020-04-04T21:17:49+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://fhxisdog.github.io/tags/git/</loc>
-    <lastmod>2020-04-04T21:17:49+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -157,14 +185,14 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/flutter/</loc>
+    <loc>https://fhxisdog.github.io/tags/flutter/</loc>
     <lastmod>2019-11-10T06:07:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/tags/flutter/</loc>
+    <loc>https://fhxisdog.github.io/categories/flutter/</loc>
     <lastmod>2019-11-10T06:07:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -234,14 +262,14 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/tags/docker/</loc>
+    <loc>https://fhxisdog.github.io/categories/docker/</loc>
     <lastmod>2019-06-04T15:01:04+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/docker/</loc>
+    <loc>https://fhxisdog.github.io/tags/docker/</loc>
     <lastmod>2019-06-04T15:01:04+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

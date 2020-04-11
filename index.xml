@@ -5,10 +5,28 @@
     <link>https://fhxisdog.github.io/</link>
     <description>Recent content on just for fun</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Apr 2020 10:26:30 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2020 16:53:23 +0800</lastBuildDate>
     
         <atom:link href="https://fhxisdog.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Win10_xiaohe</title>
+      <link>https://fhxisdog.github.io/2020/04/win10_xiaohe/</link>
+      <pubDate>Sat, 11 Apr 2020 16:53:23 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2020/04/win10_xiaohe/</guid>
+      <description>今天发现 Win10 自带的微软输入法还可以添加 小鹤双拼，终于可以抛弃其他的广告输入法了。 步骤： win + R，输入 regedit，打开注册表 找到 计算机\HKE</description>
+    </item>
+    
+    <item>
+      <title>Git submodule使用总结</title>
+      <link>https://fhxisdog.github.io/2020/04/git_submodule/</link>
+      <pubDate>Sat, 11 Apr 2020 15:06:44 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2020/04/git_submodule/</guid>
+      <description>使用场景 基于公司的项目会越来越多，常常需要提取一个公共的类库提供给多个项目使用，但是这个library怎么和git在一起方便管理呢？ 我们需要</description>
+    </item>
     
     <item>
       <title>Arch安装记录</title>
@@ -170,24 +188,6 @@
       
       <guid>https://fhxisdog.github.io/2019/05/linux_use_modmap_switch_super_capslock/</guid>
       <description>manjaro的i3wm版本默认的mod键是super(就是windows键)，为了拯救我的小拇指，所以使用xmodmap将super键和C</description>
-    </item>
-    
-    <item>
-      <title>Smb无法连接windows共享文件夹</title>
-      <link>https://fhxisdog.github.io/2019/05/smb_connect_windows/</link>
-      <pubDate>Tue, 28 May 2019 13:05:29 +0800</pubDate>
-      
-      <guid>https://fhxisdog.github.io/2019/05/smb_connect_windows/</guid>
-      <description>问题描述 使用pacmanfm在地址栏输入:smb://fhxisdog-win/temp访问windows共享文件夹，提示NO FILE OR DIRECTIONARY 在命令行</description>
-    </item>
-    
-    <item>
-      <title>Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy</title>
-      <link>https://fhxisdog.github.io/2019/05/shadowsocks-libev-privoxy/</link>
-      <pubDate>Tue, 28 May 2019 12:01:14 +0800</pubDate>
-      
-      <guid>https://fhxisdog.github.io/2019/05/shadowsocks-libev-privoxy/</guid>
-      <description>本文所用到的工具 shadowsocks-libev privoxy gfwlist2privoxy shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev 配置: 在/etc/shadowsocks/下新建co</description>
     </item>
     
   </channel>
