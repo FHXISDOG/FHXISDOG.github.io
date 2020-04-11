@@ -3,7 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://fhxisdog.github.io/tags/arch/</loc>
+    <lastmod>2020-04-10T10:26:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://fhxisdog.github.io/2020/04/arch_install/</loc>
+    <lastmod>2020-04-10T10:26:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/categories/</loc>
     <lastmod>2020-04-10T10:26:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -17,6 +31,20 @@
   </url>
   
   <url>
+    <loc>https://fhxisdog.github.io/categories/linux/</loc>
+    <lastmod>2020-04-10T10:26:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/tags/linux/</loc>
+    <lastmod>2020-04-10T10:26:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://fhxisdog.github.io/posts/</loc>
     <lastmod>2020-04-10T10:26:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -24,8 +52,8 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/</loc>
-    <lastmod>2020-04-04T21:17:49+08:00</lastmod>
+    <loc>https://fhxisdog.github.io/tags/</loc>
+    <lastmod>2020-04-10T10:26:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -46,13 +74,6 @@
   
   <url>
     <loc>https://fhxisdog.github.io/2020/04/git_work_flow/</loc>
-    <lastmod>2020-04-04T21:17:49+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://fhxisdog.github.io/tags/</loc>
     <lastmod>2020-04-04T21:17:49+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -164,20 +185,6 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/tags/linux/</loc>
-    <lastmod>2019-11-10T05:07:07+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://fhxisdog.github.io/categories/linux/</loc>
-    <lastmod>2019-11-10T05:07:07+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://fhxisdog.github.io/2019/11/emacs_shortcuts/</loc>
     <lastmod>2019-11-10T04:07:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -255,14 +262,14 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/orther/</loc>
+    <loc>https://fhxisdog.github.io/tags/orther/</loc>
     <lastmod>2019-06-04T14:17:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/tags/orther/</loc>
+    <loc>https://fhxisdog.github.io/categories/orther/</loc>
     <lastmod>2019-06-04T14:17:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -290,14 +297,14 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/tags/skywalking/</loc>
+    <loc>https://fhxisdog.github.io/categories/skywalking/</loc>
     <lastmod>2019-05-29T15:33:57+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/skywalking/</loc>
+    <loc>https://fhxisdog.github.io/tags/skywalking/</loc>
     <lastmod>2019-05-29T15:33:57+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
