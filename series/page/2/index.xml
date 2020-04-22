@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>Linux使用modmap替换super和CapsLock位置</title>
+      <link>https://fhxisdog.github.io/2019/05/linux_use_modmap_switch_super_capslock/</link>
+      <pubDate>Tue, 28 May 2019 15:50:39 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/linux_use_modmap_switch_super_capslock/</guid>
+      <description>manjaro的i3wm版本默认的mod键是super(就是windows键)，为了拯救我的小拇指，所以使用xmodmap将super键和C</description>
+    </item>
+    
+    <item>
       <title>Smb无法连接windows共享文件夹</title>
       <link>https://fhxisdog.github.io/2019/05/smb_connect_windows/</link>
       <pubDate>Tue, 28 May 2019 13:05:29 +0800</pubDate>

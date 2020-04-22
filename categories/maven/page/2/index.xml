@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>maven on just for fun</title>
+    <link>https://fhxisdog.github.io/categories/maven/</link>
+    <description>Recent content in maven on just for fun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 22 Apr 2020 12:00:26 +0800</lastBuildDate>
+    
+        <atom:link href="https://fhxisdog.github.io/categories/maven/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux使用modmap替换super和CapsLock位置</title>
+      <link>https://fhxisdog.github.io/2019/05/linux_use_modmap_switch_super_capslock/</link>
+      <pubDate>Tue, 28 May 2019 15:50:39 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/linux_use_modmap_switch_super_capslock/</guid>
+      <description>manjaro的i3wm版本默认的mod键是super(就是windows键)，为了拯救我的小拇指，所以使用xmodmap将super键和C</description>
+    </item>
+    
+    <item>
+      <title>Smb无法连接windows共享文件夹</title>
+      <link>https://fhxisdog.github.io/2019/05/smb_connect_windows/</link>
+      <pubDate>Tue, 28 May 2019 13:05:29 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/smb_connect_windows/</guid>
+      <description>问题描述 使用pacmanfm在地址栏输入:smb://fhxisdog-win/temp访问windows共享文件夹，提示NO FILE OR DIRECTIONARY 在命令行</description>
+    </item>
+    
+    <item>
+      <title>Shadowsocks-libev&#43;privoxy&#43;gfwlist2privoxy</title>
+      <link>https://fhxisdog.github.io/2019/05/shadowsocks-libev-privoxy/</link>
+      <pubDate>Tue, 28 May 2019 12:01:14 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/05/shadowsocks-libev-privoxy/</guid>
+      <description>本文所用到的工具 shadowsocks-libev privoxy gfwlist2privoxy shadowsocks-libev安装配置 下载安装:sudo pacman -S shadowsocks-libev 配置: 在/etc/shadowsocks/下新建co</description>
+    </item>
+    
+    <item>
+      <title>深入浅出 JIT 编译器</title>
+      <link>https://fhxisdog.github.io/2019/04/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/</link>
+      <pubDate>Sun, 21 Apr 2019 18:23:51 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2019/04/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-jit-%E7%BC%96%E8%AF%91%E5%99%A8/</guid>
+      <description>转自:https://www.ibm.com/developerworks/cn/java/j-lo-just-in-time/ JIT 简介 JIT 是 just</description>
+    </item>
+    
+  </channel>
+</rss>

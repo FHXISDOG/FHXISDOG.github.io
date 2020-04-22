@@ -5,10 +5,19 @@
     <link>https://fhxisdog.github.io/tags/</link>
     <description>Recent content in Tags on just for fun</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 11 Apr 2020 16:53:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2020 12:00:26 +0800</lastBuildDate>
     
         <atom:link href="https://fhxisdog.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Maven 本地有jar包仍拉取远程仓库的jar包</title>
+      <link>https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/</link>
+      <pubDate>Wed, 22 Apr 2020 12:00:26 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/</guid>
+      <description>问题现象 使用Maven过程中，曾经出现过本地仓库中已经存在某jar包，但是Maven仍然从远程仓库下载jar包的现象，并且可能会报出类似以下</description>
+    </item>
     
     <item>
       <title>win10自带输入法添加小鹤双拼</title>
@@ -179,15 +188,6 @@
       
       <guid>https://fhxisdog.github.io/2019/05/manjaro-i3wm_external_mirror/</guid>
       <description>装了manjaro的i3wm桌面环境后，发现外界显示器无法显示。搜索资料后发现解决方法如下。 查看设备输入 终端输入: xrandr 可以看到结果如下，其中 e</description>
-    </item>
-    
-    <item>
-      <title>Linux使用modmap替换super和CapsLock位置</title>
-      <link>https://fhxisdog.github.io/2019/05/linux_use_modmap_switch_super_capslock/</link>
-      <pubDate>Tue, 28 May 2019 15:50:39 +0800</pubDate>
-      
-      <guid>https://fhxisdog.github.io/2019/05/linux_use_modmap_switch_super_capslock/</guid>
-      <description>manjaro的i3wm版本默认的mod键是super(就是windows键)，为了拯救我的小拇指，所以使用xmodmap将super键和C</description>
     </item>
     
   </channel>
