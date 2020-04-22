@@ -3,13 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/</loc>
-    <lastmod>2020-04-22T12:00:26+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://fhxisdog.github.io/categories/</loc>
     <lastmod>2020-04-22T12:00:26+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -31,6 +24,13 @@
   </url>
   
   <url>
+    <loc>https://fhxisdog.github.io/categories/maven/</loc>
+    <lastmod>2020-04-22T12:00:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://fhxisdog.github.io/tags/maven/</loc>
     <lastmod>2020-04-22T12:00:26+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/maven/</loc>
+    <loc>https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/</loc>
     <lastmod>2020-04-22T12:00:26+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -80,14 +80,14 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/tags/git/</loc>
+    <loc>https://fhxisdog.github.io/categories/git/</loc>
     <lastmod>2020-04-11T15:06:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/git/</loc>
+    <loc>https://fhxisdog.github.io/tags/git/</loc>
     <lastmod>2020-04-11T15:06:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -115,14 +115,14 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/tags/linux/</loc>
+    <loc>https://fhxisdog.github.io/categories/linux/</loc>
     <lastmod>2020-04-10T10:26:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/linux/</loc>
+    <loc>https://fhxisdog.github.io/tags/linux/</loc>
     <lastmod>2020-04-10T10:26:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -150,14 +150,14 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/tags/smicroservices/</loc>
+    <loc>https://fhxisdog.github.io/categories/smicroservices/</loc>
     <lastmod>2019-11-16T14:07:16+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/smicroservices/</loc>
+    <loc>https://fhxisdog.github.io/tags/smicroservices/</loc>
     <lastmod>2019-11-16T14:07:16+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -276,14 +276,14 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/tags/docker/</loc>
+    <loc>https://fhxisdog.github.io/categories/docker/</loc>
     <lastmod>2019-06-04T15:01:04+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/docker/</loc>
+    <loc>https://fhxisdog.github.io/tags/docker/</loc>
     <lastmod>2019-06-04T15:01:04+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -304,13 +304,6 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/tags/orther/</loc>
-    <lastmod>2019-06-04T14:17:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://fhxisdog.github.io/categories/orther/</loc>
     <lastmod>2019-06-04T14:17:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -318,14 +311,21 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/nacos/</loc>
-    <lastmod>2019-05-29T15:33:57+08:00</lastmod>
+    <loc>https://fhxisdog.github.io/tags/orther/</loc>
+    <lastmod>2019-06-04T14:17:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://fhxisdog.github.io/tags/nacos/</loc>
+    <lastmod>2019-05-29T15:33:57+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/categories/nacos/</loc>
     <lastmod>2019-05-29T15:33:57+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -339,14 +339,14 @@
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/categories/skywalking/</loc>
+    <loc>https://fhxisdog.github.io/tags/skywalking/</loc>
     <lastmod>2019-05-29T15:33:57+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://fhxisdog.github.io/tags/skywalking/</loc>
+    <loc>https://fhxisdog.github.io/categories/skywalking/</loc>
     <lastmod>2019-05-29T15:33:57+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
