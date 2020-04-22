@@ -11,7 +11,7 @@
     
     
     <item>
-      <title>Maven 本地有jar包仍拉取远程仓库的jar包</title>
+      <title>aven 本地有jar包仍拉取远程仓库的jar包</title>
       <link>https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/</link>
       <pubDate>Wed, 22 Apr 2020 12:00:26 +0800</pubDate>
       
