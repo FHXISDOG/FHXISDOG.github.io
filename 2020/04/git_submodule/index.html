@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="使用场景 基于公司的项目会越来越多，常常需要提取一个公共的类库提供给多个项目使用，但是这个library怎么和git在一起方便管理呢？ 我们需要" />
-  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
+  <meta name="generator" content="Hugo 0.72.0 with theme pure" />
   <title>Git submodule使用总结 - just for fun</title>
   
   
@@ -73,7 +73,7 @@
           <a id="avatar" href="https://fhxisdog.github.io" target="_blank">
             <img class="img-circle img-rotate" src="https://fhxisdog.github.io/hj.jpg" width="200" height="200">
           </a>
-          <h2 id="name" class="hidden-xs hidden-sm">FHXISDOG</h2>
+          <h2 id="name" class="hidden-xs hidden-sm">Fingerr</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">just for fun</h3>
           <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>GuangZhou, China</small>
         </div><div class="search" id="search-form-wrap">
@@ -296,6 +296,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/docker_timezone/" class="title">docker时区问题</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 15:15:29 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/" class="title">windows以zip方式安装mysql</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 14:43:27 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/" class="title">Maven 本地有jar包仍拉取远程仓库的jar包</a>
                     </p>
                     <p class="item-date">
@@ -320,26 +340,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2020-04-11 15:06:44 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
                     </p>
                 </div>
             </li>
@@ -402,7 +402,7 @@
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h2 id="heading">使用场景</h2>
+      <h2 id="使用场景">使用场景</h2>
 <p>基于公司的项目会越来越多，常常需要提取一个公共的类库提供给多个项目使用，但是这个library怎么和git在一起方便管理呢？
 我们需要解决下面几个问题：</p>
 <p>如何在git项目中导入library库?</p>
@@ -410,19 +410,19 @@
 <p>其他项目如何获取到library库最新的提交?</p>
 <p>如何在clone的时候能够自动导入library库?</p>
 <p>解决以上问题，可以考虑使用git的 Submodule来解决。</p>
-<h2 id="submodule">什么是Submodule?</h2>
+<h2 id="什么是submodule">什么是Submodule?</h2>
 <p><code>git Submodule</code> 是一个很好的多项目使用共同类库的工具，他允许类库项目做为<code>repository</code>,子项目做为一个单独的git项目存在父项目中，子项目可以有自己的独立的commit，push，pull。而父项目以Submodule的形式包含子项目，父项目可以指定子项目<code>header</code>，父项目中会的提交信息包含<code>Submodule</code>的信息，再<code>clone</code>父项目的时候可以把<code>Submodule</code>初始化。</p>
-<h2 id="heading-1">使用</h2>
-<h3 id="heading-2">添加子模块</h3>
+<h2 id="使用">使用</h2>
+<h3 id="添加子模块">添加子模块</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git submodule add &lt;url&gt; <span style="color:#75715e">#在当前项目添加一个同名的子模块</span>
 
 git submodule add &lt;url&gt; &lt;path&gt; <span style="color:#75715e">#在&lt;path&gt; 目录添加子模块</span>
-</code></pre></div><h3 id="clone"><code>clone</code>子模块</h3>
+</code></pre></div><h3 id="clone子模块"><code>clone</code>子模块</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone &lt;url&gt; --recuresive
 </code></pre></div><p>如果<code>clone</code>时忘记添加参数<code>--recursive</code>可以使用以下命令进行拉取子模块</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git submodule update --init --recursive  <span style="color:#75715e">#如果子模块也包含子模块,递归拉取,如果无需递归,去掉 --recursive即可</span>
-</code></pre></div><h3 id="heading-3">在包含子模块的项目上工作</h3>
-<h4 id="heading-4">从子模块的远端拉取上游修改</h4>
+</code></pre></div><h3 id="在包含子模块的项目上工作">在包含子模块的项目上工作</h3>
+<h4 id="从子模块的远端拉取上游修改">从子模块的远端拉取上游修改</h4>
 <p>在项目中使用子模块的最简模型，就是只使用子项目并不时地获取更新，而并不在你的检出中进行任何更改。我们来看一个简单的例子。</p>
 <p>如果想要在子模块中查看新工作，可以进入到目录中运行 git fetch 与 git merge，合并上游分支来更新本地代码。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git fetch
@@ -483,7 +483,7 @@ Changes not staged <span style="color:#66d9ef">for</span> commit:
 
 no changes added to commit <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add&#34;</span> and/or <span style="color:#e6db74">&#34;git commit -a&#34;</span><span style="color:#f92672">)</span>
 </code></pre></div><p>如果你设置了配置选项 status.submodulesummary，Git 也会显示你的子模块的更改摘要：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config status.submodulesummary 1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config status.submodulesummary <span style="color:#ae81ff">1</span>
 
 $ git status
 On branch master
@@ -503,7 +503,7 @@ Submodules changed but not updated:
 </code></pre></div><p>这时如果运行 git diff，可以看到我们修改了 .gitmodules 文件，同时还有几个已拉取的提交需要提交到我们自己的子模块项目中。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git diff
 diff --git a/.gitmodules b/.gitmodules
-index 6fc0b3d..fd1cc29 100644
+index 6fc0b3d..fd1cc29 <span style="color:#ae81ff">100644</span>
 --- a/.gitmodules
 +++ b/.gitmodules
 @@ -1,3 +1,4 @@
@@ -525,7 +525,7 @@ Date:   Wed Sep <span style="color:#ae81ff">17</span> 16:37:02 <span style="colo
     updating DbConnector <span style="color:#66d9ef">for</span> bug fixes
 
 diff --git a/.gitmodules b/.gitmodules
-index 6fc0b3d..fd1cc29 100644
+index 6fc0b3d..fd1cc29 <span style="color:#ae81ff">100644</span>
 --- a/.gitmodules
 +++ b/.gitmodules
 @@ -1,3 +1,4 @@
@@ -539,7 +539,7 @@ Submodule DbConnector c3f01dc..c87d55d:
   &gt; more efficient db routine
   &gt; better connection routine
 </code></pre></div><p>当运行 git submodule update &ndash;remote 时，Git 默认会尝试更新 所有 子模块， 所以如果有很多子模块的话，你可以传递想要更新的子模块的名字。</p>
-<h4 id="heading-5">从项目远端拉取上游更改</h4>
+<h4 id="从项目远端拉取上游更改">从项目远端拉取上游更改</h4>
 <p>现在，让我们站在协作者的视角，他有自己的 MainProject 仓库的本地克隆， 只是执行 git pull 获取你新提交的更改还不够：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git pull
 From https://github.com/chaconinc/MainProject
@@ -586,7 +586,7 @@ nothing to commit, working tree clean
 $ git submodule sync --recursive
 <span style="color:#75715e"># 从新 URL 更新子模块</span>
 $ git submodule update --init --recursive
-</code></pre></div><h4 id="heading-6">在子模块上工作</h4>
+</code></pre></div><h4 id="在子模块上工作">在子模块上工作</h4>
 <p>你很有可能正在使用子模块，因为你确实想在子模块中编写代码的同时，还想在主项目上编写代码（或者跨子模块工作）。 否则你大概只能用简单的依赖管理系统（如 <code>Maven</code> 或 <code>Rubygems</code>）来替代了。</p>
 <p>现在我们将通过一个例子来演示如何在子模块与主项目中同时做修改，以及如何同时提交与发布那些修改。</p>
 <p>到目前为止，当我们运行 <code>git submodule update</code> 从子模块仓库中抓取修改时， Git 将会获得这些改动并更新子目录中的文件，但是会将子仓库留在一个称作“游离的 HEAD”的状态。 这意味着没有本地工作分支（例如 “master” ）跟踪改动。 如果没有工作分支跟踪更改，也就意味着即便你将更改提交到了子模块，这些更改也很可能会在下次运行 <code>git submodule update</code> 时丢失。如果你想要在子模块中跟踪这些修改，还需要一些额外的步骤。</p>
@@ -646,7 +646,7 @@ Recorded preimage <span style="color:#66d9ef">for</span> <span style="color:#e6d
 Automatic merge failed; fix conflicts and <span style="color:#66d9ef">then</span> commit the result.
 Unable to merge <span style="color:#e6db74">&#39;c75e92a2b3855c9e5b66f915308390d9db204aca&#39;</span> in submodule path <span style="color:#e6db74">&#39;DbConnector&#39;</span>
 </code></pre></div><p>你可以进入子模块目录中然后就像平时那样修复冲突。</p>
-<h4 id="heading-7">发布子模块改动</h4>
+<h4 id="发布子模块改动">发布子模块改动</h4>
 <p>现在我们的子模块目录中有一些改动。 其中有一些是我们通过更新从上游引入的，而另一些是本地生成的，由于我们还没有推送它们，所以对任何其他人都不可用。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git diff
 Submodule DbConnector c87d55d..82d2ad3:
@@ -690,7 +690,7 @@ Total <span style="color:#ae81ff">2</span> <span style="color:#f92672">(</span>d
 To https://github.com/chaconinc/MainProject
    3d6d338..9a377d1  master -&gt; master
 </code></pre></div><p>如你所见，Git 进入到 DbConnector 模块中然后在推送主项目前推送了它。 如果那个子模块因为某些原因推送失败，主项目也会推送失败。 你也可以通过设置 <code>git config push.recurseSubmodules on-demand</code> 让它成为默认行为。</p>
-<h4 id="heading-8">合并子模块改动</h4>
+<h4 id="合并子模块改动">合并子模块改动</h4>
 <p>如果你其他人同时改动了一个子模块引用，那么可能会遇到一些问题。 也就是说，如果子模块的历史已经分叉并且在父项目中分别提交到了分叉的分支上，那么你需要做一些工作来修复它。</p>
 <p>如果一个提交是另一个的直接祖先（一个快进式合并），那么 Git 会简单地选择之后的提交来合并，这样没什么问题。</p>
 <p>不过，Git 甚至不会尝试去进行一次简单的合并。 如果子模块提交已经分叉且需要合并，那你会得到类似下面的信息：</p>
@@ -792,9 +792,9 @@ $ cd ..
 $ git add DbConnector
 $ git commit -am 'Fast forwarded to a common submodule child'
 </code></pre><p>这些命令完成了同一件事，但是通过这种方式你至少可以验证工作是否有效，以及当你在完成时可以确保子模块目录中有你的代码。</p>
-<h4 id="heading-9">子模的块技巧</h4>
+<h4 id="子模的块技巧">子模的块技巧</h4>
 <p>你可以做几件事情来让用子模块工作轻松一点儿。</p>
-<h5 id="heading-10">子模块遍历</h5>
+<h5 id="子模块遍历">子模块遍历</h5>
 <p>有一个 <code>foreach</code> 子模块命令，它能在每一个子模块中运行任意命令。 如果项目中包含了大量子模块，这会非常有用。</p>
 <p>例如，假设我们想要开始开发一项新功能或者修复一些错误，并且需要在几个子模块内工作。 我们可以轻松地保存所有子模块的工作进度。</p>
 <pre><code class="language-console" data-lang="console">$ git submodule foreach 'git stash'
@@ -843,15 +843,15 @@ index 1aaefb6..5297645 100644
  {
         struct strbuf out = STRBUF_INIT;
 </code></pre><p>在这里，我们看到子模块中定义了一个函数并在主项目中调用了它。 这明显是个简化了的例子，但是希望它能让你明白这种方法的用处。</p>
-<h5 id="heading-11">有用的别名</h5>
+<h5 id="有用的别名">有用的别名</h5>
 <p>你可能想为其中一些命令设置别名，因为它们可能会非常长而你又不能设置选项作为它们的默认选项。 我们在 <a href="https://git-scm.com/book/zh/v2/ch00/_git_aliases">Git 别名</a> 介绍了设置 Git 别名， 但是如果你计划在 Git 中大量使用子模块的话，这里有一些例子。</p>
 <pre><code class="language-console" data-lang="console">$ git config alias.sdiff '!'&quot;git diff &amp;&amp; git submodule foreach 'git diff'&quot;
 $ git config alias.spush 'push --recurse-submodules=on-demand'
 $ git config alias.supdate 'submodule update --remote --merge'
 </code></pre><p>这样当你想要更新子模块时可以简单地运行 <code>git supdate</code>，或 <code>git spush</code> 检查子模块依赖后推送。</p>
-<h3 id="heading-12">子模块的问题</h3>
+<h3 id="子模块的问题">子模块的问题</h3>
 <p>然而使用子模块还是有一些小问题。</p>
-<h4 id="heading-13">切换分支</h4>
+<h4 id="切换分支">切换分支</h4>
 <p>例如，使用 Git 2.13 以前的版本时，在有子模块的项目中切换分支可能会造成麻烦。 如果你创建一个新分支，在其中添加一个子模块，之后切换到没有该子模块的分支上时，你仍然会有一个还未跟踪的子模块目录。</p>
 <pre><code class="language-console" data-lang="console">$ git --version
 git version 2.12.2
@@ -926,7 +926,7 @@ nothing to commit, working tree clean
 </code></pre><p>当你在父级项目的几个分支上工作时，对 <code>git checkout</code> 使用 <code>--recurse-submodules</code> 选项也很有用， 它能让你的子模块处于不同的提交上。确实，如果你在记录了子模块的不同提交的分支上切换， 那么在执行 <code>git status</code> 后子模块会显示为“已修改”并指出“新的提交”。 这是因为子模块的状态默认不会在切换分支时保留。</p>
 <p>这点非常让人困惑，因此当你的项目中拥有子模块时，可以总是使用 <code>git checkout --recurse-submodules</code>。 （对于没有 <code>--recurse-submodules</code> 选项的旧版 Git，在检出之后可使用 <code>git submodule update --init --recursive</code> 来让子模块处于正确的状态）。</p>
 <p>幸运的是，你可以通过 <code>git config submodule.recurse true</code> 设置 <code>submodule.recurse</code> 选项， 告诉 Git（&gt;=2.14）总是使用 <code>--recurse-submodules</code>。 如上所述，这也会让 Git 为每个拥有 <code>--recurse-submodules</code> 选项的命令（除了 <code>git clone</code>） 总是递归地在子模块中执行。</p>
-<h4 id="heading-14">从子目录切换到子模块</h4>
+<h4 id="从子目录切换到子模块">从子目录切换到子模块</h4>
 <p>另一个主要的告诫是许多人遇到了将子目录转换为子模块的问题。 如果你在项目中已经跟踪了一些文件，然后想要将它们移动到一个子模块中，那么请务必小心，否则 Git 会对你发脾气。 假设项目内有一些文件在子目录中，你想要将其转换为一个子模块。 如果删除子目录然后运行 <code>submodule add</code>，Git 会朝你大喊：</p>
 <pre><code class="language-console" data-lang="console">$ rm -Rf CryptoLibrary/
 $ git submodule add https://github.com/chaconinc/CryptoLibrary
@@ -955,7 +955,7 @@ Switched to branch 'master'
 </code></pre><p>当你切换回来之后，因为某些原因你得到了一个空的 <code>CryptoLibrary</code> 目录，并且 <code>git submodule update</code> 也无法修复它。 你需要进入到子模块目录中运行 <code>git checkout .</code> 来找回所有的文件。 你也可以通过 <code>submodule foreach</code> 脚本来为多个子模块运行它。</p>
 <p>要特别注意的是，近来子模块会将它们的所有 Git 数据保存在顶级项目的 <code>.git</code> 目录中，所以不像旧版本的 Git，摧毁一个子模块目录并不会丢失任何提交或分支。</p>
 <p>拥有了这些工具，使用子模块会成为可以在几个相关但却分离的项目上同时开发的相当简单有效的方法。</p>
-<h2 id="heading-15">参考连接</h2>
+<h2 id="参考连接">参考连接</h2>
 <blockquote>
 <p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97"> Git 工具 - 子模块</a></p>
 <p><a href="https://segmentfault.com/a/1190000003076028#item-1">使用Git Submodule管理子模块</a></p>

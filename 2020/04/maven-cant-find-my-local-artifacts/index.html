@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="问题现象 使用Maven过程中，曾经出现过本地仓库中已经存在某jar包，但是Maven仍然从远程仓库下载jar包的现象，并且可能会报出类似以下" />
-  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
+  <meta name="generator" content="Hugo 0.72.0 with theme pure" />
   <title>Maven 本地有jar包仍拉取远程仓库的jar包 - just for fun</title>
   
   
@@ -73,7 +73,7 @@
           <a id="avatar" href="https://fhxisdog.github.io" target="_blank">
             <img class="img-circle img-rotate" src="https://fhxisdog.github.io/hj.jpg" width="200" height="200">
           </a>
-          <h2 id="name" class="hidden-xs hidden-sm">FHXISDOG</h2>
+          <h2 id="name" class="hidden-xs hidden-sm">Fingerr</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">just for fun</h3>
           <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>GuangZhou, China</small>
         </div><div class="search" id="search-form-wrap">
@@ -296,6 +296,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/docker_timezone/" class="title">docker时区问题</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 15:15:29 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/" class="title">windows以zip方式安装mysql</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 14:43:27 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/" class="title">Maven 本地有jar包仍拉取远程仓库的jar包</a>
                     </p>
                     <p class="item-date">
@@ -320,26 +340,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2020-04-11 15:06:44 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
                     </p>
                 </div>
             </li>
@@ -403,14 +403,14 @@
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h3 id="heading">问题现象</h3>
+      <h3 id="问题现象">问题现象</h3>
 <p>使用Maven过程中，曾经出现过本地仓库中已经存在某jar包，但是Maven仍然从远程仓库下载jar包的现象，并且可能会报出类似以下的错误：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>exec<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span>   The project com.acme:test:0.0.1-SNAPSHOT <span style="color:#f92672">(</span>/home/acme/pom.xml<span style="color:#f92672">)</span> has <span style="color:#ae81ff">1</span> error
 <span style="color:#f92672">[</span>exec<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span>     Non-resolvable parent POM: Failure to find com.acme.maven:parent-pom:pom:2 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted <span style="color:#66d9ef">until</span> the update interval of central has elapsed or updates are forced and <span style="color:#e6db74">&#39;parent.relativePath&#39;</span> points at no local POM @ line 5, column <span style="color:#ae81ff">13</span> -&gt; <span style="color:#f92672">[</span>Help 2<span style="color:#f92672">]</span>
-</code></pre></div><h2 id="heading-1">解决方案</h2>
+</code></pre></div><h2 id="解决方案">解决方案</h2>
 <p>在stackoverflow看到了类似的问题，可以通过删除<code>_remote.repositories</code>文件解决问题。</p>
 <p>Maven使用<code>_remote.repositories</code>文件存储本地jar对应的远程仓库源头。如果源头已经不存在该jar包（比如更改配置切换镜像、切换仓库导致的），Maven的resolve会失败，从而导致项目构建失败。删除了该文件以后，Maven不再从远程仓库执行此操作，因此可以解决问题。</p>
-<h2 id="heading-2">参考资料</h2>
+<h2 id="参考资料">参考资料</h2>
 <blockquote>
 <p><a href="https://www.caosh.me/solution/maven-local-repository-does-not-work/">Maven偶现本地仓库jar存在仍然从远程仓库拉取且失败的现象 | Blog.new &lsquo;书豪&rsquo;</a></p>
 <p><a href="https://stackoverflow.com/questions/16866978/maven-cant-find-my-local-artifacts">maven-cant-find-my-local-artifacts</a></p>
@@ -431,6 +431,11 @@
                 <a href="https://fhxisdog.github.io/2020/04/win10_xiaohe/" title="win10自带输入法添加小鹤双拼"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/"
+                    title="windows以zip方式安装mysql"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
             <li class="toggle-toc">

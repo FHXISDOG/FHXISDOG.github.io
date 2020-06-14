@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="基本概念 四度空间: 工作区:Workspace 就是你在电脑里能看到的目录 暂存区: Index/Stage/Cached 英文叫stage, 或index。一般存放在 &amp;ldquo;.g" />
-  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
+  <meta name="generator" content="Hugo 0.72.0 with theme pure" />
   <title>Git不完全使用指南 - just for fun</title>
   
   
@@ -73,7 +73,7 @@
           <a id="avatar" href="https://fhxisdog.github.io" target="_blank">
             <img class="img-circle img-rotate" src="https://fhxisdog.github.io/hj.jpg" width="200" height="200">
           </a>
-          <h2 id="name" class="hidden-xs hidden-sm">FHXISDOG</h2>
+          <h2 id="name" class="hidden-xs hidden-sm">Fingerr</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">just for fun</h3>
           <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>GuangZhou, China</small>
         </div><div class="search" id="search-form-wrap">
@@ -296,6 +296,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/docker_timezone/" class="title">docker时区问题</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 15:15:29 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/" class="title">windows以zip方式安装mysql</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 14:43:27 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/" class="title">Maven 本地有jar包仍拉取远程仓库的jar包</a>
                     </p>
                     <p class="item-date">
@@ -320,26 +340,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2020-04-11 15:06:44 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
                     </p>
                 </div>
             </li>
@@ -402,8 +402,8 @@
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h2 id="heading">基本概念</h2>
-<h3 id="heading-1">四度空间:</h3>
+      <h2 id="基本概念">基本概念</h2>
+<h3 id="四度空间">四度空间:</h3>
 <p><strong>工作区:Workspace</strong></p>
 <p> 就是你在电脑里能看到的目录</p>
 <p><strong>暂存区: Index/Stage/Cached</strong></p>
@@ -412,7 +412,7 @@
 <p>工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</p>
 <p><strong>远程仓库: Remote Repository</strong></p>
 <p>远程仓库则被设置在一个能被所有团队成员访问到的远程服务器上，基本上都是在互联网上或者是本地局域网中</p>
-<h3 id="heading-2">五种状态:</h3>
+<h3 id="五种状态">五种状态:</h3>
 <p><strong>未修改(Unmodify):</strong></p>
 <p>记录在工作区,没有被修改的文件</p>
 <p><strong>未追踪(Untracked):</strong></p>
@@ -425,15 +425,15 @@
 <p>已提交到本地仓库</p>
 <p><strong>已推送(pushed):</strong></p>
 <p>已推送到远程仓库</p>
-<h4 id="heading-3">一张图概括:</h4>
+<h4 id="一张图概括">一张图概括:</h4>
 <p><img src="/img/Git/4_space.png" alt=""></p>
-<h4 id="heading-4"></h4>
-<h2 id="heading-5">新建一个仓库</h2>
+<h4 id="heading"></h4>
+<h2 id="新建一个仓库">新建一个仓库</h2>
 <pre><code class="language-git" data-lang="git">git init #在当前目录新建一个git仓库
 
 git clone #clone一个远程的仓库到当前目录
 </code></pre><p>当你创建一个带有<code>.git</code>文件夹的目录后,这个目录中的所有操作都将会被<code>git</code>记录,这就故事开始的地方,让我们开启这个游戏!</p>
-<h2 id="heading-6">加入暂存区</h2>
+<h2 id="加入暂存区">加入暂存区</h2>
 <p>这个目录就是被git记录的工作区,在这个目录下的所有增删改都会被git纳入到版本控制.</p>
 <p>可以使用<code>git status</code>查看当前目录的哪些文件的变化:</p>
 <pre><code class="language-git" data-lang="git">git status #查看当前工作区文件状态
@@ -459,23 +459,23 @@ git add &lt;file name&gt; #将某个文件的修改就如缓存区
 <pre><code class="language-git" data-lang="git">git update-index --skip-worktree &lt;file name&gt; # 这个不会关闭文件与远程仓库的跟踪，只是告诉Git不要跟踪对本地文件/文件夹的更改，每次pull时会拉取最新的变化会提示冲突，但因为没有跟踪本地更改，所以需要no-skip-worktree再合并最新的变化 或者使用git stash将本地的更改保存起来,再git pull,然后再git stash pop,再合并冲突,比较麻烦
 </code></pre><p>反向操作:</p>
 <pre><code class="language-git" data-lang="git">git update-index --no-skip-worktree &lt;file name&gt;
-</code></pre><h2 id="heading-7">提交</h2>
-<h3 id="heading-8">改写提交</h3>
+</code></pre><h2 id="提交">提交</h2>
+<h3 id="改写提交">改写提交</h3>
 <p>如果提交完发现自己漏提了文件,或者提交信息写错了可以使用<code>--amend</code>来改写提交</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit --amend <span style="color:#75715e">#如果有漏提的文件,add到缓存区即可,然后git会打开默认的编辑器让你重新编写提交信息</span>
-</code></pre></div><h3 id="heading-9">复制提交</h3>
+</code></pre></div><h3 id="复制提交">复制提交</h3>
 <p><code>cherry-pick</code>可以将其它提交复制到当前再提交一遍</p>
 <p>执行:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git cherry-pick c2 c4
 </code></pre></div><p><img src="/img/Git/cherry-pick.gif" alt=""></p>
-<h2 id="heading-10">恢复</h2>
-<h3 id="heading-11">文件已被修改尚未加入到缓存区</h3>
+<h2 id="恢复">恢复</h2>
+<h3 id="文件已被修改尚未加入到缓存区">文件已被修改尚未加入到缓存区</h3>
 <pre><code class="language-git" data-lang="git">git restore &lt;file name&gt; #将文件恢复到和缓存区(index)一样的状态
-</code></pre><h3 id="heading-12">文件被修改并提交到缓存区</h3>
+</code></pre><h3 id="文件被修改并提交到缓存区">文件被修改并提交到缓存区</h3>
 <pre><code class="language-git" data-lang="git">git restore --staged &lt;file name&gt; #将文件从缓存区(index)移动出来    
-</code></pre><h3 id="untracked">新增的文件删除(untracked状态)</h3>
+</code></pre><h3 id="新增的文件删除untracked状态">新增的文件删除(untracked状态)</h3>
 <pre><code class="language-git" data-lang="git">git clean -f &lt;file name&gt; #将untracked状态的文件删除
-</code></pre><h2 id="git">Git指针</h2>
+</code></pre><h2 id="git指针">Git指针</h2>
 <p>指针是git的精髓,理解的指针的移动对于很多命令的理解和记忆更胜一筹.</p>
 <p>Git中指针大致有五类:</p>
 <ul>
@@ -529,7 +529,7 @@ git add &lt;file name&gt; #将某个文件的修改就如缓存区
 <h3 id="git-branch--f-branch-name-"><code>git branch -f &lt;branch name&gt; </code></h3>
 <p>这条命令是将分支指针移动到指定位置.运行<code>git branch -f master c1</code>:</p>
 <p><img src="/img/Git/branch-f.gif" alt=""></p>
-<h3 id="heading-13">匿名分支与头指针分离处理</h3>
+<h3 id="匿名分支与头指针分离处理">匿名分支与头指针分离处理</h3>
 <ul>
 <li>匿名分支</li>
 </ul>
@@ -540,7 +540,7 @@ git add &lt;file name&gt; #将某个文件的修改就如缓存区
 <li>强制回退丢失 <code>commit id</code></li>
 </ul>
 <p>如果意外使用如:<code>git reset --hard HEAD^</code>时,可能会使commit消失,这时候可以使用<code>git reflog</code>来找回命令</p>
-<h2 id="heading-14">分支</h2>
+<h2 id="分支">分支</h2>
 <blockquote>
 <p>几乎所有的版本控制系统都以某种形式支持分支。
 使用分支意味着你可以把你的工作从开发主线上分离开来，以免影响开发主线。
@@ -551,7 +551,7 @@ Git 处理分支的方式可谓是难以置信的轻量，创建新分支这一�
 与许多其它版本控制系统不同，Git 鼓励在工作流程中频繁地使用分支与合并，哪怕一天之内进行许多次。
 理解和精通这一特性，你便会意识到 Git 是如此的强大而又独特，并且从此真正改变你的开发方式。</p>
 </blockquote>
-<h3 id="heading-15">命令</h3>
+<h3 id="命令">命令</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git branch <span style="color:#75715e">#列出仓库中所有分支。</span>
 git branch &lt;branch&gt; <span style="color:#75715e">#创建一个名为 &lt;branch&gt; 的分支。不会 自动切换到那个分支去。</span>
 git branch -d &lt;branch&gt; <span style="color:#75715e">#删除指定分支。这是一个安全的操作，Git 会阻止你删除包含未合并更改的分支。</span>
@@ -562,10 +562,10 @@ git branch -m &lt;branch&gt; <span style="color:#75715e">#将当前分支命名�
 git checkout &lt;existing-branch&gt; <span style="color:#75715e">#查看特定分支，分支应该已经通过 git branch 创建。这使得 &lt;existing-branch&gt; 成为当前的分支，并更新工作目录的版本。</span>
 git checkout -b &lt;new-branch&gt; <span style="color:#75715e">#创建并查看 &lt;new-branch&gt;，-b 选项是一个方便的标记，告诉Git在运行 git checkout &lt;new-branch&gt; 之前运行 git branch &lt;new-branch&gt;。</span>
 git checkout -b &lt;new-branch&gt; &lt;existing-branch&gt; <span style="color:#75715e">#和上一条相同，但将 &lt;existing-branch&gt; 作为新分支的基，而不是当前分支。</span>
-</code></pre></div><h3 id="heading-16">分支合并的两种姿势</h3>
+</code></pre></div><h3 id="分支合并的两种姿势">分支合并的两种姿势</h3>
 <h4 id="git-merge">git merge</h4>
 <p><img src="/img/Git/merge.gif" alt=""></p>
-<h5 id="merge">merge的三种特殊情况</h5>
+<h5 id="merge的三种特殊情况">merge的三种特殊情况</h5>
 <ul>
 <li>
 <p><strong>冲突</strong></p>
@@ -621,7 +621,7 @@ git merge branch1
 <p>它会把整个 branch1分支移动到 master 分支的后面，有效地把所有 master 分支上新的提交并入过来。但是，rebase 为原分支上每一个提交创建一个新的提交，重写了项目历史，并且不会带来合并提交。</p>
 <p>rebase最大的好处是你的项目历史会非常整洁。首先，它不像 <code>git merge</code> 那样引入不必要的合并提交。其次，如上图所示，rebase 导致最后的项目历史呈现出完美的线性——你可以从项目终点到起点浏览而不需要任何的 fork。这让你更容易使用 <code>git log</code>、<code>git bisect</code> 和 <code>gitk</code> 来查看项目历史。</p>
 <p>不过，这种简单的提交历史会带来两个后果：安全性和可跟踪性。如果你违反了 rebase 黄金法则，重写项目历史可能会给你的协作工作流带来灾难性的影响。此外，rebase 不会有合并提交中附带的信息——你看不到 branch分支中并入了上游的哪些更改。</p>
-<h5 id="rebase">交互式rebase</h5>
+<h5 id="交互式rebase">交互式rebase</h5>
 <p>交互式的 rebase 允许你更改并入新分支的提交。这比自动的 rebase 更加强大，因为它提供了对分支上提交历史完整的控制。一般来说，这被用于将 feature 分支并入 master 分支之前，清理混乱的历史。</p>
 <p>把 <code>-i</code> 传入 <code>git rebase</code> 选项来开始一个交互式的rebase过程：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout feature
@@ -635,21 +635,21 @@ pick 5c67e61 Message <span style="color:#66d9ef">for</span> commit <span style="
 fixup 9480b3d Message <span style="color:#66d9ef">for</span> commit <span style="color:#75715e">#2</span>
 pick 5c67e61 Message <span style="color:#66d9ef">for</span> commit <span style="color:#75715e">#3</span>
 </code></pre></div><p>忽略不重要的提交会让你的 feature 分支的历史更清晰易读。这是 <code>git merge</code> 做不到的。</p>
-<h5 id="rebase-1">Rebase的黄金法则</h5>
+<h5 id="rebase的黄金法则">Rebase的黄金法则</h5>
 <p>当你理解 rebase 是什么的时候，最重要的就是什么时候 <em>不能</em> 用 rebase。<code>git rebase</code> 的黄金法则便是，绝不要在公共的分支上使用它。</p>
 <p>这次 rebase 将 master 分支上的所有提交都移到了 feature 
 分支后面。问题是它只发生在你的代码仓库中，其他所有的开发者还在原来的 master 上工作。因为 rebase 引起了新的提交，Git 
 会认为你的 master 分支和其他人的 master 已经分叉了。</p>
 <p>同步两个 master 分支的唯一办法是把它们 merge 到一起，导致一个额外的合并提交和两堆包含同样更改的提交。不用说，这会让人非常困惑。</p>
 <p>所以，在你运行 <code>git rebase</code> 之前，一定要问问你自己「有没有别人正在这个分支上工作？」。如果答案是肯定的，那么把你的爪子放回去，重新找到一个无害的方式（如 <code>git revert</code>）来提交你的更改。不然的话，你可以随心所欲地重写历史。</p>
-<h5 id="heading-17">强制推送</h5>
+<h5 id="强制推送">强制推送</h5>
 <p>如果你想把 rebase 之后的 master 分支推送到远程仓库，Git 会阻止你这么做，因为两个分支包含冲突。但你可以传入 <code>--force</code> 标记来强行推送。就像下面一样：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 小心使用这个命令！</span>
 git push --force
 </code></pre></div><p>它会重写远程的 master 分支来匹配你仓库中 rebase 之后的 master 分支，对于团队中其他成员来说这看上去很诡异。所以，务必小心这个命令，只有当你知道你在做什么的时候再使用。</p>
 <p>仅有的几个强制推送的使用场景之一是，当你在想向远程仓库推送了一个私有分支之后，执行了一个本地的清理（比如说为了回滚）。这就像是在说「哦，其实我并不想推送之前那个
 feature 分支的。用我现在的版本替换掉吧。」同样，你要注意没有别人正在这个 feature 分支上工作。</p>
-<h5 id="heading-18">本地清理</h5>
+<h5 id="本地清理">本地清理</h5>
 <p>在你工作流中使用 rebase 最好的用法之一就是清理本地正在开发的分支。隔一段时间执行一次交互式 rebase，你可以保证你 feature 分支中的每一个提交都是专注和有意义的。你在写代码时不用担心造成孤立的提交——因为你后面一定能修复。</p>
 <p>调用 <code>git rebase</code> 的时候，你有两个基（base）可以选择：上游分支（比如 master）或者你 
 feature 分支中早先的一个提交。我们在「交互式 rebase」一节看到了第一种的例子。后一种在当你只需要修改最新几次提交时也很有用。比如说，下面的命令对最新的 3 次提交进行了交互式 
@@ -662,7 +662,7 @@ git rebase -i HEAD~3
 </code></pre></div><p>交互式 rebase 是在你工作流中引入 <code>git rebase</code> 的的好办法，因为它只影响本地分支。其他开发者只能看到你已经完成的结果，那就是一个非常整洁、易于追踪的分支历史。</p>
 <p>但同样的，这只能用在私有分支上。如果你在同一个 feature 分支和其他开发者合作的话，这个分支是公开的，你不能重写这个历史。</p>
 <p>用带有交互式的 rebase 清理本地提交，这是无法用 <code>git merge</code> 命令代替的。</p>
-<h3 id="heading-19">保存当前工作状态</h3>
+<h3 id="保存当前工作状态">保存当前工作状态</h3>
 <blockquote>
 <p>此时我在 feature_666 分支,非常聚精会神加持高专注地实现一个功能 666 模块，简直键盘如飞的编写代码～～～
 然后这时，客户反馈出一个 bug , 非常严重，必须立马解决，优先级为 0 ！！！
@@ -690,15 +690,15 @@ git stash save &lt;message&gt; #给stash 存储的修改起个名字并保存
 git stash apply stash@{X} #取出相应的暂存
 
 git stash drop stash@{X} #将记录列表中取出的对应暂存记录删除
-</code></pre><h2 id="heading-20">标签</h2>
+</code></pre><h2 id="标签">标签</h2>
 <p>命令:</p>
 <pre><code class="language-git" data-lang="git">git tag &lt;tag name&gt; #打一个标签
 
 git checkout &lt;tag name&gt; #检出一个标签
 
 git tag -d &lt;tag name&gt; #删除一个标签
-</code></pre><h2 id="heading-21">远程交互</h2>
-<h3 id="git-init">添加远程仓库(git init方式)</h3>
+</code></pre><h2 id="远程交互">远程交互</h2>
+<h3 id="添加远程仓库git-init方式">添加远程仓库(git init方式)</h3>
 <ul>
 <li>初始化</li>
 </ul>
@@ -724,7 +724,7 @@ git tag -d &lt;tag name&gt; #删除一个标签
 <li>合并当前与远程分支</li>
 </ul>
 <pre><code class="language-git" data-lang="git">git merge origin/dev
-</code></pre><h3 id="git-clone">克隆方式(git clone)</h3>
+</code></pre><h3 id="克隆方式git-clone">克隆方式(git clone)</h3>
 <ul>
 <li>克隆仓库</li>
 </ul>
@@ -733,11 +733,11 @@ git tag -d &lt;tag name&gt; #删除一个标签
 <li>检出分支</li>
 </ul>
 <pre><code class="language-git" data-lang="git">git checkout -b &lt;local branch name&gt; &lt;remote branch name&gt; #拉取本地分支与远程分支关联
-</code></pre><h3 id="heading-22">有关远程分支的命令</h3>
+</code></pre><h3 id="有关远程分支的命令">有关远程分支的命令</h3>
 <pre><code class="language-git" data-lang="git">git branch -a #查看远程分支
 
 git branch -vv #查看本地分支与远程分支的关联
-</code></pre><h3 id="heading-23">本地分支与远程分支名称问题</h3>
+</code></pre><h3 id="本地分支与远程分支名称问题">本地分支与远程分支名称问题</h3>
 <p>本地分支与远程对应的分支尽量同名,如果不同命会出现问题:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    fatal: The upstream branch of your current branch does not match
 the name of your current branch.  To push to the upstream branch
@@ -754,7 +754,7 @@ To choose either option permanently, see push.default in <span style="color:#e6d
 <pre><code class="language-git" data-lang="git">git push origin dev2:dev
 </code></pre><p>或者更改git 配置:</p>
 <pre><code class="language-git" data-lang="git">git config --global push.default upstream
-</code></pre><h3 id="heading-24">操纵远程分支</h3>
+</code></pre><h3 id="操纵远程分支">操纵远程分支</h3>
 <ul>
 <li>将本地分支推送到远程</li>
 </ul>

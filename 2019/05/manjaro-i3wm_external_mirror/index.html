@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="装了manjaro的i3wm桌面环境后，发现外界显示器无法显示。搜索资料后发现解决方法如下。 查看设备输入 终端输入: xrandr 可以看到结果如下，其中 e" />
-  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
+  <meta name="generator" content="Hugo 0.72.0 with theme pure" />
   <title>Manjaro I3wm接入外接显示器不显示 - just for fun</title>
   
   
@@ -73,7 +73,7 @@
           <a id="avatar" href="https://fhxisdog.github.io" target="_blank">
             <img class="img-circle img-rotate" src="https://fhxisdog.github.io/hj.jpg" width="200" height="200">
           </a>
-          <h2 id="name" class="hidden-xs hidden-sm">FHXISDOG</h2>
+          <h2 id="name" class="hidden-xs hidden-sm">Fingerr</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">just for fun</h3>
           <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>GuangZhou, China</small>
         </div><div class="search" id="search-form-wrap">
@@ -296,6 +296,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/docker_timezone/" class="title">docker时区问题</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 15:15:29 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/" class="title">windows以zip方式安装mysql</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 14:43:27 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/" class="title">Maven 本地有jar包仍拉取远程仓库的jar包</a>
                     </p>
                     <p class="item-date">
@@ -320,26 +340,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2020-04-11 15:06:44 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
                     </p>
                 </div>
             </li>
@@ -405,7 +405,7 @@
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
       <p>装了manjaro的i3wm桌面环境后，发现外界显示器无法显示。搜索资料后发现解决方法如下。</p>
-<h3 id="heading">查看设备输入</h3>
+<h3 id="查看设备输入">查看设备输入</h3>
 <p>终端输入:</p>
 <pre><code>xrandr
 </code></pre><p>可以看到结果如下，其中 eDP1是我笔记本自带的屏幕，HDMI1就是我外接的显示器。</p>
@@ -448,7 +448,7 @@ HDMI1 connected (normal left inverted right x axis y axis)
 HDMI2 disconnected (normal left inverted right x axis y axis)
 VIRTUAL1 disconnected (normal left inverted right x axis y axis)
 
-</code></pre><h3 id="heading-1">双屏设置</h3>
+</code></pre><h3 id="双屏设置">双屏设置</h3>
 <ul>
 <li>设置主屏幕</li>
 </ul>
@@ -481,7 +481,7 @@ VIRTUAL1 disconnected (normal left inverted right x axis y axis)
 <li>永久保存</li>
 </ul>
 <pre><code>如果需要永久保存配置，可以通过更改/etc/X11/xorg.conf或者/etc/X11/xorg.conf.d/****进行保存。
-</code></pre><h3 id="heading-2">常用命令</h3>
+</code></pre><h3 id="常用命令">常用命令</h3>
 <ul>
 <li>外接显示器(&ndash;auto:最高分辨率)，与笔记本液晶屏幕显示同样内容（克隆）</li>
 </ul>
@@ -506,7 +506,7 @@ VIRTUAL1 disconnected (normal left inverted right x axis y axis)
 <li>关闭外接显示器，同时打开笔记本液晶屏幕 （只用笔记本液晶屏）</li>
 </ul>
 <pre><code> xrandr --output HDMI1 --off --output eDP1 --auto
-</code></pre><h3 id="heading-3">参考连接</h3>
+</code></pre><h3 id="参考连接">参考连接</h3>
 <p><a href="https://wiki.archlinux.org/index.php/Xrandr_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29">Arch Wiki</a></p>
 <p><a href="https://wiki.wh-redirect.deepin.cn/mediawiki/index.php?title=%E4%BD%BF%E7%94%A8Xrandr%E8%AE%BE%E7%BD%AE%E5%8D%95%E5%B1%8F%E5%92%8C%E5%8F%8C%E5%B1%8F">使用Xrandr设置单屏和双屏</a></p>
 

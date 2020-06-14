@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="安装python必须的依赖 sudo pip install jedi elpy rope pylint emacs配置 在～/.emacs.d/路径新建文件init.el 添加以下配置: (require &#39;package) (package-initialize) ;;配置包管理列" />
-  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
+  <meta name="generator" content="Hugo 0.72.0 with theme pure" />
   <title>Emacs搭建python开发环境 - just for fun</title>
   
   
@@ -73,7 +73,7 @@
           <a id="avatar" href="https://fhxisdog.github.io" target="_blank">
             <img class="img-circle img-rotate" src="https://fhxisdog.github.io/hj.jpg" width="200" height="200">
           </a>
-          <h2 id="name" class="hidden-xs hidden-sm">FHXISDOG</h2>
+          <h2 id="name" class="hidden-xs hidden-sm">Fingerr</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">just for fun</h3>
           <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>GuangZhou, China</small>
         </div><div class="search" id="search-form-wrap">
@@ -296,6 +296,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/docker_timezone/" class="title">docker时区问题</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 15:15:29 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/" class="title">windows以zip方式安装mysql</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 14:43:27 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/" class="title">Maven 本地有jar包仍拉取远程仓库的jar包</a>
                     </p>
                     <p class="item-date">
@@ -320,26 +340,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2020-04-11 15:06:44 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
                     </p>
                 </div>
             </li>
@@ -403,9 +403,9 @@
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h3 id="python">安装python必须的依赖</h3>
+      <h3 id="安装python必须的依赖">安装python必须的依赖</h3>
 <p><code>sudo pip install jedi elpy rope pylint</code></p>
-<h3 id="emacs">emacs配置</h3>
+<h3 id="emacs配置">emacs配置</h3>
 <p>在<code>～/.emacs.d/</code>路径新建文件<code>init.el</code></p>
 <p>添加以下配置:</p>
 <pre><code>(require 'package)
@@ -464,7 +464,7 @@
                 (neotree-find file-name)))
         (message &quot;Could not find git project root.&quot;))))
 
-</code></pre><h3 id="emacs-1">emacs配置</h3>
+</code></pre><h3 id="emacs配置-1">emacs配置</h3>
 <p>进入Emacs,<code>ALT-X</code>输入<code>list-packages</code></p>
 <p>安装必须的包:</p>
 <pre><code>		      company

@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="项目中遇到需要将vue打包到spring boot 中的static中，直接访问，不需要使用Nginx来访问nginx.具体做法如下: 将vue工程放到" />
-  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
+  <meta name="generator" content="Hugo 0.72.0 with theme pure" />
   <title>将vue打包到springboot静态资源中 - just for fun</title>
   
   
@@ -73,7 +73,7 @@
           <a id="avatar" href="https://fhxisdog.github.io" target="_blank">
             <img class="img-circle img-rotate" src="https://fhxisdog.github.io/hj.jpg" width="200" height="200">
           </a>
-          <h2 id="name" class="hidden-xs hidden-sm">FHXISDOG</h2>
+          <h2 id="name" class="hidden-xs hidden-sm">Fingerr</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">just for fun</h3>
           <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>GuangZhou, China</small>
         </div><div class="search" id="search-form-wrap">
@@ -296,6 +296,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/docker_timezone/" class="title">docker时区问题</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 15:15:29 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/" class="title">windows以zip方式安装mysql</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 14:43:27 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/" class="title">Maven 本地有jar包仍拉取远程仓库的jar包</a>
                     </p>
                     <p class="item-date">
@@ -320,26 +340,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2020-04-11 15:06:44 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
                     </p>
                 </div>
             </li>
@@ -405,8 +405,8 @@
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
       <p>项目中遇到需要将vue打包到spring boot 中的static中，直接访问，不需要使用Nginx来访问nginx.具体做法如下:</p>
-<h3 id="vuespring-boot">将vue工程放到spring boot工程最外层</h3>
-<h3 id="pom">修改pom文件</h3>
+<h3 id="将vue工程放到spring-boot工程最外层">将vue工程放到spring boot工程最外层</h3>
+<h3 id="修改pom文件">修改pom文件</h3>
 <pre><code>      &lt;plugin&gt;
                 &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
                 &lt;artifactId&gt;exec-maven-plugin&lt;/artifactId&gt;
@@ -454,7 +454,7 @@
                 &lt;/executions&gt;
             &lt;/plugin&gt;
         &lt;/plugins&gt;
-</code></pre><h3 id="springboot-static-">配置拦截器(此步可以省略,应为springboot static 路径是默认放开的)</h3>
+</code></pre><h3 id="配置拦截器此步可以省略应为springboot-static-路径是默认放开的">配置拦截器(此步可以省略,应为springboot static 路径是默认放开的)</h3>
 <pre><code>    @Override
     public void addResourceHandlers(org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry registry) {
         registry.addResourceHandler(&quot;/static/**&quot;)

@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="服务启动 本地单机启动 下载源码 从github上下载源码方式: git clone https://github.com/alibaba/nacos.git cd nacos/ mvn -Prelease-nacos clean install -U ls -al distribution/target/ // change the $version to your actual path cd distribution/target/nacos-server-$version/nacos/bin 下载编译后压缩包方式 从 最新稳定版本 下" />
-  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
+  <meta name="generator" content="Hugo 0.72.0 with theme pure" />
   <title>nacos使用指南 - just for fun</title>
   
   
@@ -73,7 +73,7 @@
           <a id="avatar" href="https://fhxisdog.github.io" target="_blank">
             <img class="img-circle img-rotate" src="https://fhxisdog.github.io/hj.jpg" width="200" height="200">
           </a>
-          <h2 id="name" class="hidden-xs hidden-sm">FHXISDOG</h2>
+          <h2 id="name" class="hidden-xs hidden-sm">Fingerr</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">just for fun</h3>
           <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>GuangZhou, China</small>
         </div><div class="search" id="search-form-wrap">
@@ -296,6 +296,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/docker_timezone/" class="title">docker时区问题</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 15:15:29 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/" class="title">windows以zip方式安装mysql</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 14:43:27 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/" class="title">Maven 本地有jar包仍拉取远程仓库的jar包</a>
                     </p>
                     <p class="item-date">
@@ -320,26 +340,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2020-04-11 15:06:44 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
                     </p>
                 </div>
             </li>
@@ -404,10 +404,10 @@
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h1 id="heading">服务启动</h1>
-<h2 id="heading-1">本地单机启动</h2>
-<h3 id="heading-2">下载源码</h3>
-<h4 id="github">从github上下载源码方式:</h4>
+      <h1 id="服务启动">服务启动</h1>
+<h2 id="本地单机启动">本地单机启动</h2>
+<h3 id="下载源码">下载源码</h3>
+<h4 id="从github上下载源码方式">从github上下载源码方式:</h4>
 <pre><code>git clone https://github.com/alibaba/nacos.git
 cd nacos/
 mvn -Prelease-nacos clean install -U  
@@ -415,26 +415,26 @@ ls -al distribution/target/
 
 // change the $version to your actual path
 cd distribution/target/nacos-server-$version/nacos/bin
-</code></pre><h4 id="heading-3">下载编译后压缩包方式</h4>
+</code></pre><h4 id="下载编译后压缩包方式">下载编译后压缩包方式</h4>
 <p>从 <a href="https://github.com/alibaba/nacos/releases">最新稳定版本</a> 下载 nacos-server-$version.zip 包</p>
 <pre><code> unzip nacos-server-$version.zip 或者 tar -xvf nacos-server-$version.tar.gz
  cd nacos/bin
-</code></pre><h3 id="heading-4">启动服务</h3>
+</code></pre><h3 id="启动服务">启动服务</h3>
 <h4 id="linuxunixmac">Linux/Unix/Mac</h4>
 <pre><code>sh startup.sh -m standalone
 </code></pre><h4 id="windows">windows</h4>
 <pre><code>cmd startup.cmd
 
 </code></pre><p>或者双击startup.cmd运行文件。</p>
-<h3 id="heading-5">测试</h3>
+<h3 id="测试">测试</h3>
 <p>浏览器访问:<code>localhost:8848/nacos</code>(默认用户名/密码:nacos/nacos)</p>
-<h2 id="docker">单机无数据库docker启动</h2>
-<h3 id="heading-6">下载镜像</h3>
+<h2 id="单机无数据库docker启动">单机无数据库docker启动</h2>
+<h3 id="下载镜像">下载镜像</h3>
 <pre><code>docker pull nacos/nacos-server
-</code></pre><h3 id="docker-1">启动docker</h3>
+</code></pre><h3 id="启动docker">启动docker</h3>
 <pre><code>docker run -d --name nacos -e PREFER_HOST_NAME=hostname -e MODE=standalone -e SPRING_DATASOURCE_PLATFORM=empty -p 8848:8848 nacos/nacos-server
-</code></pre><h2 id="docker-mysql">docker mysql启动</h2>
-<h3 id="nacos-standalonestandaloneenv">新建<code>nacos-standalone</code>文件夹，新建<code>standalone.env</code>文件:</h3>
+</code></pre><h2 id="docker-mysql启动">docker mysql启动</h2>
+<h3 id="新建nacos-standalone文件夹新建standaloneenv文件">新建<code>nacos-standalone</code>文件夹，新建<code>standalone.env</code>文件:</h3>
 <pre><code>PREFER_HOST_NAME=hostname
 MODE=standalone
 SPRING_DATASOURCE_PLATFORM=mysql
@@ -444,15 +444,15 @@ MYSQL_MASTER_SERVICE_DB_NAME=nacos
 MYSQL_MASTER_SERVICE_PORT=3306
 MYSQL_MASTER_SERVICE_USER=root
 MYSQL_MASTER_SERVICE_PASSWORD=you know
-</code></pre><h3 id="mysqlnacos">将mysql连接到nacos网络</h3>
+</code></pre><h3 id="将mysql连接到nacos网络">将mysql连接到nacos网络</h3>
 <pre><code>docker network create nacos
 
 docker network connect nacos iotechina-dev-mysql-5.7.26
-</code></pre><h3 id="heading-7">启动</h3>
+</code></pre><h3 id="启动">启动</h3>
 <pre><code>docker run -d --name nacos --env-file=standalone.env --network nacos  -p 8848:8848 nacos/nacos-server
-</code></pre><h2 id="docker-compose">docker-compose启动</h2>
-<h3 id="nacos">新建nacos文件夹</h3>
-<h3 id="docker-composeyml">新建docker-compose.yml文件</h3>
+</code></pre><h2 id="docker-compose启动">docker-compose启动</h2>
+<h3 id="新建nacos文件夹">新建nacos文件夹</h3>
+<h3 id="新建docker-composeyml文件">新建docker-compose.yml文件</h3>
 <pre><code>version: &quot;3&quot;
 networks:
   nacos:
@@ -509,8 +509,8 @@ services:
     restart: on-failure
 	networks:
     	- nacos    
-</code></pre><h3 id="dockerhttpsgithubcomnacos-groupnacos-dockerblobmasterexamplecluster-hostnameyaml-nacos">复制<a href="https://github.com/nacos-group/nacos-docker/blob/master/example/cluster-hostname.yaml">官方docker配置</a>到 nacos目录对应的文件夹</h3>
-<h3 id="nacosenvnacos-hostnameenv">编辑<code>nacos/env/nacos-hostname.env</code></h3>
+</code></pre><h3 id="复制官方docker配置httpsgithubcomnacos-groupnacos-dockerblobmasterexamplecluster-hostnameyaml到-nacos目录对应的文件夹">复制<a href="https://github.com/nacos-group/nacos-docker/blob/master/example/cluster-hostname.yaml">官方docker配置</a>到 nacos目录对应的文件夹</h3>
+<h3 id="编辑nacosenvnacos-hostnameenv">编辑<code>nacos/env/nacos-hostname.env</code></h3>
 <pre><code>#nacos dev env
 PREFER_HOST_MODE=hostname
 NACOS_SERVERS=nacos1:8848 nacos2:8848 nacos3:8848
@@ -521,14 +521,14 @@ MYSQL_SLAVE_SERVICE_HOST=iotechina-dev-mysql-5.7.26
 MYSQL_SLAVE_SERVICE_PORT=3306
 MYSQL_MASTER_SERVICE_USER=you know
 MYSQL_MASTER_SERVICE_PASSWORD=you know
-</code></pre><h3 id="mysql--nacos-network">mysql 连接 nacos network</h3>
+</code></pre><h3 id="mysql-连接-nacos-network">mysql 连接 nacos network</h3>
 <pre><code>docker network connect nacos iotechina-dev-mysql-5.7.26
-</code></pre><h3 id="heading-8">启动</h3>
+</code></pre><h3 id="启动-1">启动</h3>
 <pre><code>docker-compose up -d
-</code></pre><h2 id="mysql">单机集群mysql启动</h2>
+</code></pre><h2 id="单机集群mysql启动">单机集群mysql启动</h2>
 <p><del>复制mysql驱动
 在<code>nacos/plugins/</code>新建文件夹<code>mysql</code>,复制对应数据库的jar驱动到这个文件夹</del></p>
-<h3 id="heading-9">修改配置文件</h3>
+<h3 id="修改配置文件">修改配置文件</h3>
 <p>编辑<code>nacos/application.properties</code>文件,加入如下内容:</p>
 <pre><code>spring.datasource.platform=mysql
 
@@ -540,18 +540,18 @@ db.password=you know
 <pre><code>192.168.0.118:8848  #注意这里和`conf/application.properties`中的`server.port`相对应
 192.168.0.118:8847
 192.168.0.118:8846
-</code></pre><h3 id="heading-10">启动</h3>
+</code></pre><h3 id="启动-2">启动</h3>
 <pre><code>sh startup.sh 
 </code></pre><h1 id="spring-cloud">spring cloud</h1>
-<h2 id="heading-11">版本对应关系</h2>
+<h2 id="版本对应关系">版本对应关系</h2>
 <p>由于nacos还没有纳入spring cloud体系，所以需要手动管理依赖关系。</p>
 <p>版本对应关系:<a href="https://github.com/spring-cloud-incubator/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E">版本说明 Wiki</a></p>
-<h2 id="heading-12">服务发现</h2>
+<h2 id="服务发现">服务发现</h2>
 <h3 id="demo">Demo</h3>
-<h4 id="nacos-server">启动nacos-server</h4>
-<h4 id="heading-13">配置应用</h4>
-<h5 id="spring-bootservice-consumerservice-provider">新建两个spring-boot应用:service-consumer,service-provider</h5>
-<h5 id="heading-14">分别配置两个应用</h5>
+<h4 id="启动nacos-server">启动nacos-server</h4>
+<h4 id="配置应用">配置应用</h4>
+<h5 id="新建两个spring-boot应用service-consumerservice-provider">新建两个spring-boot应用:service-consumer,service-provider</h5>
+<h5 id="分别配置两个应用">分别配置两个应用</h5>
 <p>引入pom依赖:</p>
 <pre><code>&lt;!--注意这里版本依赖关系，根据自己的springcloud版本引入对应的版本--&gt;
         &lt;dependency&gt;
@@ -563,11 +563,11 @@ db.password=you know
 <p>编辑<code>application.properties</code>:</p>
 <pre><code>spring.application.name=${application-name} #应用名称，根据自己需要填写
 spring.cloud.nacos.discovery.server-addr=dev.iotechina.com:8848
-</code></pre><h4 id="feign">使用feign进行调用测试</h4>
-<h2 id="heading-15">配置中心</h2>
+</code></pre><h4 id="使用feign进行调用测试">使用feign进行调用测试</h4>
+<h2 id="配置中心">配置中心</h2>
 <h3 id="demo-1">Demo</h3>
-<h4 id="nacos-server-1">启动nacos-server</h4>
-<h4 id="heading-16">添加配置</h4>
+<h4 id="启动nacos-server-1">启动nacos-server</h4>
+<h4 id="添加配置">添加配置</h4>
 <p>打开nacos网页端:
 配置管理-&gt;配置列表-&gt;点击加号添加配置</p>
 <pre><code>Data ID: service-consumer.properties #注意，此处一定要有.properties，并且名字和应用的${spring.application.name}一致
@@ -578,7 +578,7 @@ Group : DEFAULT_GROUP
 
 配置内容: server.port=8845
 </code></pre><p>点击发布</p>
-<h4 id="heading-17">应用配置</h4>
+<h4 id="应用配置">应用配置</h4>
 <p>引入pom依赖</p>
 <pre><code>&lt;!--注意这里版本依赖关系，根据自己的springcloud版本引入对应的版本--&gt;
         &lt;dependency&gt;
@@ -597,12 +597,12 @@ spring.cloud.nacos.config.server-addr=dev.iotechina.com:8848
 2019-05-29 15:13:35.991  INFO 1593 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'com.demo.nacosconsumer.feign.EchoFeign' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2019-05-29 15:13:36.033  INFO 1593 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6f581f58] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2019-05-29 15:13:36.188  INFO 1593 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8845 (http)
-</code></pre><h3 id="profile">profile粒度的配置</h3>
+</code></pre><h3 id="profile粒度的配置">profile粒度的配置</h3>
 <p>nacos控制台新建service-consumer-test.properties文件，写入内容server.port=8847。</p>
 <p>编辑bootstrap.properties:</p>
 <pre><code>spring.profiles.active=test
 </code></pre><p>重启应用，查看端口变化</p>
-<h3 id="-namespace-">自定义 namespace 的配置</h3>
+<h3 id="自定义-namespace-的配置">自定义 namespace 的配置</h3>
 <p>Nacos 的 Namespace 的概念：</p>
 <blockquote>
 <p>用于进行租户粒度的配置隔离。不同的命名空间下，可以存在相同的 Group 或 Data ID 的配置。Namespace 的常用场景之一是不同环境的配置的区分隔离，例如开发测试环境和生产环境的资源（如配置、服务）隔离等。</p>
@@ -610,11 +610,11 @@ spring.cloud.nacos.config.server-addr=dev.iotechina.com:8848
 <p>在没有明确指定 ${spring.cloud.nacos.config.namespace} 配置的情况下， 默认使用的是 Nacos 上 Public 这个namespae。如果需要使用自定义的命名空间，可以通过以下配置来实现：</p>
 <pre><code>spring.cloud.nacos.config.namespace=b3404bc0-d7dc-4855-b519-570ed34b62d7
 </code></pre><p>*** 该配置必须放在 bootstrap.properties 文件中。此外 spring.cloud.nacos.config.namespace 的值是 namespace 对应的 id，id 值可以在 Nacos 的控制台获取。并且在添加配置时注意不要选择其他的 namespae，否则将会导致读取不到正确的配置。 ***</p>
-<h3 id="-group-">自定义 Group 的配置</h3>
+<h3 id="自定义-group-的配置">自定义 Group 的配置</h3>
 <p>在没有明确指定 ${spring.cloud.nacos.config.group} 配置的情况下， 默认使用的是 DEFAULT_GROUP 。如果需要自定义自己的 Group，可以通过以下配置来实现：</p>
 <pre><code>spring.cloud.nacos.config.group=DEVELOP_GROUP
 </code></pre><p>*** 该配置必须放在 bootstrap.properties 文件中。并且在添加配置时 Group 的值一定要和 spring.cloud.nacos.config.group 的配置值一致。***</p>
-<h3 id="-data-id-">自定义扩展的 Data Id 配置</h3>
+<h3 id="自定义扩展的-data-id-配置">自定义扩展的 Data Id 配置</h3>
 <p>配置Demo：</p>
 <pre><code>spring.application.name=opensource-service-provider
 spring.cloud.nacos.config.server-addr=127.0.0.1:8848
@@ -650,7 +650,7 @@ spring.cloud.nacos.config.refreshable-dataids=bootstrap-common.properties
 <p><strong>Note</strong>:*** <code>通过 spring.cloud.nacos.config.shared-dataids</code> 来支持多个共享配置的 Data Id 时， 多个共享配置间的一个优先级的关系我们约定：按照配置出现的先后顺序，即后面的优先级要高于前面。 ***</p>
 <p><strong>Note</strong>:*** 通过 1spring.cloud.nacos.config.shared-dataids1 来配置时，Data Id 必须带文件扩展名，文件扩展名既可支持 properties，也可以支持 yaml/yml。 此时 <code>spring.cloud.nacos.config.file-extension1</code> 的配置对自定义扩展配置的 Data Id 文件扩展名没有影响。 ***</p>
 <p><strong>Note</strong>:<em><strong><code>spring.cloud.nacos.config.refreshable-dataids</code> 给出哪些需要支持动态刷新时，Data Id 的值也必须明确给出文件扩展名。</strong></em></p>
-<h3 id="heading-18">配置的优先级</h3>
+<h3 id="配置的优先级">配置的优先级</h3>
 <p>Spring Cloud Alibaba Nacos Config 目前提供了三种配置能力从 Nacos 拉取相关的配置</p>
 <ul>
 <li>A: 通过 spring.cloud.nacos.config.shared-dataids 支持多个共享 Data Id 的配置</li>
@@ -658,7 +658,7 @@ spring.cloud.nacos.config.refreshable-dataids=bootstrap-common.properties
 <li>C: 通过内部相关规则(应用名、应用名+ Profile )自动生成相关的 Data Id 配置</li>
 </ul>
 <p>当三种方式共同使用时，他们的一个优先级关系是:A &lt; B &lt; C</p>
-<h1 id="heading-19">遇到的问题</h1>
+<h1 id="遇到的问题">遇到的问题</h1>
 <ul>
 <li>
 <p>登陆错误:`io.jsonwebtoken.security.SignatureException: Unable to obtain JCA MAC algorithm &lsquo;HmacSHA256&rsquo;: Algorithm HmacSHA256 not available</p>

@@ -5,10 +5,28 @@
     <link>https://fhxisdog.github.io/</link>
     <description>Recent content on just for fun</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Apr 2020 12:00:26 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2020 15:15:29 +0800</lastBuildDate>
     
         <atom:link href="https://fhxisdog.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker时区问题</title>
+      <link>https://fhxisdog.github.io/2020/06/docker_timezone/</link>
+      <pubDate>Sun, 14 Jun 2020 15:15:29 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2020/06/docker_timezone/</guid>
+      <description>问题描述: 最近在使用dockers部署应用时发现,每次执行更新时时间会往后推8个小时， 查看数据库间连接:db.url=jdbc:mysql:</description>
+    </item>
+    
+    <item>
+      <title>windows以zip方式安装mysql</title>
+      <link>https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/</link>
+      <pubDate>Sun, 14 Jun 2020 14:43:27 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/</guid>
+      <description>官网下载MySQL压缩包 解压缩至目录D:/ 将D:\mysql-8.0.11-winx64\bin配置到环境变量path中 在D:\mysql-</description>
+    </item>
     
     <item>
       <title>Maven 本地有jar包仍拉取远程仓库的jar包</title>
@@ -170,24 +188,6 @@
       
       <guid>https://fhxisdog.github.io/2019/05/nacos_guide/</guid>
       <description>服务启动 本地单机启动 下载源码 从github上下载源码方式: git clone https://github.com/alibaba/nacos.git cd nacos/ mvn -Prelease-nacos clean install -U ls -al distribution/target/ // change the $version to your actual path cd distribution/target/nacos-server-$version/nacos/bin 下载编译后压缩包方式 从 最新稳定版本 下</description>
-    </item>
-    
-    <item>
-      <title>skywalking使用指南</title>
-      <link>https://fhxisdog.github.io/2019/05/skywalking_guide/</link>
-      <pubDate>Wed, 29 May 2019 15:33:57 +0800</pubDate>
-      
-      <guid>https://fhxisdog.github.io/2019/05/skywalking_guide/</guid>
-      <description>运行 单机运行 下载最新release包 解压，sh ${skywalkingpath}/bin/startup.sh 在springboot启动命令前加入启动参数 -javaagent:${path}/skywalking-agent.jar #path为skywalking解压的agen</description>
-    </item>
-    
-    <item>
-      <title>Manjaro I3wm接入外接显示器不显示</title>
-      <link>https://fhxisdog.github.io/2019/05/manjaro-i3wm_external_mirror/</link>
-      <pubDate>Wed, 29 May 2019 11:59:08 +0800</pubDate>
-      
-      <guid>https://fhxisdog.github.io/2019/05/manjaro-i3wm_external_mirror/</guid>
-      <description>装了manjaro的i3wm桌面环境后，发现外界显示器无法显示。搜索资料后发现解决方法如下。 查看设备输入 终端输入: xrandr 可以看到结果如下，其中 e</description>
     </item>
     
   </channel>

@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        just for fun</title>
+        docker时区问题 - just for fun
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,26 +23,33 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="问题描述: 最近在使用dockers部署应用时发现,每次执行更新时时间会往后推8个小时， 查看数据库间连接:db.url=jdbc:mysql:" />
   <meta name="generator" content="Hugo 0.72.0 with theme pure" />
-  <title>just for fun</title>
+  <title>docker时区问题 - just for fun</title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://fhxisdog.github.io/categories/maven/index.xml" title="just for fun" />
   
   <link rel="stylesheet" href="https://fhxisdog.github.io/css/style.min.c4bc7071f132c964c2116bca53b392933f377e5ca7b7051ed245187c621a2d3e.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="maven" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://fhxisdog.github.io/categories/maven/" />
-<meta property="og:updated_time" content="2020-04-22T12:00:26+08:00" />
-<meta itemprop="name" content="maven">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="maven"/>
-<meta name="twitter:description" content=""/>
+  <meta property="og:title" content="docker时区问题" />
+<meta property="og:description" content="问题描述: 最近在使用dockers部署应用时发现,每次执行更新时时间会往后推8个小时， 查看数据库间连接:db.url=jdbc:mysql:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fhxisdog.github.io/2020/06/docker_timezone/" />
+<meta property="article:published_time" content="2020-06-14T15:15:29+08:00" />
+<meta property="article:modified_time" content="2020-06-14T15:15:29+08:00" />
+<meta itemprop="name" content="docker时区问题">
+<meta itemprop="description" content="问题描述: 最近在使用dockers部署应用时发现,每次执行更新时时间会往后推8个小时， 查看数据库间连接:db.url=jdbc:mysql:">
+<meta itemprop="datePublished" content="2020-06-14T15:15:29&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-14T15:15:29&#43;08:00" />
+<meta itemprop="wordCount" content="326">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="docker时区问题"/>
+<meta name="twitter:description" content="问题描述: 最近在使用dockers部署应用时发现,每次执行更新时时间会往后推8个小时， 查看数据库间连接:db.url=jdbc:mysql:"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -343,53 +351,148 @@
 
     
     
-<main class="main" role="main">
-    <article class="article article-categories article-type-list" itemscope="">
-        <header class="article-header">
-            <h1 itemprop="name" class="hidden-xs">maven</h1>
-            <p class="text-muted hidden-xs">共 12 个分类</p>
-            <nav role="navigation" id="nav-main" class="okayNav">
-                <ul>
-                    <li><a href="/categories/">All</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/docker/">docker</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/flutter/">flutter</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/git/">Git</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/jvm/">jvm</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/linux/">linux</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/maven/">maven</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/nacos/">nacos</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/orther/">orther</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/skywalking/">skywalking</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/smicroservices/">smicroservices</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/spring-boot/">spring boot</a></li>
-                    <li><a href="https://fhxisdog.github.io/categories/tips/">tips</a></li>
-                </ul>
-            </nav>
-        </header>
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/06/docker_timezone/"
+    >docker时区问题</a
+  >
+</h1>
+
+      <div class="article-meta">
         
-        <div class="article-body">
-            <div class="panel panel-default b-no">
-                <div class="panel-heading" role="tab">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#collapse402c5d9af6b43711ea070bee5170f74d" aria-expanded="true">
-                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>maven
-                        </a>
-                        <small class="text-muted">(Total1 articles)</small>
-                    </h4>
-                </div>
-                <div id="collapse402c5d9af6b43711ea070bee5170f74d" class="panel-collapse collapse in" role="tabpanel"
-                    aria-labelledby="heading402c5d9af6b43711ea070bee5170f74d">
-                    <div class="panel-body">
-                        <div class="collection"><a href="https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-04-22 12:00:26 &#43;0800 CST" itemprop="datePublished" style="margin-right: 5px;">2020-04-22
-    </time>Maven 本地有jar包仍拉取远程仓库的jar包
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://fhxisdog.github.io/2020/06/docker_timezone/" class="article-date">
+  <time datetime="2020-06-14 15:15:29 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
 </a>
+</span>
+
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/06/docker_timezone/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 326字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h3 id="问题描述">问题描述:</h3>
+<p>最近在使用dockers部署应用时发现,每次执行更新时时间会往后推8个小时，
+查看数据库间连接:<code>db.url=jdbc:mysql://xxxxx/xx?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=GMT%2b8&amp;autoReconnect=true&amp;failOverReadOnly=false</code></p>
+<p>使用<code>java</code>的<code>LocalDateTime.now()</code>打印出的时间也是快了8个小时</p>
+<h3 id="解决方案">解决方案:</h3>
+<p><code>docker</code>创建应用的容器时，不仅要将<code>/etc/localtime</code>挂载进去，也要将时区挂载进去.</p>
+<p>例如:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> docker run --name app-name -d <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span> -v /etc/localtime:/etc/localtime <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span> -v /app:/app
+ --network xx-bridge <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span> -p 8080:8080 java:8 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span> sh -c <span style="color:#e6db74">&#39;echo &#34;Asia/Shanghai&#34; &gt; /etc/timezone &amp;&amp; java -jar /app/app.jar &#39;</span>
+</code></pre></div>
+    </div>
+    <div class="article-footer">
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/" title="windows以zip方式安装mysql"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        
+        <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal"
+            data-target="#donateModal"><span>赏</span></button>
+        
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content donate">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <div class="modal-body">
+                <div class="donate-box">
+                    <div class="donate-head">
+                        <p>感谢您的支持,我会继续努力的!</p>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+                            <div class="donate-payimg">
+                                <img src="https://fhxisdog.github.io/donate/alipayimg.jpg"
+                                    alt="扫码支持" title="扫一扫" />
+                            </div>
+                            <p class="text-muted mv">扫码打赏, 多少你说了算~</p>
+                            <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦~</p>
                         </div>
+                        <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+                            <div class="donate-payimg">
+                                <img src="https://fhxisdog.github.io/donate/wechatpayimg.jpg"
+                                    alt="扫码支持" title="扫一扫" />
+                            </div>
+                            <p class="text-muted mv">扫码打赏, 多少你说了算~</p>
+                            <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+                        </div>
+                    </div>
+                    <div class="donate-footer">
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay"
+                                    aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab"
+                                    aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i>
+                                    微信支付</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </article>
+    </div>
+</div>
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
     <li><a href="https://github.com/FHXISDOG" target="_blank" title="github" data-toggle=tooltip data-placement=top >
@@ -450,6 +553,23 @@
         
         hasInnerContainers: true,
     });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '25cb16a0cefbf9358b4d',
+        clientSecret: '304421f8e707e448d98a330df684406736483f34',
+        repo: 'fhxisdog.github.io',
+        owner: 'FHXISDOG',
+        admin: ['FHXISDOG'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
 </script>
 
   </body>

@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="在Docker中，容器之间的链接是一种很常见的操作：它提供了访问其中的某个容器的网络服务而不需要将所需的端口暴露给Docker Host主机的" />
-  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
+  <meta name="generator" content="Hugo 0.72.0 with theme pure" />
   <title>Docker Compose：链接外部容器的几种方式 - just for fun</title>
   
   
@@ -73,7 +73,7 @@
           <a id="avatar" href="https://fhxisdog.github.io" target="_blank">
             <img class="img-circle img-rotate" src="https://fhxisdog.github.io/hj.jpg" width="200" height="200">
           </a>
-          <h2 id="name" class="hidden-xs hidden-sm">FHXISDOG</h2>
+          <h2 id="name" class="hidden-xs hidden-sm">Fingerr</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">just for fun</h3>
           <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>GuangZhou, China</small>
         </div><div class="search" id="search-form-wrap">
@@ -296,6 +296,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/docker_timezone/" class="title">docker时区问题</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 15:15:29 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/" class="title">windows以zip方式安装mysql</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 14:43:27 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/" class="title">Maven 本地有jar包仍拉取远程仓库的jar包</a>
                     </p>
                     <p class="item-date">
@@ -320,26 +340,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2020-04-11 15:06:44 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
                     </p>
                 </div>
             </li>
@@ -430,7 +430,7 @@ services:
 针对这两种典型的情况，下面给出我个人测试可行的办法：</li>
 </ol>
 <hr>
-<h4 id="heading">方式一：让需要链接的容器同属一个外部网络</h4>
+<h4 id="方式一让需要链接的容器同属一个外部网络">方式一：让需要链接的容器同属一个外部网络</h4>
 <p>我们还是使用nginx镜像来模拟这样的一个情景：假设我们需要将两个使用Docker Compose管理的nignx容器（test1和test2）链接起来，使得test2能够访问test1中提供的服务，这里我们以能ping通为准。</p>
 <p>首先，我们定义容器test1的<code>docker-compose.yml</code>文件内容为：</p>
 <pre><code>version: &quot;3&quot;
@@ -475,8 +475,8 @@ PING test1 (172.18.0.2): 56 data bytes
 <p>如果我们通过docker run &ndash;rm &ndash;name test3 -d nginx这种方式来先启动了一个容器(test3)并且没有指定它所属的外部网络，而需要将其与test1或者test2链接的话，这个时候手动链接外部网络即可：</p>
 <pre><code>docker network connect app_net test3
 
-</code></pre><h2 id="heading-1">这样，三个容器都可以相互访问了。</h2>
-<h4 id="heading-2">方式二：更改需要链接的容器的网络模式</h4>
+</code></pre><h2 id="这样三个容器都可以相互访问了">这样，三个容器都可以相互访问了。</h2>
+<h4 id="方式二更改需要链接的容器的网络模式">方式二：更改需要链接的容器的网络模式</h4>
 <p>通过更改你想要相互链接的容器的网络模式为bridge,并指定需要链接的外部容器（<code>external_links</code>)即可。与同属外部网络的容器可以相互访问的链接方式一不同，这种方式的访问是单向的。</p>
 <p>还是以nginx容器镜像为例子，如果容器实例nginx1需要访问容器实例nginx2，那么nginx2的<code>doker-compose.yml</code>定义为：</p>
 <pre><code>version: &quot;3&quot;

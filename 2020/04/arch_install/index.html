@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="本文记录本人安装Arch的过程以及后续配置,不做为教程,只作为备忘使用,仅供参考 前期准备 下载镜像 下载Rufus 由于我的电脑支持efi启动,制" />
-  <meta name="generator" content="Hugo 0.61.0 with theme pure" />
+  <meta name="generator" content="Hugo 0.72.0 with theme pure" />
   <title>Arch安装记录 - just for fun</title>
   
   
@@ -43,7 +43,7 @@
 <meta itemprop="description" content="本文记录本人安装Arch的过程以及后续配置,不做为教程,只作为备忘使用,仅供参考 前期准备 下载镜像 下载Rufus 由于我的电脑支持efi启动,制">
 <meta itemprop="datePublished" content="2020-04-10T10:26:30&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-10T10:26:30&#43;08:00" />
-<meta itemprop="wordCount" content="6267">
+<meta itemprop="wordCount" content="6661">
 
 
 
@@ -73,7 +73,7 @@
           <a id="avatar" href="https://fhxisdog.github.io" target="_blank">
             <img class="img-circle img-rotate" src="https://fhxisdog.github.io/hj.jpg" width="200" height="200">
           </a>
-          <h2 id="name" class="hidden-xs hidden-sm">FHXISDOG</h2>
+          <h2 id="name" class="hidden-xs hidden-sm">Fingerr</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">just for fun</h3>
           <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>GuangZhou, China</small>
         </div><div class="search" id="search-form-wrap">
@@ -296,6 +296,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/docker_timezone/" class="title">docker时区问题</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 15:15:29 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/" class="title">windows以zip方式安装mysql</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-14 14:43:27 &#43;0800 CST" itemprop="datePublished">2020-06-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/" class="title">Maven 本地有jar包仍拉取远程仓库的jar包</a>
                     </p>
                     <p class="item-date">
@@ -320,26 +340,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2020-04-11 15:06:44 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/arch_install/" class="title">Arch安装记录</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-10 10:26:30 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://fhxisdog.github.io/2020/04/git_work_flow/" class="title">Git几种常见工作流</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-04 21:17:49 &#43;0800 CST" itemprop="datePublished">2020-04-04</time>
                     </p>
                 </div>
             </li>
@@ -398,43 +398,43 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/arch_install/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 6267字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 13分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 6661字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 14分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
       <blockquote>
 <p>本文记录本人安装Arch的过程以及后续配置,不做为教程,只作为备忘使用,仅供参考</p>
 </blockquote>
-<h2 id="heading">前期准备</h2>
+<h2 id="前期准备">前期准备</h2>
 <ul>
 <li><a href="https://www.archlinux.org/download/">下载镜像</a></li>
 <li>下载<a href="https://rufus.ie/">Rufus</a></li>
 <li>由于我的电脑支持<code>efi</code>启动,制作<code>efi/gpt</code>格式的启动盘</li>
 </ul>
-<h2 id="heading-1">系统安装</h2>
-<h3 id="u">开机U盘启动</h3>
+<h2 id="系统安装">系统安装</h2>
+<h3 id="开机u盘启动">开机U盘启动</h3>
 <p>不同品牌型号的电脑,进入U盘启动的方式不一样,我这里的是<code>F12</code>选择U盘启动</p>
-<h3 id="heading-2">启动安装环境</h3>
+<h3 id="启动安装环境">启动安装环境</h3>
 <p><code>MBR</code>:</p>
 <p><img src="/img/ArchInstall/MBR_START.gif" alt=""></p>
 <p><code>UEFI</code>:</p>
 <p><img src="/img/ArchInstall/UEFI_START.gif" alt=""></p>
 <p>当屏幕上出现命令行提示符及闪烁的光标时即启动完毕。</p>
 <p><img src="/img/ArchInstall/start_orver.gif" alt=""></p>
-<h3 id="heading-3">检查引导方式</h3>
+<h3 id="检查引导方式">检查引导方式</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ls /sys/firmware/efi/efivars
 </code></pre></div><p>如果提示:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">如果提示
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ls: cannot access <span style="color:#e6db74">&#39;/sys/firmware/efi/efivars&#39;</span>: No such file or directory
 </code></pre></div><p>表明你是以<code>BIOS</code>方式引导，否则为以<code>EFI</code>方式引导</p>
-<h3 id="heading-4">联网</h3>
+<h3 id="联网">联网</h3>
 <p>我这里是插入网线了,所以执行命令:</p>
 <pre><code class="language-sheell" data-lang="sheell">dhcpcd
 </code></pre><p>如果你是wifi,请执行:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wifi-menu
-</code></pre></div><h3 id="heading-5">更新系统时间</h3>
+</code></pre></div><h3 id="更新系统时间">更新系统时间</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">timedatectl set-ntp true
-</code></pre></div><h3 id="heading-6">分区与格式化</h3>
+</code></pre></div><h3 id="分区与格式化">分区与格式化</h3>
 <blockquote>
 <p>警告：请谨慎操作以防数据丢失</p>
 </blockquote>
@@ -447,7 +447,7 @@
 <p>在 UEFI 系统上，需要一个 UEFI 系统分区。</p>
 </li>
 </ul>
-<h4 id="heading-7">查看分区:</h4>
+<h4 id="查看分区">查看分区:</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">fdisk -l
 </code></pre></div><p>输出:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">DISK /dev/nvme0n1    xxxxxxxxxxxxx
@@ -455,7 +455,7 @@
 /dev/nvme0n1p2   xxx
 </code></pre></div><p>输出像“Disk /dev/nvme0n1 xx GiB &hellip;”这种的，xx也就是该存储设备的总容量，然后你判断哪个设备是有多余空间的。假如该设备是<code>/dev/sda</code>，这时候你还可以通过如下命令查看该存储设备下已有的分区情况：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">fdisk -l /dev/nvme0n1
-</code></pre></div><h4 id="heading-8">格式化硬盘:(我硬盘没有重要数据所以格式化,如果你硬盘有数据,不要执行此命令!!!!!!!!!!!!)</h4>
+</code></pre></div><h4 id="格式化硬盘我硬盘没有重要数据所以格式化如果你硬盘有数据不要执行此命令">格式化硬盘:(我硬盘没有重要数据所以格式化,如果你硬盘有数据,不要执行此命令!!!!!!!!!!!!)</h4>
 <p>输入:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">fdisk /dev/nvme0n1
 
@@ -464,8 +464,8 @@ d    <span style="color:#75715e">#这里省略输出,有几个分区执行几次
 y
 
 w    <span style="color:#75715e">#写入格式化结果,也可以不写入,下一步不执行fdisk /dev/nvme0n1就行,然后和新的分区结果一起写入</span>
-</code></pre></div><h4 id="heading-9">分区</h4>
-<h5 id="mbr">如果你是<code>MBR</code>,只需要一个分区用于系统安装的分区:</h5>
+</code></pre></div><h4 id="分区">分区</h4>
+<h5 id="如果你是mbr只需要一个分区用于系统安装的分区">如果你是<code>MBR</code>,只需要一个分区用于系统安装的分区:</h5>
 <ol>
 <li>创建根分区:</li>
 </ol>
@@ -488,13 +488,13 @@ w    <span style="color:#75715e">#写入格式化结果,也可以不写入,�
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkfs.ext4 /dev/nvme0n1p1     <span style="color:#75715e">#请将的sdxY替换为刚创建的分区,例如我的是 mkfs.ext4 /dev/nvme0n1p1</span>
 </code></pre></div></li>
 </ol>
-<h5 id="efi">如果你是EFI模式，需要分两个分区：</h5>
+<h5 id="如果你是efi模式需要分两个分区">如果你是EFI模式，需要分两个分区：</h5>
 <ul>
 <li>第一个分区用于系统引导（512M）</li>
 <li>第二个分区用于系统安装（49G）</li>
 </ul>
 <p>操作步骤:</p>
-<h6 id="heading-10">创建引导分区</h6>
+<h6 id="创建引导分区">创建引导分区</h6>
 <p>1.执行命令:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">fdisk /dev/nvme0n1 <span style="color:#75715e">#自己的磁盘根据情况变化,名称可能不一样</span>
 </code></pre></div><p>2.输入<code>n</code>创建一个新的分区，首先会让你选择起始扇区，一般直接回车使用默认数值即可，然后可以输入结束扇区或是分区大小，这里我们输入<code>+512M</code>来创建一个512M的引导分区。</p>
@@ -513,7 +513,7 @@ Changed type of partition to <span style="color:#e6db74">&#39;EFI System&#39;</s
 <blockquote>
 <p>这里我的输入 <code>p</code>查看,我的引导分区名是:<code>/dev/nvme0n1p1</code>,所以我的引导分区是<code>/dev/nvme0n1p1</code></p>
 </blockquote>
-<h6 id="heading-11">创建根分区:</h6>
+<h6 id="创建根分区">创建根分区:</h6>
 <ol>
 <li>
 <p>输入n</p>
@@ -525,14 +525,13 @@ Changed type of partition to <span style="color:#e6db74">&#39;EFI System&#39;</s
 <blockquote>
 <p>这里我的输入 <code>p</code>查看,我的引导分区名是:<code>/dev/nvme0n1p2</code>,所以我的分区是<code>/dev/nvme0n1p2</code></p>
 </blockquote>
-<h6 id="heading-12">写入:</h6>
+<h6 id="写入">写入:</h6>
 <p>输入<code>w</code>写入,退出<code>fdisk</code></p>
-<h6 id="heading-13">格式化分区:</h6>
+<h6 id="格式化分区">格式化分区:</h6>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkfs.fat -F32 /dev/nvme0n1p1 <span style="color:#75715e">#请将nvme0n1p1替换为刚创建的引导分区 这里我的分区名是 /dev/nvme0n1p1</span>
 
-
 mkfs.ext4 /dev/nvme0n1p2     <span style="color:#75715e">#请将的nvme0n1p2替换为刚创建的分区 这里我的分区名是`/dev/nvme0n1p2`</span>
-</code></pre></div><h4 id="heading-14">挂载分区</h4>
+</code></pre></div><h4 id="挂载分区">挂载分区</h4>
 <ul>
 <li>如果你是<code>MBR</code>格式启动,只需挂在根分区即可:</li>
 </ul>
@@ -542,17 +541,17 @@ mkfs.ext4 /dev/nvme0n1p2     <span style="color:#75715e">#请将的nvme0n1p2替�
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mount /dev/nvme0n1p2 /mnt <span style="color:#75715e">#挂在根分区</span>
 mkdir /mnt/boot
-mount /dev/sdxY /mnt/boot <span style="color:#75715e">#上面的efi中 /dev/nvme0n1p1是引导分区</span>
-</code></pre></div><h4 id="heading-15">选择镜像源</h4>
+mount /dev/nvme0n1p1 /mnt/boot <span style="color:#75715e">#上面的efi中 /dev/nvme0n1p1是引导分区</span>
+</code></pre></div><h4 id="选择镜像源">选择镜像源</h4>
 <p>编辑<code> /etc/pacman.d/mirrorlist</code>,变更为:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Server <span style="color:#f92672">=</span> http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 Server <span style="color:#f92672">=</span> http://mirrors.zju.edu.cn/archlinux/$repo/os/$arch
-</code></pre></div><h4 id="heading-16">安装基本包</h4>
+</code></pre></div><h4 id="安装基本包">安装基本包</h4>
 <p>下面就要安装最基本的<code>ArchLinux</code>包到磁盘上了。这是一个联网下载并安装的过程。</p>
 <p>执行以下命令：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pacstrap /mnt base base-devel linux linux-firmware dhcpcd
 </code></pre></div><p>根据下载速度的不同在这里需要等待一段时间，当命令提示符重新出现的时候就可以进行下一步操作了。</p>
-<h4 id="fstab">配置Fstab</h4>
+<h4 id="配置fstab">配置Fstab</h4>
 <p>生成自动挂载分区的<code>fstab</code>文件，执行以下命令：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">genfstab -L /mnt &gt;&gt; /mnt/etc/fstab
 </code></pre></div><p>由于这步比较重要，所以我们需要输出生成的文件来检查是否正确，执行以下命令：</p>
@@ -562,16 +561,16 @@ Server <span style="color:#f92672">=</span> http://mirrors.zju.edu.cn/archlinux/
 <p>执行如下命令：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">arch-chroot /mnt
 </code></pre></div><p>这里顺便说一下，如果以后我们的系统出现了问题，只要插入U盘并启动， 将我们的系统根分区挂载到了<code>/mnt</code>下（如果有<code>efi</code>分区也要挂载到<code>/mnt/boot</code>下），再通过这条命令就可以进入我们的系统进行修复操作。</p>
-<h4 id="heading-17">设置时区</h4>
+<h4 id="设置时区">设置时区</h4>
 <p>依次执行如下命令设置我们的时区为上海并生成相关文件：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc
-</code></pre></div><h4 id="heading-18">提前安装必须软件包</h4>
+</code></pre></div><h4 id="提前安装必须软件包">提前安装必须软件包</h4>
 <p>因为我们现在已经<code>Chroot</code>到了新的系统中，只有一些最基本的包（组件），这时候我们就需要自己安装新的包了，下面就要介绍一下<code>ArchLinux</code>下非常强大的包管理工具<code>pacman</code>，大部分情况下，一行命令就可以搞定包与依赖的问题。</p>
 <p>安装包的命令格式为<code>pacman -S 包名</code>，<code>pacman</code>会自动检查这个包所需要的其他包（即为依赖）并一起装上。下面我们就通过<code>pacman</code>来安装一些包，这些包在之后会用上，在这里先提前装好。</p>
 <p>执行如下命令（注意大小写，大小写错误会导致包无法找到）：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pacman -S vim dialog wpa_supplicant  networkmanager
-</code></pre></div><h4 id="locale">设置Locale</h4>
+</code></pre></div><h4 id="设置locale">设置Locale</h4>
 <p>设置我们使用的语言选项，编辑<code>/etc/locale.gen</code>文件,在文件中找到<code>zh_CN.UTF-8 UTF-8</code>  <code>zh_HK.UTF-8 UTF-8</code>  <code>zh_TW.UTF-8 UTF-8</code>  <code>en_US.UTF-8 UTF-8</code>这四行，去掉行首的#号.</p>
 <p>然后执行：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">locale-gen
@@ -579,7 +578,7 @@ hwclock --systohc
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /etc/locale.conf
 </code></pre></div><p>在文件的第一行加入以下内容：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">LANG<span style="color:#f92672">=</span>en_US.UTF-8
-</code></pre></div><h4 id="heading-19">设置主机名</h4>
+</code></pre></div><h4 id="设置主机名">设置主机名</h4>
 <p>打开（不存在时会创建）<code>/etc/hostname</code>文件：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /etc/hostname
 </code></pre></div><p>在文件的第一行输入你自己设定的一个<code>myhostname</code>,我这里输入的是<code>Arch</code></p>
@@ -589,15 +588,15 @@ hwclock --systohc
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">127.0.0.1    localhost
 ::1        localhost
 127.0.1.1    Arch.localdomain    Arch
-</code></pre></div><h4 id="root">设置Root密码</h4>
+</code></pre></div><h4 id="设置root密码">设置Root密码</h4>
 <p><code>Root</code>是<code>Linux</code>中具有最高权限帐户，有些敏感的操作必须通过<code>Root</code>用户进行，比如使用<code>pacman</code>，我们之前进行所有的操作也都是以<code>Root</code>用户进行的，也正是因为<code>Root</code>的权限过高，如果使用不当会造成安全问题，所以我们之后会新建一个普通用户来进行日常的操作。在这里我们需要为<code>Root</code>帐户设置一个密码：</p>
 <p>执行如下命令：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">passwd
 </code></pre></div><p>按提示设置并确认就可以了。</p>
-<h4 id="intel-ucodeintelcpu">安装<code>Intel-ucode</code>（非<code>Intel</code>CPU可以跳过此步骤）</h4>
+<h4 id="安装intel-ucode非intelcpu可以跳过此步骤">安装<code>Intel-ucode</code>（非<code>Intel</code>CPU可以跳过此步骤）</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pacman -S intel-ucode
-</code></pre></div><h4 id="bootloader">安装<code>Bootloader</code></h4>
-<h5 id="systemd-bootctlefi"><code>systemd bootctl</code>方式(仅<code>efi</code>引导方式可用):</h5>
+</code></pre></div><h4 id="安装bootloader">安装<code>Bootloader</code></h4>
+<h5 id="systemd-bootctl方式仅efi引导方式可用"><code>systemd bootctl</code>方式(仅<code>efi</code>引导方式可用):</h5>
 <ol>
 <li>安装<code>bootctl</code>:</li>
 </ol>
@@ -606,7 +605,7 @@ hwclock --systohc
 <li>编辑<code>/boot/loader/loader.conf</code>(没有则新建):</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">default 
-archtimeout 4
+archtimeout <span style="color:#ae81ff">4</span>
 </code></pre></div><ol start="3">
 <li><code>vim</code>编辑<code>/boot/loader/entries/arch.conf</code>(没有则新建):</li>
 </ol>
@@ -622,8 +621,8 @@ linux   /vmlinuz-linux
 initrd  /intel-ucode.img
 initrd  /initramfs-linux.img
 options root=PARTUUID=12345-67890-1234-123456-7890 rw
-</code></pre></div><h5 id="grub"><code>grub</code>方式</h5>
-<h6 id="biosmbr">如果为BIOS/MBR引导方式：</h6>
+</code></pre></div><h5 id="grub方式"><code>grub</code>方式</h5>
+<h6 id="如果为biosmbr引导方式">如果为BIOS/MBR引导方式：</h6>
 <ul>
 <li>安装<code>grub</code>包：</li>
 </ul>
@@ -643,7 +642,7 @@ options root=PARTUUID=12345-67890-1234-123456-7890 rw
 </ul>
 <p><strong>如果你没有看到成功的提示信息，请仔细检查是否正确完成上面的过程。常见问题如下：</strong></p>
 <p>1.如果报<code>warning failed to connect to lvmetad，falling back to device scanning.</code>错误。参照<a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux">wiki</a>中搜索关键词<code>use_lvmetad</code>所在位置，简单的方法是编辑<code>/etc/lvm/lvm.conf</code>这个文件，找到<code>use_lvmetad = 1</code>将<code>1</code>修改为<code>0</code>，保存，重新配置grub。</p>
-<h6 id="efigpt">如果为EFI/GPT引导方式：</h6>
+<h6 id="如果为efigpt引导方式">如果为EFI/GPT引导方式：</h6>
 <ul>
 <li>安装<code>grub</code>与<code>efibootmgr</code>两个包：</li>
 </ul>
@@ -659,13 +658,14 @@ options root=PARTUUID=12345-67890-1234-123456-7890 rw
 </code></pre></div><p><strong>提示信息应与上面的类似，如果你发现错误，请仔细检查是否正确完成上面的过程。</strong></p>
 <p>如果报<code>warning failed to connect to lvmetad，falling back to device scanning.</code>错误。参照<a href="https://www.pckr.co.uk/arch-grub-mkconfig-lvmetad-failures-inside-chroot-install/">这篇文章</a>，简单的方法是编辑<code>/etc/lvm/lvm.conf</code>这个文件，找到<code>use_lvmetad = 1</code>将<code>1</code>修改为<code>0</code>，保存，重新配置grub</p>
 <p>如果报<code>grub-probe: error: cannot find a GRUB drive for /dev/sdb1, check your device.map</code>类似错误，并且<code>sdb1</code>这个地方是你的u盘，这是u盘<code>uefi</code>分区造成的错误，对我们的正常安装没有影响，可以不用理会这条错误。</p>
-<h5 id="heading-20">安装后检查</h5>
+<h5 id="安装后检查">安装后检查</h5>
 <p><strong>如果你是多系统，请注意上面一节中对<code>os-prober</code>这个包的安装。</strong></p>
 <p><strong>强烈建议使用如下命令检查是否成功生成各系统的入口，如果没有正常生成会出现开机没有系统入口的情况：</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /boot/grub/grub.cfg
 </code></pre></div><p>检查接近末尾的<code>menuentry</code>部分是否有<code>windows</code>或其他系统名入口。下图例子中是<code>Arch Linux</code>入口与检测到的<code>windows10</code>入口（安装在<code>/dev/sda1</code>)</p>
 <p><strong>如果你没有看到<code>Arch Linux</code>系统入口或者该文件不存在</strong>，请先检查<code>/boot</code>目录是否正确部署<code>linux</code>内核：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /boot
+
 ls
 </code></pre></div><p>查看是否有<code>initramfs-linux-fallback.img initramfs-linux.img intel-ucode.img vmlinuz-linux</code>这几个文件，如果都没有，说明<code>linux</code>内核没有被正确部署，很有可能是<code>/boot</code>目录没有被正确挂载导致的，确认<code>/boot</code>目录无误后，可以重新部署<code>linux</code>内核：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pacman -S linux
@@ -673,14 +673,14 @@ ls
 <p><strong>如果你已经安装<code>os-prober</code>包并生成配置文件后还是没有生成其他系统的入口</strong>：</p>
 <p><strong>你目前处的U盘安装环境下有可能无法检测到其他系统的入口，请在下一步中重启登陆之后重新运行</strong>：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre></div><h4 id="heading-21">重启</h4>
+</code></pre></div><h4 id="重启">重启</h4>
 <p>接下来，你需要进行重启来启动已经安装好的系统，执行如下命令：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">exit
 </code></pre></div><p><strong>如果挂载了<code>/mnt/boot</code>，先<code>umount /mnt/boot</code>，再<code>umount /mnt</code>，否则直接<code>umount /mnt</code>：</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">umount /mnt/bootumount /mntreboot
 </code></pre></div><p>注意这个时候你可能会卡在有两行提示的地方无法正常关机，长按电源键强制关机即可，没有影响。</p>
-<h2 id="heading-22">安装后基本配置</h2>
-<h3 id="heading-23">连接网络</h3>
+<h2 id="安装后基本配置">安装后基本配置</h2>
+<h3 id="连接网络">连接网络</h3>
 <p>现在我们是在新安装的系统上进行操作，所以我们要重新联网，我们在之前安装系统时已经提前装好了相关的包。所以现在只要跟之前一样：</p>
 <ul>
 <li>如果你是有线网并且路由器支持DHCP的话插上网线后先执行以下命令获取IP地址：</li>
@@ -690,7 +690,7 @@ ls
 <li>无线网:</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wifi-menu
-</code></pre></div><h3 id="heading-24">创建交换文件</h3>
+</code></pre></div><h3 id="创建交换文件">创建交换文件</h3>
 <p>交换文件可以在物理内存不足的时候将部分内存暂存到交换文件中，避免系统由于内存不足而完全停止工作。</p>
 <p>之前我们通常采用单独一个分区的方式作为交换分区，现在更推荐采用交换文件的方式，更便于我们的管理。</p>
 <p>分配一块空间用于交换文件，执行：</p>
@@ -705,8 +705,8 @@ ls
 </code></pre></div><p>最后我们需要编辑<code>/etc/fstab</code>为交换文件设置一个入口，使用<code>vim</code>打开文件：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /etc/fstab
 </code></pre></div><p><strong>注意编辑<code>fstab</code>文件的时候要格外注意不要修改之前的内容，直接在最后新起一行加入以下内容</strong>：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/swapfile none swap defaults <span style="color:#ae81ff">0</span> 0
-</code></pre></div><h3 id="heading-25">新建用户</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/swapfile none swap defaults <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+</code></pre></div><h3 id="新建用户">新建用户</h3>
 <p>在这之前所有操作都是以<code>root</code>用户的身份进行的，由于<code>root</code>的权限过高，日常使用<code>root</code>用户是不安全的。<code>Linux</code>为我们提供了强大的用户与组的权限管理，提高了整个系统的安全性。这里我们就来新建一个用户。</p>
 <p>执行以下命令来创建一个名为<code>username</code>的用户（请自行替换<code>username</code>为你的用户名）：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">useradd -m -G wheel username （请自行替换username为你的用户名）
@@ -722,7 +722,7 @@ ls
 <p>当然记得为新用户设置一个密码，执行如下命令：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">passwd username （请自行替换username为你的用户名）  
 </code></pre></div><p>根据提示输入两次密码就可以了，注意，这是你的用户密码，推荐与之前设置的<code>root</code>用户的密码不同。</p>
-<h3 id="sudo">配置sudo</h3>
+<h3 id="配置sudo">配置sudo</h3>
 <p>我们已经创建好了一个新的用户，以后我们将会使用这个用户来登录，那么如果我们需要执行一些只有<code>root</code>用户才能执行的命令（例如修改系统文件、安装软件包）怎么办？当然我们可以通过:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">su
 </code></pre></div><p>命令来切换到<code>root</code>用户执行命令后再通过:</p>
@@ -744,21 +744,20 @@ ls
 <p>配置好<code>sudo</code>以后，我们进行一次重启，执行：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">reboot
 </code></pre></div><p>来重启你的电脑。</p>
-<p>重启以后输入你<strong>刚创建的用户名与密码</strong>来登录。注意登录后要重新进行联网操作。</p>
-<h3 id="heading-26">图形界面的安装</h3>
-<h4 id="heading-27">安装集显:</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -S xf86-video-intel
-</code></pre></div><h4 id="xorgkdesddm">安装<code>Xorg</code>,桌面环境(我这里安装的是<code>KDE</code>),<code>SDDM</code></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -S xorg plasma kde-applications sddm
-</code></pre></div><h4 id="heading-28">设置开机启动服务和网络</h4>
+<p>重启以后输入你<strong>刚创建的用户名与密码</strong>来登录。注意登录后要重新进行联网操作(<code>sudo dhcpcd</code>)。</p>
+<h3 id="图形界面的安装">图形界面的安装</h3>
+<h4 id="安装集显与桌面环境以及启动器">安装集显与桌面环境以及启动器:</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -S xf86-video-intel xorg palsma sddm kconsole
+</code></pre></div><h4 id="设置开机启动服务和网络">设置开机启动服务和网络</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo systemctl enable sddm <span style="color:#75715e">#设置开机启动sddm</span>
 
 sudo systemctl disable netctl <span style="color:#75715e">#配置网络</span>
 
 sudo systemctl enable NetworkManager <span style="color:#75715e">#注意大小写</span>
+
 sudo pacman -S network-manager-applet <span style="color:#75715e">#安装工具栏工具来显示网络设置图标</span>
 </code></pre></div><p>重启后即可进入桌面环境</p>
-<h4 id="heading-29">设置中国源</h4>
+<h4 id="设置中国源如果不需要可以不设置">设置中国源（如果不需要可以不设置)</h4>
 <p>升级系统到最新</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">sudo pacman -Syyu
 </code></pre></div><p>编辑<code>/etc/pacman.conf</code>配置源:</p>
@@ -786,7 +785,7 @@ sudo pacman-key --populate archlinux
 sudo pacman-key --populate archlinuxcn
 sudo pacman -S archlinuxcn-keyring
 sudo pacman -Syu
-</code></pre></div><h4 id="heading-30">安装中文字体</h4>
+</code></pre></div><h4 id="安装中文字体">安装中文字体</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -S adobe-source-han-sans-cn-fonts <span style="color:#f92672">(</span>思源黑体<span style="color:#f92672">)</span>
 
 sudo pacman -S ttf-dejavu
@@ -794,16 +793,68 @@ sudo pacman -S ttf-dejavu
 sudo pacman -S wqy-zenhei
 
 sudo pacman -S wqy-microhei
-</code></pre></div><p>编辑 <code>~/.xprofile</code>或<code>~/.xinitrc</code>:</p>
+</code></pre></div><p>编辑 <code>~/.xprofile</code>或<code>~/.xinitrc</code>或<code>/etc/profile</code>（如果不需要系统语言是中文可以不设置):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export LANG<span style="color:#f92672">=</span>zh_CN.UTF-8
 export LANGUAGE<span style="color:#f92672">=</span>zh_CN:en_US
+</code></pre></div><h4 id="安装输入法">安装输入法</h4>
+<h5 id="安装fcitx">安装<code>fcitx</code></h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -S fcitx fcitx-configtool fcitx-libpinyin
+</code></pre></div><h5 id="配置环境变量">配置环境变量</h5>
+<p>编辑<code>/etc/profile</code>(也可以设置<code>~/.pam_enviroment</code>，但是只设置<code>~/.pam_enviroment</code>会导致emacs不能使用输入法):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">GTK_IM_MODULE<span style="color:#f92672">=</span>fcitx
+QT_IM_MODULE<span style="color:#f92672">=</span>fcitx
+XMODIFIERS<span style="color:#f92672">=</span>@im<span style="color:#f92672">=</span>fcitx
+
+</code></pre></div><h3 id="安装git并设置代理">安装git并设置代理</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -S git 
+</code></pre></div><p>设置代理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --global https.proxy http://127.0.0.1:1080 <span style="color:#75715e"># 如果你的代理是http</span>
+
+git config --global http.proxy http://127.0.0.1:1080
+
+
+git config --global https.proxy socks5://127.0.0.1:1080
+
+git config --global http.proxy socks5://127.0.0.1:1080 <span style="color:#75715e">#如果你的代理是socks5</span>
+</code></pre></div><p>取消代理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --global --unset http.proxy
+
+git config --global --unset https.proxy
+
+</code></pre></div><h4 id="安装yay">安装yay</h4>
+<h5 id="安装git和base-devel-和-go">安装<code>git</code>和<code>base-devel</code> 和 <code>go</code></h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -S git base-devel go
+
+</code></pre></div><h5 id="由于yay需要go的module由于我大清国情需要设置下go的proxy">由于yay需要go的module,由于我大清国情，需要设置下go的proxy</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go env -w GO111MODULE<span style="color:#f92672">=</span>on
+go env -w GOPROXY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://goproxy.io,direct&#34;</span> 
+</code></pre></div><h5 id="下载快照并安装">下载快照并安装</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir -P temp/yay
+
+cd temp/yay
+
+git clone https://aur/archlinux.org/yay.git
+
+makepkg si
+</code></pre></div><p>设置清华源:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yay --aururl <span style="color:#e6db74">&#34;https://aur.tuna.tsinghua.edu.cn&#34;</span> --save
+
+yay -P -g     <span style="color:#75715e">#查看配置</span>
+</code></pre></div><h4 id="安装wps">安装wps</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yay  -S wps-office ttf-wps-fonts
+</code></pre></div><h4 id="安装oh-my-zsh">安装oh-my-zsh</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -S zsh
+</code></pre></div><p>安装<a href="https://ohmyz.sh/">oh-my-zsh</a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -S sh 
+
+sh -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>  <span style="color:#75715e">#如果不行，把install.sh下载下来手动执行sh -c</span>
 </code></pre></div><p>重启即可</p>
-<h2 id="heading-31">参考连接:</h2>
+<h2 id="参考连接">参考连接:</h2>
 <blockquote>
-<p><a href="%5Bhttps://www.joxrays.com/archlinux-configure/%5D(https://www.joxrays.com/archlinux-configure/)">Archlinux从安装到基本配置</a></p>
-<p><a href="%5Bhttps://www.viseator.com/2017/05/17/arch_install/%5D(https://www.viseator.com/2017/05/17/arch_install/)">以官方Wiki的方式安装ArchLinux</a></p>
-<p><a href="%5Bhttps://www.viseator.com/2017/05/19/arch_setup/%5D(https://www.viseator.com/2017/05/19/arch_setup/)">ArchLinux安装后的必须配置与图形界面安装教程</a></p>
-<p><a href="https://bbs.archlinuxcn.org/viewtopic.php?id=1037">Arch Linux 安装指南[2019.12.01]</a></p>
+<p><a href="https://www.joxrays.com/archlinux-configure/">Archlinux从安装到基本配置</a></p>
+<p><a href="https://www.viseator.com/2017/05/17/arch_install/">以官方Wiki的方式安装ArchLinux</a></p>
+<p><a href="https://www.viseator.com/2017/05/19/arch_setup/">ArchLinux安装后的必须配置与图形界面安装教程</a></p>
+<p><a href="https://bbs.archlinuxcn.org/viewtopic.php?id=1037">Arch Linux 安装指南 2019.12.01</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/113615452">女生程序员教你15分钟安装Arch Linux</a></p>
 </blockquote>
 
