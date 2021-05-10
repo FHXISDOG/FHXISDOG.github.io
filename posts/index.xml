@@ -5,10 +5,19 @@
     <link>https://fhxisdog.github.io/posts/</link>
     <description>Recent content in Posts on just for fun</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 14 Jun 2020 15:15:29 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 May 2021 16:09:30 +0800</lastBuildDate>
     
         <atom:link href="https://fhxisdog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Postman 在请求前添加自动执行脚本</title>
+      <link>https://fhxisdog.github.io/2021/05/postman_pre_request/</link>
+      <pubDate>Mon, 10 May 2021 16:09:30 +0800</pubDate>
+      
+      <guid>https://fhxisdog.github.io/2021/05/postman_pre_request/</guid>
+      <description>平时使用postman时经常会有需要在一下请求前先执行一些脚本，或者先统一发一次请求的需求，例如：先登陆再请求其他接口。经过摸索，发现pos</description>
+    </item>
     
     <item>
       <title>docker时区问题</title>
@@ -179,15 +188,6 @@
       
       <guid>https://fhxisdog.github.io/2019/06/version_name/</guid>
       <description>Alpha：是内部测试版,一般不向外部发布,会有很多Bug.一般只有测试人员使用。 Beta：也是测试版，这个阶段的版本会一直加入新的功能。在</description>
-    </item>
-    
-    <item>
-      <title>nacos使用指南</title>
-      <link>https://fhxisdog.github.io/2019/05/nacos_guide/</link>
-      <pubDate>Wed, 29 May 2019 15:33:57 +0800</pubDate>
-      
-      <guid>https://fhxisdog.github.io/2019/05/nacos_guide/</guid>
-      <description>服务启动 本地单机启动 下载源码 从github上下载源码方式: git clone https://github.com/alibaba/nacos.git cd nacos/ mvn -Prelease-nacos clean install -U ls -al distribution/target/ // change the $version to your actual path cd distribution/target/nacos-server-$version/nacos/bin 下载编译后压缩包方式 从 最新稳定版本 下</description>
     </item>
     
   </channel>

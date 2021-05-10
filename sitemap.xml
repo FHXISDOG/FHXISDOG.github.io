@@ -3,21 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://fhxisdog.github.io/2020/06/docker_timezone/</loc>
-    <lastmod>2020-06-14T15:15:29+08:00</lastmod>
+    <loc>https://fhxisdog.github.io/categories/</loc>
+    <lastmod>2021-05-10T16:09:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://fhxisdog.github.io/</loc>
-    <lastmod>2020-06-14T15:15:29+08:00</lastmod>
+    <lastmod>2021-05-10T16:09:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/tags/postman/</loc>
+    <lastmod>2021-05-10T16:09:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/categories/postman/</loc>
+    <lastmod>2021-05-10T16:09:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/2021/05/postman_pre_request/</loc>
+    <lastmod>2021-05-10T16:09:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://fhxisdog.github.io/posts/</loc>
+    <lastmod>2021-05-10T16:09:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/tags/skill/</loc>
+    <lastmod>2021-05-10T16:09:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/tags/</loc>
+    <lastmod>2021-05-10T16:09:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://fhxisdog.github.io/2020/06/docker_timezone/</loc>
     <lastmod>2020-06-14T15:15:29+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -26,13 +68,6 @@
   <url>
     <loc>https://fhxisdog.github.io/2020/06/windowsinstallmysqlwithzip/</loc>
     <lastmod>2020-06-14T14:43:27+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://fhxisdog.github.io/categories/</loc>
-    <lastmod>2020-04-22T12:00:26+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -60,13 +95,6 @@
   
   <url>
     <loc>https://fhxisdog.github.io/2020/04/maven-cant-find-my-local-artifacts/</loc>
-    <lastmod>2020-04-22T12:00:26+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://fhxisdog.github.io/tags/</loc>
     <lastmod>2020-04-22T12:00:26+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
